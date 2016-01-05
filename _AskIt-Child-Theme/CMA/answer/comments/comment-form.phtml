@@ -1,0 +1,24 @@
+<div class="cma-comments-add cma-comment-form-container">
+	<a href="#" class="cma-comment-add-link"><?php echo CMA_Labels::getLocalized('add_comment_link') ?></a>
+	<form action="<?php echo esc_attr(get_permalink($threadId)); ?>" method="post" class="cma-comment-form" data-id="<?php echo (isset($answerId) ? $answerId : 0); ?>" >
+		<input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('cma_comment')); ?>" />
+		<input type="hidden" name="cma-action" value="comment-add" />
+		<input type="hidden" name="cma-return-url" value="<?php echo esc_attr($_SERVER['REQUEST_URI']) ?>" />
+		<?php if (!empty($answerId)): ?>
+			<input type="hidden" name="cma-answer-id" value="<?php echo esc_attr($answerId); ?>" />
+		<?php endif; ?>
+		<textarea name="content" data-limitify="<?php echo esc_attr(CMA_Settings::getOption(
+			empty($answerId) ? CMA_Settings::OPTION_JS_LIMIT_QUESTION_COMMENT : CMA_Settings::OPTION_JS_LIMIT_ANSWER_COMMENT
+		));
+		?>"></textarea>
+		<?php do_action('cma_frontend_comment_form_body_after', array(empty($answerId) ? null : $answerId)); ?>
+		<div class="form-controls">
+			<?php printf('<input type="submit" value="%s" data-label-edit="%s" />',
+				esc_attr(CMA_Labels::getLocalized('add_comment_button')),
+				esc_attr(CMA_Labels::getLocalized('save_comment_button'))
+			);
+			?>
+			<a href="" class="cma-comment-form-cancel">Cancel</a>
+		</div>
+	</form>
+</div>

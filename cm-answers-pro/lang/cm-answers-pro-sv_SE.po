@@ -1,0 +1,1120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CM Answers v1.8.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-08-13 19:59:17+0000\n"
+"Last-Translator: admin <info@jensensatelje.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: cm-answers.php:29
+#, php-format
+#@ default
+msgid "We are sorry, but you need to have at least PHP 5.3 to run this plugin (currently installed version: %s) - please upgrade or contact your system administrator."
+msgstr "Du behöver PHP 5.3 för att få detta att fungera - uppgradera nu"
+
+#: lib/controllers/AnswerController.php:18
+#@ cm-answers
+msgid "CM Answers Sidebar"
+msgstr "CM Answers Sidofält"
+
+#: lib/controllers/AnswerController.php:19
+#@ cm-answers
+msgid "This sidebar is shown on CM Answers pages"
+msgstr "Det här sidofältet visas på CM Answers hemsida"
+
+#: lib/controllers/AnswerController.php:34
+#: lib/controllers/AnswerController.php:42
+#: lib/models/AnswerThread.php:80
+#@ cm-answers
+msgid "Question"
+msgstr "Fråga"
+
+#: lib/controllers/AnswerController.php:34
+#, php-format
+#@ default
+msgid "\"%s\" has been succesfully approved"
+msgstr "\"%s\" har blivit godkänt"
+
+#: lib/controllers/AnswerController.php:42
+#, php-format
+#@ default
+msgid "\"%s\" has been succesfully moved to trash"
+msgstr "\"%s\" har flyttats till skräp" 
+
+#: lib/controllers/AnswerController.php:115
+#@ cm-answers
+msgid "Your answer has been succesfully added."
+msgstr "Ditt svar är lagts in"
+
+#: lib/controllers/AnswerController.php:119
+#@ cm-answers
+msgid "Thank you for your answer, it has been held for moderation."
+msgstr "Tack för ditt svar, det väntar på godkännande."
+
+#: lib/controllers/AnswerController.php:165
+#@ cm-answers
+msgid "New question has been succesfully added."
+msgstr "Ny fråga inlagt."
+
+#: lib/controllers/AnswerController.php:168
+#@ cm-answers
+msgid "Thank you for your question, it has been held for moderation."
+msgstr "Tack för din fråga, det väntar på godkännande."
+
+#: lib/controllers/AnswerController.php:187
+#@ cm-answers
+msgid "There was an error while processing your vote"
+msgstr "Det blev ett fel under processen med ditt betyg"
+
+#: lib/controllers/AnswerController.php:191
+#@ cm-answers
+msgid "You have to be logged-in to vote"
+msgstr "Du måste vara inloggad för att kunna rösta"
+
+#: lib/controllers/AnswerController.php:200
+#@ cm-answers
+msgid "You have already voted for this comment"
+msgstr "Du har redan röstat på denna kommentar"
+
+#: lib/controllers/AnswerController.php:238
+#: lib/models/AnswerThread.php:423
+#@ cm-answers
+msgid "Author"
+msgstr "Författare"
+
+#: lib/controllers/AnswerController.php:239
+#@ cm-answers
+msgid "Views"
+msgstr "Visningar"
+
+#: lib/controllers/AnswerController.php:240
+#@ cm-answers
+msgid "Status"
+msgstr "Status"
+
+#: lib/controllers/AnswerController.php:241
+#: lib/models/AnswerThread.php:115
+#: lib/models/AnswerThread.php:116
+#@ cm-answers
+msgid "Answers"
+msgstr "Svar"
+
+#: lib/controllers/AnswerController.php:258
+#: lib/models/AnswerThread.php:161
+#@ cm-answers
+msgid "pending"
+msgstr "väntar"
+
+#: lib/controllers/AnswerController.php:260
+#@ cm-answers
+msgid "Approve"
+msgstr "Godkänna"
+
+#: lib/controllers/BaseController.php:467
+#@ cm-answers
+msgid "CM Answers Settings"
+msgstr "Inställningar CM Answers"
+
+#: lib/controllers/BaseController.php:467
+#@ cm-answers
+msgid "Settings"
+msgstr "Inställningar"
+
+#: lib/controllers/BaseController.php:468
+#@ cm-answers
+msgid "About"
+msgstr "Om"
+
+#: lib/controllers/BaseController.php:469
+#@ cm-answers
+msgid "Pro Version"
+msgstr "Pro Version"
+
+#: lib/controllers/BaseController.php:480
+#@ cm-answers
+msgid "Settings succesfully updated"
+msgstr "Inställningar uppdaterade"
+
+#: lib/controllers/BaseController.php:560
+#@ cm-answers
+msgid "Filter by status"
+msgstr "Filter status"
+
+#: lib/controllers/BaseController.php:562
+#@ cm-answers
+msgid "Approved"
+msgstr "Godkänd"
+
+#: lib/controllers/BaseController.php:564
+#@ cm-answers
+msgid "Pending"
+msgstr "Väntar"
+
+#: lib/controllers/BaseController.php:566
+#@ cm-answers
+msgid "Trash"
+msgstr "Skräp"
+
+#: lib/models/AnswerThread.php:81
+#: lib/models/AnswerThread.php:113
+#: views/frontend/answer/meta/menu-item.phtml:1
+#@ cm-answers
+msgid "Questions"
+msgstr "Frågor"
+
+#: lib/models/AnswerThread.php:118
+#: lib/models/AnswerThread.php:119
+#@ cm-answers
+msgid "Add New"
+msgstr "Lägg till nytt"
+
+#: lib/models/AnswerThread.php:162
+#@ cm-answers
+msgid "approved"
+msgstr "Godkänd"
+
+#: lib/models/AnswerThread.php:231
+#@ cm-answers
+msgid "RESOLVED"
+msgstr "Löst"
+
+#: lib/models/AnswerThread.php:373
+#@ cm-answers
+msgid "Title cannot be empty"
+msgstr "En titel krävs"
+
+#: lib/models/AnswerThread.php:375
+#: lib/models/AnswerThread.php:524
+#@ cm-answers
+msgid "Content cannot be empty"
+msgstr "Innehåll kan inte vara tomt"
+
+#: lib/models/AnswerThread.php:418
+#@ cm-answers
+msgid "Please moderate"
+msgstr "Var snäll och moderera."
+
+#: lib/models/AnswerThread.php:420
+#@ cm-answers
+msgid "A new question has been asked and is waiting for your approval"
+msgstr "En ny fråga är ställd och väntar på svar"
+
+#: lib/models/AnswerThread.php:424
+#@ cm-answers
+msgid "E-mail"
+msgstr "E-post"
+
+#: lib/models/AnswerThread.php:426
+#@ cm-answers
+msgid "Title"
+msgstr "Titel"
+
+#: lib/models/AnswerThread.php:428
+#@ cm-answers
+msgid "Content"
+msgstr "Innehåll"
+
+#: lib/models/AnswerThread.php:433
+#@ cm-answers
+msgid "Approve it"
+msgstr "Godkänn"
+
+#: lib/models/AnswerThread.php:435
+#@ cm-answers
+msgid "Trash it"
+msgstr "Släng"
+
+#: lib/models/AnswerThread.php:437
+#@ cm-answers
+msgid "Please visit the questions moderation panel"
+msgstr "Var snäll och gå till frågornas panel"
+
+#: lib/models/AnswerThread.php:641
+#@ cm-answers
+msgid "some time ago"
+msgstr "en tid sedan"
+
+#: lib/models/AnswerThread.php:644
+#, php-format
+#@ cm-answers
+msgid "1 second ago"
+msgid_plural "%d seconds ago"
+msgstr[0] "1 sekund sedan
+msgstr[1] "%d sekunder sedan"
+
+#: lib/models/AnswerThread.php:649
+#, php-format
+#@ cm-answers
+msgid "1 minute ago"
+msgid_plural "%d minutes ago"
+msgstr[0] "1 minut sedan"
+msgstr[1] "%d minuter sedan"
+
+#: lib/models/AnswerThread.php:655
+#, php-format
+#@ cm-answers
+msgid "1 hour ago"
+msgid_plural "%d hours ago"
+msgstr[0] "1 timme sedan"
+msgstr[1] "%d timmar sedan"
+
+#: lib/models/AnswerThread.php:661
+#, php-format
+#@ cm-answers
+msgid "1 day ago"
+msgid_plural "%d days ago"
+msgstr[0] "1 dag sedan"
+msgstr[1] "%d dagar sedan"
+
+#: lib/models/AnswerThread.php:667
+#, php-format
+#@ cm-answers
+msgid "1 week ago"
+msgid_plural "%d weeks ago"
+msgstr[0] "1 vecka sedan"
+msgstr[1] "%d veckor sedan"
+
+#: lib/models/AnswerThread.php:673
+#, php-format
+#@ cm-answers
+msgid "1 month ago"
+msgid_plural "%d months ago"
+msgstr[0] "1 månad sedan"
+msgstr[1] "%d månader sedan"
+
+#: lib/models/AnswerThread.php:680
+#, php-format
+#@ cm-answers
+msgid "1 year ago"
+msgid_plural "%d years ago"
+msgstr[0] "1 år sedan"
+msgstr[1] "%d år sedan"
+
+#: lib/models/PostType.php:64
+#, php-format
+#@ cm-answers
+msgid "Add %s"
+msgstr "Lägg till %s"
+
+#: lib/models/PostType.php:65
+#, php-format
+#@ cm-answers
+msgid "Add New %s"
+msgstr "Lägg till ny  %s"
+
+#: lib/models/PostType.php:66
+#, php-format
+#@ cm-answers
+msgid "Edit %s"
+msgstr "Redigera %s"
+
+#: lib/models/PostType.php:67
+#, php-format
+#@ cm-answers
+msgid "New %s"
+msgstr "Ny  %s"
+
+#: lib/models/PostType.php:69
+#, php-format
+#@ cm-answers
+msgid "View %s"
+msgstr "Se  %s"
+
+#: lib/models/PostType.php:70
+#, php-format
+#@ cm-answers
+msgid "Search %s"
+msgstr "Sök %s"
+
+#: lib/models/PostType.php:71
+#, php-format
+#@ cm-answers
+msgid "No %s found"
+msgstr "Ingen %s hittad"
+
+#: lib/models/PostType.php:72
+#, php-format
+#@ cm-answers
+msgid "No %s found in Trash"
+msgstr "Ingen %s  hittad i skräpet"
+
+#: views/backend/settings.phtml:24
+#@ cm-answers
+msgid "General Settings"
+msgstr "Allmänna inställningar"
+
+#: views/backend/settings.phtml:25
+#@ cm-answers
+msgid "You can add \"My Questions\" and \"My Answers\" profile views per user anywhere on the site by using shortcodes: [cma-my-questions] and [cma-my-answers]"
+msgstr "Du kan lägga till \\ \\\"Мina frågor\" och \\ \\\"Мina svar\" på vilken sida du vill med shortcodes: [cma-my-questions] och [cma-my-answers]"
+
+#: views/backend/settings.phtml:26
+#@ cm-answers
+msgid "Link to questions frontend list"
+msgstr "Länkar till frågor"
+
+#: views/backend/settings.phtml:29
+#@ cm-answers
+msgid "Enable ratings for answers"
+msgstr "Godkänn betyg för svar"
+
+#: views/backend/settings.phtml:31
+#: views/backend/settings.phtml:38
+#: views/backend/settings.phtml:54
+#: views/backend/settings.phtml:61
+#: views/backend/settings.phtml:82
+#@ cm-answers
+msgid "No"
+msgstr "Nej"
+
+msgid "no"
+msgstr "nej"
+
+#: views/backend/settings.phtml:32
+#: views/backend/settings.phtml:39
+#: views/backend/settings.phtml:55
+#: views/backend/settings.phtml:62
+#: views/backend/settings.phtml:83
+#@ cm-answers
+msgid "Yes"
+msgstr "Ja"
+
+msgid "yes"
+msgstr "ja"
+
+#: views/backend/settings.phtml:33
+#@ cm-answers
+msgid "If enabled, users will be able to rate answers"
+msgstr "Om på, användare kommer kunna sätta betyg"
+
+#: views/backend/settings.phtml:36
+#@ cm-answers
+msgid "Enable negative ratings"
+msgstr "Godkänn negativa betyg"
+
+#: views/backend/settings.phtml:40
+#@ cm-answers
+msgid "If enabled, users will be able to give \"thumbs down\" for an answer. If previous settings is disabled, this will be ignored."
+msgstr "Om på kommer användare att kunna ge \\ \\\"tummen ned \" till ett svar. Om förra inställningen är av kommer detta att ignoreras."
+
+#: views/backend/settings.phtml:43
+#@ cm-answers
+msgid "On questions list in \"votes\" box show"
+msgstr "I frågelistan \\ \\\"röster\ boxen att synas""
+
+#: views/backend/settings.phtml:45
+#@ cm-answers
+msgid "Total number of votes of its answers"
+msgstr "Totalt antal röster till fråga"
+
+#: views/backend/settings.phtml:47
+#@ cm-answers
+msgid "Rating of the best answer"
+msgstr "Betyg till bästa svar"
+
+#: views/backend/settings.phtml:48
+#@ cm-answers
+msgid "If ratings are disabled, this setting will be ignored."
+msgstr "Om betyg är av kommer detta att ignoreras."
+
+#: views/backend/settings.phtml:52
+#@ cm-answers
+msgid "Auto-approve new questions"
+msgstr "Godkänn frågor automatiskt
+
+#: views/backend/settings.phtml:59
+#@ cm-answers
+msgid "Auto-approve answers"
+msgstr "Godkänn svar automatiskt"
+
+#: views/backend/settings.phtml:80
+#@ cm-answers
+msgid "Add \"Answers\" to WP Nav Menu"
+msgstr "Lägg till \\ \\\"Svar\" till WP Nav Menu"
+
+#: views/backend/settings.phtml:84
+#@ cm-answers
+msgid "You need to have \"wp_nav_menu\" trigger in your template"
+msgstr "Du behöver\\ \\\"wp_nav_menu \" i din template"
+
+#: views/backend/settings.phtml:87
+#@ cm-answers
+msgid "Notifications"
+msgstr "Notiser"
+
+#: views/backend/settings.phtml:90
+#@ cm-answers
+msgid "Notify about new questions"
+msgstr "Meddela nya frågor"
+
+#: views/backend/settings.phtml:91
+#@ cm-answers
+msgid "Example"
+msgstr "Exempel"
+
+#: views/backend/settings.phtml:92
+#@ cm-answers
+msgid "Separate e-mail addresses by commas or leave empty to disable."
+msgstr "Separera e-post adresser med komma eller lämna tom för att inte användas."
+
+#: views/backend/settings.phtml:95
+#@ cm-answers
+msgid "New question notification title"
+msgstr "Ny fråga notifikation titel"
+
+#: views/backend/settings.phtml:100
+#@ cm-answers
+msgid "New question notification content"
+msgstr "Ny fråga innehåll"
+
+#: views/backend/settings.phtml:102
+#: views/backend/settings.phtml:116
+#@ cm-answers
+msgid "Name of the site"
+msgstr "Namn på sida"
+
+#: views/backend/settings.phtml:103
+#@ cm-answers
+msgid "Author of the question"
+msgstr "Författare"
+
+#: views/backend/settings.phtml:104
+#: views/backend/settings.phtml:117
+#@ cm-answers
+msgid "Title of the question"
+msgstr "Titel på fråga"
+
+#: views/backend/settings.phtml:105
+#@ cm-answers
+msgid "Approval status of the question (pending, approved)"
+msgstr "Status på fråga (väntar, godkänd)"
+
+#: views/backend/settings.phtml:106
+#@ cm-answers
+msgid "Link to the new question"
+msgstr "Länk till ny fråga"
+
+#: views/backend/settings.phtml:109
+#@ cm-answers
+msgid "New answer notification title"
+msgstr "Ny fråga notifikation titel"
+
+#: views/backend/settings.phtml:114
+#@ cm-answers
+msgid "New answer notification content"
+msgstr "Ny fråga notifikation innehåll"
+
+#: views/backend/settings.phtml:118
+#@ cm-answers
+msgid "Link to the new answer"
+msgstr "Länk till nytt svar"
+
+#: views/backend/settings.phtml:122
+#@ cm-answers
+msgid "Update"
+msgstr "Uppdatera"
+
+#: views/frontend/answer/index.phtml:8
+#@ cm-answers
+msgid "All Questions"
+msgstr "Alla frågor"
+
+#: views/frontend/answer/index.phtml:18
+#: views/frontend/answer/single.phtml:55
+#@ cm-answers
+msgid "Newest"
+msgstr "Senaste"
+
+#: views/frontend/answer/index.phtml:19
+#@ cm-answers
+msgid "Hottest"
+msgstr "Hetast"
+
+#: views/frontend/answer/index.phtml:20
+#@ cm-answers
+msgid "Most votes"
+msgstr "Flest röster"
+
+#: views/frontend/answer/index.phtml:21
+#@ cm-answers
+msgid "Most views"
+msgstr "Flest visningar"
+
+#: views/frontend/answer/index.phtml:36
+#: views/frontend/answer/widget/my-answers.phtml:7
+#@ cm-answers
+msgid "Votes"
+msgstr "Röster"
+
+#: views/frontend/answer/index.phtml:38
+#@ cm-answers
+msgid "views"
+msgstr "visningar"
+
+#: views/frontend/answer/index.phtml:40
+#@ cm-answers
+msgid "answers"
+msgstr "svar"
+
+#: views/frontend/answer/index.phtml:44
+#: views/frontend/answer/widget/my-questions.phtml:19
+#, php-format
+#@ cm-answers
+msgid "updated %s by %s"
+msgstr "Uppdaterat %s  av %s"
+
+#: views/frontend/answer/index.phtml:65
+#@ cm-answers
+msgid "Ask a Question"
+msgstr "Ställ en fråga"
+
+#: views/frontend/answer/index.phtml:68
+#: views/frontend/answer/single.phtml:95
+#@ cm-answers
+msgid "Allow markup"
+msgstr "Tillåt markering"
+
+#: views/frontend/answer/index.phtml:69
+#: views/frontend/answer/single.phtml:96
+#@ cm-answers
+msgid "Wrap your code using"
+msgstr "Packetera din kod med"
+
+# @ cm-answers-pro
+#: views/frontend/answer/index.phtml:170
+#: views/frontend/answer/widget/questions.phtml:87
+msgid "Enter your basic question"
+msgstr "Ställ din grundläggande fråga"
+
+# @ cm-answers-pro
+#: views/frontend/answer/index.phtml:172
+#: views/frontend/answer/widget/questions.phtml:88
+msgid "Enter more details about your question"
+msgstr "Fyll i fler detaljer"
+
+#: views/frontend/answer/index.phtml:76
+#: views/frontend/answer/single.phtml:103
+#@ cm-answers
+msgid "Notify me of follow"
+msgstr "Meddela mig uppdateringar"
+
+#: views/frontend/answer/index.phtml:78
+#@ cm-answers
+msgid "Add Question"
+msgstr "Lägg till en fråga"
+
+#: views/frontend/answer/single.phtml:9
+#@ cm-answers
+msgid "Back to Questions List"
+msgstr "Tillbaka till listan på frågor"
+
+#: views/frontend/answer/single.phtml:28
+#@ cm-answers
+msgid "Thank you for voting!"
+msgstr "Tack för din röst
+
+#: views/frontend/answer/single.phtml:42
+#: views/frontend/answer/single.phtml:77
+#, php-format
+#@ cm-answers
+msgid "Posted by %s"
+msgstr "Författare %s"
+
+#: views/frontend/answer/single.phtml:43
+#, php-format
+#@ cm-answers
+msgid "Asked on %s"
+msgstr "Frågat den  %s"
+
+# @ cm-answers-pro
+#: views/frontend/answer/widget/questions.phtml:119
+#, php-format
+msgid "asked %s by %s"
+msgstr "frågat %s av %s"
+
+#: views/frontend/answer/single.phtml:56
+#@ cm-answers
+msgid "Highest Rating"
+msgstr "Нögsta betyg"
+
+#: views/frontend/answer/single.phtml:65
+#@ cm-answers
+msgid "Thumbs Up!"
+msgstr "Tummen upp!"
+
+#: views/frontend/answer/single.phtml:67
+#@ cm-answers
+msgid "Thumbs Down!"
+msgstr "Tummen ned!"
+
+#: views/frontend/answer/single.phtml:78
+#, php-format
+#@ cm-answers
+msgid "Answered on %s"
+msgstr "Frågat den %s"
+
+#: views/frontend/answer/single.phtml:92
+#: views/frontend/answer/single.phtml:109
+#@ cm-answers
+msgid "Post your Answer"
+msgstr "Skicka in ditt svar"
+
+#: views/frontend/answer/single.phtml:99
+#@ cm-answers
+msgid "Write your Answer here"
+msgstr "Skriv ditt svar här"
+
+#: views/frontend/answer/single.phtml:107
+#@ cm-answers
+msgid "Mark as resolved"
+msgstr "Markera som löst"
+
+#: views/frontend/answer/widget/my-answers.phtml:16
+#, php-format
+#@ cm-answers
+msgid "posted %s in reply to %s"
+msgstr "inskickat %s som svar till %s"
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: views/frontend/answer/widget/my-questions.phtml:7
+#: views/frontend/answer/index.phtml:36
+#: views/frontend/answer/widget/my-answers.phtml:7
+#@ cm-answers
+msgid "vote"
+msgid_plural "votes"
+msgstr[0] "betyg"
+msgstr[1] "betyg"
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: views/frontend/answer/widget/my-questions.phtml:9
+#: views/frontend/answer/index.phtml:38
+#@ cm-answers
+msgid "view"
+msgid_plural "views"
+msgstr[0] "visning
+msgstr[1] "visningar"
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: views/frontend/answer/widget/my-questions.phtml:11
+#: views/frontend/answer/index.phtml:40
+#@ cm-answers
+msgid "answer"
+msgid_plural "answers"
+msgstr[0] "svar"
+msgstr[1] "svar"
+
+#: views/frontend/error.phtml:8
+#@ cm-answers
+msgid "Go back to previous page"
+msgstr "Gå tillbaka till förra frågan"
+
+# @ cm-answers-pro
+#: views/frontend/answer/nav-bar.phtml:8
+msgid "Choose the filter options and click the submit button"
+msgstr "Välj filter och klicka på skicka"
+
+# @ cm-answers-pro
+msgid "All questions"
+msgstr "Alla frågor"
+
+# @ cm-answers-pro
+msgid "All categories"
+msgstr "Alla kategorier"
+
+# @ cm-answers-pro
+msgid "All subcategories"
+msgstr "Alla underkategorier"
+
+# @ cm-answers-pro
+msgid "Enter your basic question"
+msgstr "Ställ din grundläggande fråga"
+
+# @ cm-answers-pro
+msgid "Enter more details about your question"
+msgstr "Fyll i fler detaljer kring din fråga"
+
+# @ cm-answers-pro
+msgid "Choose category"
+msgstr "Välj kategori"
+
+# @ cm-answers-pro
+msgid "Mark as best answer"
+msgstr "Markera som bästa svar"
+
+# @ cm-answers-pro
+msgid "An error occurred."
+msgstr "Ett fel inträffade."
+
+# @ cm-answers-pro
+msgid "You have to be logged-in."
+msgstr "Du måste vara inloggad."
+
+# @ cm-answers-pro
+msgid "The best answer has been marked."
+msgstr "Det bästa svaret har blivit markerat."
+
+# @ cm-answers-pro
+msgid "Answer not found."
+msgstr "Svaret kan inte hittas."
+
+# @ cm-answers-pro
+msgid "Mark as favorite"
+msgstr "Markera som favorit"
+
+# @ cm-answers-pro
+msgid "Unmark as favorite"
+msgstr "Avmarkera som favorit"
+
+# @ cm-answers-pro
+msgid "Favorite"
+msgstr "Favorit"
+
+# @ cm-answers-pro
+msgid "Favorite for %d users"
+msgstr "Favorit %d användare"
+
+# @ cm-answers-pro
+msgid "Marked as favorite."
+msgstr "Markera som favorit."
+
+# @ cm-answers-pro
+msgid "Unmarked as favorite."
+msgstr "Avmarkera som favorit."
+
+# @ cm-answers-pro
+msgid "Best answer"
+msgstr "Bästa svaret"
+
+# @ cm-answers-pro
+msgid "No questions found."
+msgstr "Inga frågor hittade."
+
+# @ cm-answers-pro
+msgid "You have already voted for this question."
+msgstr "Du har redan röstat på denna frågan."
+
+# @ cm-answers-pro
+msgid "Edit"
+msgstr "Redigera"
+
+# @ cm-answers-pro
+msgid "Views"
+msgstr "Visningar"
+
+# @ cm-answers-pro
+msgid "Category"
+msgstr "Kategori"
+
+# @ cm-answers-pro
+msgid "Answered questions"
+msgstr "Besvarade frågor"
+
+# @ cm-answers-pro
+msgid "Unanswered questions"
+msgstr "Obesvarade frågor"
+
+# @ cm-answers-pro
+msgid "Search Questions..."
+msgstr "Sök frågor…"
+
+# @ cm-answers-pro
+msgid "Unmark best answer"
+msgstr "Avmarkera bästa svar"
+
+# @ cm-answers-pro
+msgid "Edit your Answer"
+msgstr "Redigera ditt svar"
+
+# @ cm-answers-pro
+msgid "Edit your Question"
+msgstr "Redigera din fråga"
+
+# @ cm-answers-pro
+msgid "Add comment"
+msgstr "Lägg till kommentar"
+
+# @ cm-answers-pro
+msgid "Save comment"
+msgstr "Spara kommentar"
+
+# @ cm-answers-pro
+msgid "Send private question"
+msgstr "Skicka privat fråga"
+
+# @ cm-answers-pro
+msgid "Send private question to %s"
+msgstr "Sänd privat fråga till %s"
+
+# @ cm-answers-pro
+msgid "Enter your question title"
+msgstr "Fyll i titel"
+
+# @ cm-answers-pro
+msgid "Send"
+msgstr "Skicka"
+
+# @ cm-answers-pro
+msgid "Cancel"
+msgstr "Ångra"
+
+# @ cm-answers-pro
+msgid "Private question has been sent."
+msgstr "Privat fråga inskickad."
+
+# @ cm-answers-pro
+msgid "Save"
+msgstr "Spara"
+
+# @ cm-answers-pro
+msgid "Oldest"
+msgstr "Äldst"
+
+# @ cm-answers-pro
+msgid "Lowest Rating"
+msgstr "Lägst betyg"
+
+# @ cm-answers-pro
+msgid "Back to Full Questions List"
+msgstr "Tillbaka till alla frågor"
+
+# @ cm-answers-pro
+msgid "Follow"
+msgstr "Följ"
+
+# @ cm-answers-pro
+msgid "Unfollow"
+msgstr "Följ ej"
+
+# @ cm-answers-pro
+msgid "You have been added to the followers of this thread."
+msgstr "Du har blivit tillagd i listan av följare till denna tråd."
+
+# @ cm-answers-pro
+msgid "You have been removed from the followers of this thread."
+msgstr "Du har blivit borttagen i listan av följare till denna tråd."
+
+# @ cm-answers-pro
+msgid "Follow category"
+msgstr "Följ kategori"
+
+# @ cm-answers-pro
+msgid "Unfollow category"
+msgstr "Följ ej kategori"
+
+# @ cm-answers-pro
+msgid "You have been added to the followers of this category."
+msgstr "Du har blivit tillagd i listan av följare till denna kategori."
+
+# @ cm-answers-pro
+msgid "You have been removed from the followers of this category."
+msgstr "Du har blivit borttagen i listan av följare till denna kategori."
+
+# @ cm-answers-pro
+msgid "Followed threads and categories"
+msgstr "Trådar och kategorier du följer"
+
+# @ cm-answers-pro
+msgid "Followed threads"
+msgstr "Trådar du följer"
+
+# @ cm-answers-pro
+msgid "Followed categories"
+msgstr "Kategorier du följer"
+
+# @ cm-answers-pro
+msgid "Report spam"
+msgstr "Rapportera skräp"
+
+# @ cm-answers-pro
+msgid "Thank you! Spam report has been sent."
+msgstr "Tack! Skräprapport inskickad."
+
+# @ cm-answers-pro
+msgid "Marked as spam"
+msgstr "Markera som skräp"
+
+# @ cm-answers-pro
+msgid "Please log in to post questions"
+msgstr "Logga in för att kunna ställa frågor"
+
+# @ cm-answers-pro
+msgid "The same question has been already posted. Please use the \"Search\" option."
+msgstr "The same question has been already posted. Please use the \"Search\" option."
+
+# @ cm-answers-pro
+msgid "You cannot vote."
+msgstr "You cannot vote."
+
+# @ cm-answers-pro
+msgid "Do you really want to resolve this thread?"
+msgstr "Do you really want to resolve this thread?"
+
+# @ cm-answers-pro
+msgid "Thread has been marked as resolved."
+msgstr "Thread has been marked as resolved."
+
+# @ cm-answers-pro
+msgid "Thread has been deleted."
+msgstr "Thread has been deleted."
+
+# @ cm-answers-pro
+msgid "You cannot delete this thread."
+msgstr "You cannot delete this thread."
+
+# @ cm-answers-pro
+msgid "Thread not found."
+msgstr "Thread not found."
+
+# @ cm-answers-pro
+msgid "Invalid request."
+msgstr "Invalid request."
+
+# @ cm-answers-pro
+msgid "There was an error while removing your question."
+msgstr "There was an error while removing your question."
+
+# @ cm-answers-pro
+msgid "Do you really want to delete this question?"
+msgstr "Do you really want to delete this question?"
+
+# @ cm-answers-pro
+msgid "You do not have permissions to see this page."
+msgstr "You do not have permissions to see this page."
+
+# @ cm-answers-pro
+msgid "Answer"
+msgstr "Answer"
+
+# @ cm-answers-pro
+msgid "Do you want to remove other answers (instead of the best)? Press OK if yes, press Cancel if no."
+msgstr "Do you want to remove other answers (instead of the best)? Press OK if yes, press Cancel if no."
+
+# @ cm-answers-pro
+msgid "Private answer"
+msgstr "Private answer"
+
+# @ cm-answers-pro
+msgid "votes"
+msgstr "votes"
+
+# @ cm-answers-pro
+msgid "Related questions"
+msgstr "Related questions"
+
+# @ cm-answers-pro
+msgid "Question ID:"
+msgstr "Question ID:"
+
+# @ cm-answers-pro
+msgid "Enter more details about your question (optional)"
+msgstr "Enter more details about your question (optional)"
+
+# @ cm-answers-pro
+msgid "Related questions:"
+msgstr "Related questions:"
+
+# @ cm-answers-pro
+msgid "Enter related questions links or ids separated by new line."
+msgstr "Enter related questions links or ids separated by new line."
+
+# @ cm-answers-pro
+msgid "Cannot post content because of bad word: %s"
+msgstr "Cannot post content because of bad word: %s"
+
+# @ cm-answers-pro
+msgid "Back to Previous Page"
+msgstr "Back to Previous Page"
+
+# @ cm-answers-pro
+msgid "Follow this category"
+msgstr "Follow this category"
+
+# @ cm-answers-pro
+msgid "Unfollow this category"
+msgstr "Unfollow this category"
+
+# @ cm-answers-pro
+msgid "Unfollow all new threads"
+msgstr "Unfollow all new threads"
+
+# @ cm-answers-pro
+msgid "Follow all new threads"
+msgstr "Follow all new threads"
+
+# @ cm-answers-pro
+msgid "Unmark spam"
+msgstr "Unmark spam"
+
+# @ cm-answers-pro
+msgid "Please log in to opt-out the newsletter."
+msgstr "Please log in to opt-out the newsletter."
+
+# @ cm-answers-pro
+msgid "You have been successfully removed from newsletter."
+msgstr "You have been successfully removed from newsletter."
+
+# @ cm-answers-pro
+msgid "The opt-out function is disabled by admin."
+msgstr "The opt-out function is disabled by admin."
+
+# @ cm-answers-pro
+msgid "Opt-out from newsletter"
+msgstr "Opt-out from newsletter"
+
+# @ cm-answers-pro
+msgid "The new threads newsletter has been disabled."
+msgstr "The new threads newsletter has been disabled."
+
+# @ cm-answers-pro
+msgid "The new threads newsletter has been enabled."
+msgstr "The new threads newsletter has been enabled."
+
+# @ cm-answers-pro
+msgid "No results."
+msgstr "No results."
+
+# @ cm-answers-pro
+msgid "Answers Stats"
+msgstr "Answers Stats"
+
+# @ cm-answers-pro
+msgid "Comments"
+msgstr "Comments"
+
+# @ cm-answers-pro
+msgid "Users"
+msgstr "Users"
+
+# @ cm-answers-pro
+msgid "Add tags"
+msgstr "Add tags"
+
+# @ cm-answers-pro
+msgid "Add"
+msgstr "Add"
+
+# @ cm-answers-pro
+msgid "Drag and drop attachments here"
+msgstr "Drag and drop attachments here"
+
+# @ cm-answers-pro
+msgid "Allowed file types"
+msgstr "Allowed file types"
+
+# @ cm-answers-pro
+msgid "Max file size"
+msgstr "Max file size"

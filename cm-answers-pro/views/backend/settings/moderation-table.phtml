@@ -1,0 +1,68 @@
+<p><?php echo CMA_Settings::__('Moderation options table'); ?>: <a href="#" onclick="jQuery(this).parent().next().slideToggle();return false"><?php
+	echo CMA_Settings::__('Show/Hide'); ?></a></p>
+<div style="display:none;">
+	<table class="tg-table-plain">
+		<tr>
+			<th colspan="3" class="tg-center"><?php echo CMA_Settings::__('Option - where is it located? Is it enabled?'); ?></th>
+			<th rowspan="3" class="tg-center"><?php echo CMA_Settings::__('Effect'); ?></th>
+		</tr>
+		<tr class="tg-even">
+			<td colspan="2" class="tg-center">CM-Answers -&gt; <?php echo CMA_Settings::__('Moderation'); ?></td>
+			<td class="tg-center">WP -&gt; <?php _e('Settings'); ?> -&gt; <?php _e('Discussion'); ?></td>
+		</tr>
+		<tr>
+			<td class="tg-center"><?php echo CMA_Settings::__('Auto-approve new questions'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Simulate comment add when question is added'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('An administrator must always approve the comment'); ?></td>
+		</tr>
+		<tr class="tg-even">
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Always publish'); ?></td>
+		</tr>
+		<tr>
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Always publish'); ?></td>
+		</tr>
+		<tr class="tg-even">
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Always publish'); ?></td>
+		</tr>
+		<tr>
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Always publish'); ?></td>
+		</tr>
+		<tr class="tg-even">
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Always moderate (never publish)'); ?></td>
+		</tr>
+		<tr>
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Use internal WP Discussion settings to decide wheter moderate/publish'); ?><br/>
+				<i><?php echo CMA_Settings::__('Note: admin\'s and moderator\'s questions are always published'); ?></i><br/>
+		</tr>
+		<tr class="tg-even">
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Yes'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Always publish'); ?></td>
+		</tr>
+		<tr>
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('No'); ?></td>
+			<td class="tg-center"><?php echo CMA_Settings::__('Always publish'); ?></td>
+		</tr>
+	</table>
+</div>

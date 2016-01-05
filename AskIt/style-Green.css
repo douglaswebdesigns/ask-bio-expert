@@ -1,0 +1,9 @@
+#header { background: #5f9029 url(images/green/header-bg.png) repeat-x; }
+	span.comment-number a { background: url(images/green/comment-number.png) no-repeat;}
+		ul#secondary-menu li.current-menu-item {background:url(images/green/secondary-active.png) no-repeat right bottom; }
+			ul#secondary-menu li.current-menu-item a {background:url(images/green/secondary-active.png) no-repeat;}
+
+			ul#primary-menu a span { color:#e9e7b9; }
+
+.widget-comment-number { background:url("images/green/tab-answered-bg.png") no-repeat; }
+.commentlist .author_comments_num { background:url("images/green/tab-answered-bg.png") no-repeat; }

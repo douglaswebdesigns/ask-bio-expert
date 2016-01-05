@@ -1,0 +1,12 @@
+<div class="cma-answer-meta">
+	
+	<?php if (CMA_Settings::getOption(CMA_Settings::OPTION_SHOW_ANSWER_AUTHOR)): ?>
+		<div class="cma-answer-author">
+			<?php echo $avatar; ?>
+			<?php echo $author; ?>
+		</div>
+	<?php endif; ?>
+
+	<div class="cma-answer-date"><?php printf(CMA_Labels::getLocalized('answered_on'), $answer->getCreationDate()); ?></div>
+	
+</div>

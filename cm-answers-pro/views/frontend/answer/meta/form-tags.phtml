@@ -1,0 +1,5 @@
+<div class="cma-form-input cma-form-tags">
+	<?php printf('<input type="hidden" name="thread_tags" value="%s" />', esc_attr($tags)); ?>
+	<?php printf('<input type="text" name="thread_tag_add" class="cma-tag-input" placeholder="%s" />', esc_attr(CMA::__('Add tag'))); ?>
+	<?php printf('<input type="button" value="%s" />', esc_attr(CMA::__('Add'))); ?>
+</div>

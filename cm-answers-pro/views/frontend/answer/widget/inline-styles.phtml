@@ -1,0 +1,18 @@
+<style type="text/css">
+	/* CMA inline styles */
+    .cma_sticky_background td {
+        background: <?php echo esc_html(CMA_Settings::getOption(CMA_Settings::OPTION_STICKY_QUESTION_COLOR)); ?> !important;
+    }
+    <?php if ($submitBackground = CMA_Settings::getOption(CMA_Settings::OPTION_SUBMIT_BUTTON_CSS_BACKGROUND) AND preg_match('/^[a-z0-9\#\-]+$/i', $submitBackground)): ?>
+    	.cma-form-container input[type="submit"] {background-color: <?php echo $submitBackground; ?> !important;}
+    <?php endif; ?>
+    <?php
+    echo CMA_Thread::getCustomCss();
+    ?>
+</style>
+
+<?php if (CMA_Settings::getOption(CMA_Settings::OPTION_JS_LIMIT)): ?>
+<script type="text/javascript">
+var CMA_LIMITIFY = true;
+</script>
+<?php endif; ?>

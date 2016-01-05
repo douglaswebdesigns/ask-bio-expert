@@ -1,0 +1,87 @@
+<?php
+/**
+ * Question table template.
+ */
+
+$wp_query = CMA_AnswerController::$query;
+
+CMA_BaseController::get_header();
+$sidebarEnabled = (CMA_Thread::isSidebarEnabled() && is_active_sidebar('cm-answers-sidebar'));
+
+?>
+
+<div id="primary" class="content-area cma-content<?php echo ($sidebarEnabled ? ' cma-col-left' : ' full-width'); ?>">
+	<div id="content" role="main" class="site-content">
+    	<div class="cma-main">
+    		<div class="cma-wrapper page type-page hentry">
+            
+            	<?php do_action('CMA_breadcrumbs'); ?>
+           
+            	<?php do_action('cma_index_header_before'); ?>
+
+                <?php if (CMA_Settings::getOption(CMA_Settings::OPTION_SHOW_INDEX_TITLE)): ?><header class="entry-header">
+                    <h1 class="entry-title">
+                        <?php
+                        $foundPosts = $wp_query->found_posts;
+                        if( $wp_query->is_tax(CMA_Category::TAXONOMY) ):
+                            ?>
+                            <?php
+                            single_term_title();
+                            ?>
+                        <?php else: ?>
+                            <?php
+                            post_type_archive_title();
+                            if (isset($_GET['cmatag'])) {
+								$tagTerm = get_term_by('slug', $_GET['cmatag'], 'post_tag');
+								if (!empty($tagTerm)) {
+                            		echo ' for tag "' . esc_html($tagTerm->name) . '"';
+                            	}
+                            }
+                            ?>
+                        <?php endif; ?>
+                        <?php if (CMA_Settings::getOption(CMA_Settings::OPTION_SHOW_TITLE_FOUND_POSTS)) echo ' (' . $foundPosts . ')'; ?>
+                    </h1>
+                </header><?php endif; ?>
+                
+                <div class="entry-content">
+                
+	                <?php do_action('cma_index_header_after'); ?>
+	
+	                <?php
+	                $questionIds = array();
+	                foreach($wp_query->posts as $key => $post)
+	                {
+	                    $questionIds[] = $post->ID;
+	                }
+	                $questions = array_filter(array_map(array('CMA_Thread', 'getInstance'), $questionIds));
+	
+	                $displayOptions = CMA_Settings::getDisplayOptionsDefaults();
+	                echo CMA_BaseController::_loadView('answer/widget/questions', compact('questions', 'displayOptions'));
+	                ?>
+	                
+	            </div>
+                <div class="cma-clear"></div>
+            </div><!-- cma-wrapper -->
+
+            <?php if( CMA_Thread::isReferralEnabled() && CMA_Thread::getAffiliateCode() ): ?>
+                <span class="cma_referral_link">
+                    <a href="http://www.cminds.com/store/answers/?af=<?php echo CMA_Thread::getAffiliateCode() ?>">
+                        <img src="http://static.cminds.com/wp-content/uploads/download_answer.png" height="22" alt="Code" />
+                    </a>
+                </span>
+            <?php endif; ?>
+            
+            <div class="cma-clear"></div>
+            
+        </div><!-- cma-main -->
+    </div><!-- #content.site-content -->
+</div><!-- cma-content -->
+<?php
+/*
+ * CMA-Sidebar
+ */
+if ($sidebarEnabled) echo CMA_BaseController::_loadView('answer/widget/sidebar');
+?>
+ <h1 style="color:#000">This is the index template</h1>
+<?php
+get_footer();

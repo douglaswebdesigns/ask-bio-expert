@@ -1,0 +1,16 @@
+<div class="cma-post-comments">
+	<label for="cma_category" class="selectit"><?php echo CMA_Settings::__( 'Replace comments with the CM Answers category' ); ?>:
+		<select name="cma_category" id="cma_category" onchange="jQuery(this).parents('.cma-post-comments').find('.cma-new-category').css('display', this.value=='new' ? 'inline' : 'none')">
+			<option value="">-- <?php echo CMA_Settings::__('disabled'); ?> --</option>
+			<option value="new">-- <?php echo CMA_Settings::__('Create new category'); ?> --</option>
+			<?php foreach ($categories as $categoryId => $categoryName): ?>
+				<option value="<?php echo esc_attr($categoryId) ?>"<?php
+					if (!empty($currentCategory) AND $currentCategory->term_id == $categoryId)
+						echo ' selected="selected"'; ?>><?php echo esc_html($categoryName) ?></option>
+			<?php endforeach; ?>
+		</select>
+	</label>
+	<label for="cma_category_name" class="cma-new-category" style="display:none"><?php echo CMA_Settings::__('New category name'); ?>:
+		<input type="text" name="cma_category_name" id="cma_category_name" value="<?php echo esc_attr($post->post_title) ?>" />
+	</label>
+</div>

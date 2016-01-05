@@ -1,0 +1,14 @@
+<ul class="cma-counters-widget">
+	<?php if ($atts['show_questions']): ?>
+		<li><strong><?php echo $questionsNumber; ?></strong><span><?php echo CMA::__('Questions'); ?></span></li>
+	<?php endif; ?>
+	<?php if ($atts['show_answers']): ?>
+		<li><strong><?php echo $answersNumber; ?></strong><span><?php echo CMA::__('Answers'); ?></span></li>
+	<?php endif; ?>
+	<?php if ($atts['show_comments']): ?>	
+		<li><strong><?php echo $commentsNumber; ?></strong><span><?php echo CMA::__('Comments'); ?></span></li><li>
+	<?php endif; ?>
+	<?php if ($atts['show_users']): ?>
+		<li><strong><?php echo $usersNumber; ?></strong><span><?php echo CMA::__('Users'); ?></span></li>
+	<?php endif; ?>
+</ul>

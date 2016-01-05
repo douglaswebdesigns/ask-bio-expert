@@ -1,0 +1,47 @@
+<form id="cma-logs-table-filter" method="GET">
+<input type="hidden" name="page" value="<?php echo CMA_BaseController::ADMIN_LOGS ?>" />
+<input type="hidden" name="action" value="<?php echo esc_attr(self::$action) ?>" />
+<table class="wp-list-table widefat fixed" id="cma-logs-table">
+	<thead><tr>
+		<th><?php echo CMA::__('Question'); ?></th>
+		<th><?php echo CMA::__('Answer'); ?></th>
+		<th class="time"><?php echo CMA_Settings::__('Time from'); ?>
+			<input name="date_from" data-placeholder="YYYY-MM-DD"<?php if (!empty($dateFilterFrom)) echo ' value="'. esc_attr($dateFilterFrom) .'"';
+				?> /> <?php echo CMA_Settings::__('to'); ?>
+			<input name="date_to" data-placeholder="YYYY-MM-DD"<?php if (!empty($dateFilterTo)) echo ' value="'. esc_attr($dateFilterTo) .'"'; ?> /></th>
+		<th><?php echo CMA_Settings::__('User'); ?></th>
+		<th><?php echo CMA_Settings::__('User\'s email'); ?></th>
+		<th style="width:10em;"><?php echo CMA_Settings::__('IP address'); ?></th>
+		<th style="width:10em;"><?php echo CMA_Settings::__('Country'); ?></th>
+	</tr></thead>
+	<tbody><?php if (!empty($logs)) foreach ($logs as $i => $record): ?>
+		<tr class="<?php if ($i%2 == 0) echo ' alternate'; ?>">
+			<td><a href="<?php echo esc_attr(get_edit_post_link($record['meta_question_id'])); ?>"><?php
+				if ($question = get_post($record['meta_question_id'])) {
+					echo esc_html($question->post_title);
+				}
+			?></a></td>
+			<td><a href="<?php echo esc_attr(get_edit_comment_link($record['meta_answer_id'])); ?>"><?php
+				if ($answer = get_comment($record['meta_answer_id'])) {
+					echo esc_html(CMA_Thread::truncate(strip_tags($answer->comment_content), 100));
+				}
+			?></a></td>
+			<td><?php echo esc_html($record['created']); ?></td>
+			<td><a href="<?php echo esc_attr(get_edit_user_link($record['user_id'])); ?>"><?php
+				$user = get_user_by('id', $record['user_id']);
+				if ($user) {
+					echo esc_html($user->display_name);
+				} ?></a>
+			</td>
+			<td><?php if ($user) echo esc_html($user->user_email); ?></td>
+			<td><?php echo esc_html($record['ip_addr']); ?></td>
+			<td><?php echo esc_html($record['meta_author_country_name']); ?></td>
+		</tr>
+	<?php endforeach; ?></tbody>
+</table>
+</form>
+
+<div class="pagination">
+	<?php if (!empty($previousPage)): ?><a href="<?php echo esc_attr($previousPage) ?>">&laquo; <?php echo CMA_Settings::__('Previous page'); ?></a><?php endif; ?>
+	<?php if (!empty($nextPage)): ?><a href="<?php echo esc_attr($nextPage) ?>"><?php echo CMA_Settings::__('Next page'); ?> &raquo;</a><?php endif; ?>
+</div>

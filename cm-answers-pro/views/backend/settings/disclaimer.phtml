@@ -1,0 +1,30 @@
+<h3><?php echo CMA_Settings::__('Disclaimer'); ?></h3>
+<table>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" ><?php echo CMA_Settings::__('Show disclaimer for first time users'); ?>:<br><br><br><br></th>
+        <td ><input type="radio" name="disclaimer_approve" id="disclaimer_approve_0" value="0" <?php
+			if( !$DisclaimerApproved ) echo 'checked="checked"';
+			?>/><label for="disclaimer_approve_0"> <?php echo CMA_Settings::__('No');
+			?></label> &nbsp; <input type="radio" name="disclaimer_approve" id="disclaimer_approve_1" value="1" <?php
+        	if( $DisclaimerApproved ) echo 'checked="checked"';
+        	?>/><label for="disclaimer_approve_1"> <?php echo CMA_Settings::__('Yes'); ?></label></td>
+        <td><?php echo CMA_Settings::__('In case you want disclaimer to appear for new user you need to select yes.'); ?></td>
+    </tr>
+    <tr valign="top">
+        <th scope="row" valign="top" align="left" ><?php echo CMA_Settings::__('Disclaimer Text'); ?>:</th>
+        <td ><textarea cols="60" rows="5" name="disclaimer_content"><?php echo esc_html($DisclaimerContent); ?></textarea></td>
+        <td><?php echo CMA_Settings::__('Please describe in details the message which will appear in the disclaimer.'); ?></td>
+    </tr>
+    </tr>
+    <tr valign="top">
+        <th scope="row" valign="top" align="left" ><?php echo CMA_Settings::__('Disclaimer Accept Button text'); ?>:</th>
+        <td ><textarea cols="60" rows="1" name="disclaimer_content_accept"><?php echo esc_html($DisclaimerContentAccept); ?></textarea></td>
+        <td><?php echo CMA_Settings::__('Please specify what will appear in the disclaimer accept button.'); ?></td>
+    </tr>
+    <tr valign="top">
+        <th scope="row" valign="top" align="left" ><?php echo CMA_Settings::__('Disclaimer Reject Button text'); ?>:</th>
+        <td ><textarea cols="60" rows="1" name="disclaimer_content_reject"><?php echo esc_html($DisclaimerContentReject); ?></textarea></td>
+        <td><?php echo CMA_Settings::__('Please specify what will appear in the disclaimer reject button.'); ?></td>
+    </tr>
+
+</table>

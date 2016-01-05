@@ -1,0 +1,46 @@
+<h3><?php echo CMA_Settings::__('Sidebar'); ?></h3>
+<table>
+	<tr valign="top">
+		<th scope="row" valign="middle" align="left"><?php echo CMA_Settings::__('Enable sidebar'); ?>:</th>
+		<td><input type="radio" name="sidebar_enable" id="sidebar_enable_0" value="0" <?php
+			if( !$sidebarEnable ) echo 'checked="checked"';
+			?> /><label for="sidebar_enable_0"> <?php echo CMA_Settings::__('No');
+			?></label> &nbsp; <input type="radio" name="sidebar_enable" id="sidebar_enable_1" value="1" <?php
+			if( $sidebarEnable ) echo 'checked="checked"';
+			?> /><label for="sidebar_enable_1"> <?php echo CMA_Settings::__('Yes'); ?></label></td>
+		<td><?php echo CMA_Settings::__('Enable separate sidebar for CM Answers pages.'); ?></td>
+	</tr>
+	<tr valign="top">
+		<th scope="row" valign="middle" align="left"><?php echo CMA_Settings::__('Enable Contributor Profile sidebar'); ?>:</th>
+		<td><input type="radio" name="sidebar_contributor_enable" id="sidebar_contributor_enable_0" value="0" <?php checked('0', $sidebarContributorEnable);
+			?> /><label for="sidebar_contributor_enable_0"> <?php echo CMA_Settings::__('No'); ?></label> &nbsp;
+			<input type="radio" name="sidebar_contributor_enable" id="sidebar_contributor_enable_1" value="1" <?php
+			checked('1', $sidebarContributorEnable) ?> /><label for="sidebar_contributor_enable_1"> <?php echo CMA_Settings::__('Yes'); ?></label></td>
+		<td><?php echo CMA_Settings::__('Enable sidebar on the Contributor Profile page.'); ?></td>
+	</tr>
+	<tr valign="top">
+		<th scope="row" valign="middle" align="left"><?php echo CMA_Settings::__('Set sidebar max width (in px)'); ?>:</th>
+		<td><input type="number" name="sidebar_max_width" value="<?php echo esc_attr($sidebarMaxWidth); ?>" /></td>
+		<td><?php echo CMA_Settings::__('Set maximum width of sidebar or leave 0 to auto-adjust'); ?></td>
+	</tr>
+	<tr valign="top">
+		<th scope="row" valign="middle" align="left"><?php echo CMA_Settings::__('HTML before widget block'); ?>:</th>
+		<td><input type="text" name="sidebar_before_widget" value="<?php echo esc_attr($sidebarBeforeWidget); ?>" /></td>
+		<td><?php echo CMA_Settings::__('Leave blank to set default.'); ?></td>
+	</tr>
+	<tr valign="top">
+		<th scope="row" valign="middle" align="left"><?php echo CMA_Settings::__('HTML after widget block'); ?>:</th>
+		<td><input type="text" name="sidebar_after_widget" value="<?php echo esc_attr($sidebarAfterWidget); ?>" /></td>
+		<td><?php echo CMA_Settings::__('Leave blank to set default.'); ?></td>
+	</tr>
+	<tr valign="top">
+		<th scope="row" valign="middle" align="left"><?php echo CMA_Settings::__('HTML before widget title'); ?>:</th>
+		<td><input type="text" name="sidebar_before_title" value="<?php echo esc_attr($sidebarBeforeTitle); ?>" /></td>
+		<td><?php echo CMA_Settings::__('Leave blank to set default.'); ?></td>
+	</tr>
+	<tr valign="top">
+		<th scope="row" valign="middle" align="left"><?php echo CMA_Settings::__('HTML after widget title'); ?>:</th>
+		<td><input type="text" name="sidebar_after_title" value="<?php echo esc_attr($sidebarAfterTitle); ?>" /></td>
+		<td><?php echo CMA_Settings::__('Leave blank to set default.'); ?></td>
+	</tr>
+</table>

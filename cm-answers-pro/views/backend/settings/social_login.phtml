@@ -1,0 +1,124 @@
+
+<?php if( !ini_get('allow_url_fopen') ): ?>
+    <span style="color:red"><?php echo CMA_Settings::__('Your server configuration needs to be changed to allow social login. Please enable allow_url_fopen in your global php.ini file on the server.'); ?></span>
+<?php endif; ?>
+
+<h3>Facebook</h3>
+<ul>
+	<li><?php printf(CMA_Settings::__('Create Facebook application at %s and go to Settings on the left side of the screen.'),
+		'<a href="https://developers.facebook.com/apps/" target="new">https://developers.facebook.com/apps/</a>'); ?></li>
+	<li><?php echo CMA_Settings::__('In the "Basic" tab, click the "Add Platform" button below the settings configuration. Select "Website" in the platform dialog.'); ?></li>
+	<li><?php echo CMA_Settings::__('Enter your Site URL:'); ?> <?php echo site_url() ?></li>
+	<li><?php echo CMA_Settings::__('Press the "Save Changes" button.'); ?></li>
+</ul>
+<table>
+    <tr valign="top">
+        <th scope="row" valign="top" align="left">App ID:</th>
+        <td><input type="text" name="fb_app_id" value="<?php echo esc_attr($fb_app_id); ?>" /></td>
+        <td><?php echo CMA_Settings::__('Facebook App ID'); ?></td>
+    </tr>
+    <tr valign="top">
+        <th scope="row" valign="top" align="left">App Secret:</th>
+        <td><input type="text" name="fb_app_secret" value="<?php echo esc_attr($fb_app_secret); ?>" /></td>
+        <td><?php echo CMA_Settings::__('Facebook App Secret'); ?></td>
+    </tr>
+</table>
+
+
+<h3>Google+</h3>
+<ul>
+	<li><?php printf(CMA_Settings::__('Create project at %s'),
+		'<a href="https://console.developers.google.com/project" target="new">https://console.developers.google.com/project</a>'); ?></li>
+	<li><?php echo CMA_Settings::__('Go to the APIs &amp; auth &gt; Credentials.'); ?></li>
+	<li><?php echo CMA_Settings::__('Press the "Create new client ID" button.'); ?></li>
+	<li><?php echo CMA_Settings::__('In the dialog choose the Application type: Web application.'); ?></li>
+	<li><?php echo CMA_Settings::__('Enter the Authorized JavaScript origins:'); ?> <?php echo site_url() ?></li>
+	<li><?php echo CMA_Settings::__('Enter the Authorized redirect URI:'); ?> <?php echo site_url(); ?>/auth/google/oauth2callback</li>
+	<li><?php echo CMA_Settings::__('Press the "Create client ID" button.'); ?></li>
+	<li><?php echo CMA_Settings::__('Copy Client ID for web application and Client secret to the inputs below.'); ?></li>
+</ul>
+<table>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" >Client ID:</th>
+        <td ><input type="text" size="60" name="google_client_id" value="<?php echo esc_attr($google_client_id); ?>" /></td>
+        <td><?php echo CMA_Settings::__('Google Client ID for web application'); ?></td>
+    </tr>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" >Client Secret:</th>
+        <td ><input type="text" size="60" name="google_client_secret" value="<?php echo esc_attr($google_client_secret); ?>" /></td>
+        <td><?php echo CMA_Settings::__('Google Client Secret'); ?></td>
+    </tr>
+</table>
+
+
+<h3>LinkedIn</h3>
+<ul>
+	<li><?php printf(CMA_Settings::__('Create LinkedIn application at %s'),
+		'<a href="https://www.linkedin.com/secure/developer" target="new">https://www.linkedin.com/secure/developer</a>'); ?></li>
+    <li><?php echo CMA_Settings::__('Enter your website url:'); ?> <?php bloginfo('url') ?></li>
+    <li><?php echo CMA_Settings::__('There is no need to enter OAuth Redirect URL.'); ?></li>
+    <li><?php echo CMA_Settings::__('Enter your domain at JavaScript API Domain:'); ?> <?php echo str_replace('www.', '', $_SERVER['HTTP_HOST']); ?></li>
+</ul>
+<?php if (!function_exists('curl_init')): ?>
+	<p><?php echo CMA_Settings::__('Warning: the cURL functions are not available on this server. Contact your server administrator '
+		. 'to enable support for cURL. Until that, login by this provider will be not available for users.'); ?></p>
+<?php endif; ?>
+<table>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" >API Key:</th>
+        <td ><input type="text" size="60" name="linkedin_api_key" value="<?php echo esc_attr($linkedin_api_key); ?>" /></td>
+        <td><?php echo CMA_Settings::__('LinkedIn API Key'); ?></td>
+    </tr>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" >Secret Key:</th>
+        <td ><input type="text" size="60" name="linkedin_secret_key" value="<?php echo esc_attr($linkedin_secret_key); ?>" /></td>
+        <td><?php echo CMA_Settings::__('LinkedIn Secret Key'); ?></td>
+    </tr>
+</table>
+
+
+<h3>Twitter</h3>
+<ul>
+	<li><?php printf(CMA_Settings::__('Create Twitter application at %s'),
+		'<a href="https://dev.twitter.com/apps/" target="new">https://dev.twitter.com/apps/</a>'); ?></li>
+	<li><?php echo CMA_Settings::__('Make sure that callback URL is set to:'); ?> <?php echo site_url(); ?>/auth/twitter/oauthcallback</li>
+	<li><?php echo CMA_Settings::__('On settings tab check option "Allow this application to be used to Sign in with Twitter".'); ?></li>
+</ul>
+<?php if (!function_exists('curl_init')): ?>
+	<p><?php echo CMA_Settings::__('Warning: the cURL functions are not available on this server. Contact your server administrator '
+		. 'to enable support for cURL. Until that, login by this provider will be not available for users.'); ?></p>
+<?php endif; ?>
+<table>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" >Consumer key:</th>
+        <td ><input type="text" size="60" name="twitter_consumer_key" value="<?php echo esc_attr($twitter_consumer_key); ?>" /></td>
+        <td><?php echo CMA_Settings::__('Twitter Consumer Key'); ?></td>
+    </tr>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" >Consumer secret:</th>
+        <td ><input type="text" size="60" name="twitter_consumer_secret" value="<?php echo esc_attr($twitter_consumer_secret); ?>" /></td>
+        <td><?php echo CMA_Settings::__('Twitter Consumer Secret'); ?></td>
+    </tr>
+</table>
+
+
+
+<h3>Microsoft Live</h3>
+<ul>
+	<li><?php printf(CMA_Settings::__('Create Microsoft Live application at %s'),
+		'<a href="https://account.live.com/developers/applications/index" target="new">https://account.live.com/developers/applications/index</a>'); ?></li>
+	<li><?php echo CMA_Settings::__('Make sure that callback URL is set to:'); ?> <?php echo site_url(); ?>/auth/live/oauth2callback</li>
+	<li><?php echo CMA_Settings::__('Choose option "No" for question of whether application is for mobile devices.'); ?></li>
+</ul>
+<table>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" >Client ID:</th>
+        <td ><input type="text" size="60" name="live_client_id" value="<?php echo esc_attr($live_client_id); ?>" /></td>
+        <td><?php echo CMA_Settings::__('Live Client ID'); ?></td>
+    </tr>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" >Client Secret:</th>
+        <td ><input type="text" size="60" name="live_client_secret" value="<?php echo esc_attr($live_client_secret); ?>" /></td>
+        <td><?php echo CMA_Settings::__('Live Client Secret'); ?></td>
+    </tr>
+</table>

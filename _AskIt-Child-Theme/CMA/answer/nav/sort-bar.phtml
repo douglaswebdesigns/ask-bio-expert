@@ -1,0 +1,41 @@
+<?php
+$currentSort = (!empty($_GET['sort']) AND ctype_alnum($_GET['sort'])) ? $_GET['sort'] : CMA_Settings::getOption(CMA_Settings::OPTION_INDEX_ORDER_BY);
+if (!ctype_alnum($currentSort)) $currentSort = CMA_Settings::getOption(CMA_Settings::OPTION_INDEX_ORDER_BY);
+$args = array();
+if( isset($_GET["cmatag"]) ) $args['cmatag'] = $_GET["cmatag"];
+?>
+
+<ul class="cma-thread-orderby">
+    <li<?php if( $currentSort == 'newest' ): ?> class="cma-current-sort"<?php endif; ?>>
+        <a href="<?php
+        echo esc_attr(add_query_arg(urlencode_deep(array_merge(array(
+            'sort' => 'newest'), $args)), $permalink));
+        ?>"><?php echo CMA_Labels::getLocalized('orderby_newest'); ?>
+        </a>
+    </li>
+    <li<?php if( $currentSort == 'hottest' ): ?> class="cma-current-sort"<?php endif; ?>>
+        <a href="<?php
+        echo esc_attr(add_query_arg(urlencode_deep(array_merge(array(
+            'sort' => 'hottest'), $args)), $permalink));
+        ?>">
+               <?php echo CMA_Labels::getLocalized('orderby_hottest'); ?>
+        </a>
+    </li>
+    <?php if( CMA_Settings::getOption(CMA_Settings::OPTION_ANSWERS_RATING_ALLOWED) ): ?><li<?php if( $currentSort == 'votes' ): ?> class="cma-current-sort"<?php endif; ?>>
+            <a href="<?php
+            echo esc_attr(add_query_arg(urlencode_deep(array_merge(array(
+				'sort' => 'votes'), $args)), $permalink));
+            ?>">
+   <?php echo CMA_Labels::getLocalized('orderby_most_votes'); ?>
+            </a>
+        </li><?php endif; ?>
+    <li<?php if( $currentSort == 'views' ): ?> class="cma-current-sort"<?php endif; ?>>
+        <a href="<?php
+        echo esc_attr(add_query_arg(urlencode_deep(array_merge(array(
+            'sort' => 'views'), $args)), $permalink));
+        ?>">
+               <?php echo CMA_Labels::getLocalized('orderby_most_views'); ?>
+        </a>
+    </li>
+</ul>
+

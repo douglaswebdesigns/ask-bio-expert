@@ -1,0 +1,2 @@
+<?php if (!CMA_MicroPayments::isMicroPaymentsConfigured()) CMA_MicroPayments::displayAdminWarning('cma-warning'); ?>
+<?php echo $settingsView->renderSubcategory('micropayments', 'general'); ?>

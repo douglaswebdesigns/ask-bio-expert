@@ -1,0 +1,30 @@
+<div class="cma-followed">
+
+	<?php if (!empty($threads)): ?>
+		<table class="cma-followed-table cma-followed-threads"><caption><?php echo CMA_Labels::getLocalized('dashboard_followed_threads'); ?></caption>
+		<tbody><?php foreach ($threads as $thread): ?>
+			<tr>
+				<td><a href="<?php echo esc_attr($thread->getPermalinkWithBacklink()) ?>"><?php echo esc_html($thread->getTitle()) ?></a></td>
+				<td class="unfollow"><a href="<?php echo esc_attr($thread->getPermalink()); ?>" class="cma-unfollow-link" data-nonce="<?php
+					echo esc_attr(wp_create_nonce('cma_follow')); ?>"><?php
+		                	echo CMA_Labels::getLocalized('Unfollow'); ?></a></td>
+			</tr>
+		<?php endforeach; ?></tbody>
+		</table>
+	<?php endif; ?>
+	
+	
+	<?php if (!empty($categories)): ?>
+		<table class="cma-followed-table cma-followed-categories"><caption><?php echo CMA_Labels::getLocalized('dashboard_followed_categories'); ?></caption>
+		<tbody><?php foreach ($categories as $category): ?>
+			<tr>
+				<td><a href="<?php echo esc_attr($category->getPermalink()) ?>"><?php echo esc_html($category->getName()) ?></a></td>
+				<td class="unfollow"><a href="<?php echo esc_attr($category->getPermalink()); ?>" class="cma-unfollow-link" data-nonce="<?php
+					echo esc_attr(wp_create_nonce('cma_follow')); ?>" data-category-id="<?php
+					echo $category->getId() ?>"><?php echo CMA_Labels::getLocalized('unfollow_category'); ?></a></td>
+			</tr>
+		<?php endforeach; ?></tbody>
+		</table>
+	<?php endif; ?>
+
+</div>

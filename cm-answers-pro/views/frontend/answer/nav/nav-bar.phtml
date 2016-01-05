@@ -1,0 +1,114 @@
+<?php
+
+$wp_query = CMA_AnswerController::$query;
+
+if (!empty($thread)) {
+	if ($category = $thread->getCategory()) {
+		$currentCategoryId = $category->getId();
+	}
+}
+if (empty($currentCategoryId) AND !empty($wp_query->queried_object)) {
+	if (isset($wp_query->queried_object) AND isset($wp_query->queried_object->term_id)) {
+		$currentCategoryId = intval($wp_query->queried_object->term_id);
+	}
+	else if (!empty($category)) {
+		$currentCategoryId = $category->getId();
+	} else {
+		$currentCategoryId = null;
+	}
+}
+
+?>
+
+<form class="cma-filter" method="GET" action="<?php echo esc_attr(get_post_type_archive_link(CMA_Thread::POST_TYPE));
+	?>" title="<?php echo esc_attr(CMA::__('Choose the filter options and click the submit button')); ?>">
+<div class="cma-nav-bar">
+
+	<div class="cma-nav-item cma-nav-question-type">
+        <?php
+        $keys = array('sort', 'search', 'cmatag');
+        $queryArgs = array_filter(array_intersect_key($_GET, array_flip($keys)));
+        if (!empty($currentCategoryId)) {
+        	$dataUrl = get_term_link($currentCategoryId, CMA_Category::TAXONOMY);
+        	if (!empty($dataUrl) AND is_string($dataUrl)) $dataUrl = add_query_arg(urlencode_deep($queryArgs), $dataUrl);
+        	else $dataUrl = null;
+        }
+        if (empty($dataUrl)) {
+        	$dataUrl = add_query_arg(urlencode_deep($queryArgs), get_post_type_archive_link(CMA_Thread::POST_TYPE));
+        }
+        ?>
+        <select name="question_type" data-url="<?php echo esc_attr($dataUrl); ?>">
+            <option value="all" <?php if( !isset($_GET["question_type"]) || $_GET["question_type"] == "all" ) echo 'selected="selected"'; ?>><?php echo CMA_Labels::getLocalized('all_questions'); ?></option>
+            <option value="ans" <?php if( isset($_GET["question_type"]) && $_GET["question_type"] == "ans" ) echo 'selected="selected"'; ?>><?php echo CMA_Labels::getLocalized('answered_questions'); ?></option>
+            <option value="unans" <?php if( isset($_GET["question_type"]) && $_GET["question_type"] == "unans" ) echo 'selected="selected"'; ?>><?php echo CMA_Labels::getLocalized('unanswered_questions'); ?></option>
+        </select>
+	</div>
+	
+	<div class="cma-nav-item cma-thread-search">
+        <input type="text" name="search" placeholder="<?php echo esc_attr(CMA_Labels::getLocalized('search_questions'));
+        	?>" value="<?php echo esc_attr($wp_query->get('search')); ?>" isp_ignore="true" />
+        <input type="submit" value="&gt;" />
+	</div>
+	
+	<div class="cma-nav-item cma-filter-category"><?php
+	
+	    switch (CMA_Settings::getOption(CMA_Settings::OPTION_CATEGORY_FILTER_MODE)) {
+
+			case CMA_Settings::CATEGORY_FILTER_MODE_DISABLED:
+				break;
+
+			case CMA_Settings::CATEGORY_FILTER_MODE_TWO_LEVEL:
+				$categories = CMA_Category::getRootCategories();
+				?><select class="cma-filter-category-primary" data-current="<?php echo $currentCategoryId; ?>">
+					<option value="" data-url="<?php echo esc_attr(get_post_type_archive_link(CMA_Thread::POST_TYPE));
+					?>"><?php echo CMA_Labels::getLocalized('all_categories'); ?></option><?php
+					foreach ($categories as $category_id => $categoryName):
+						$selected = (!empty($currentCategoryId)
+							AND (intval($category_id) == intval($currentCategoryId)
+								OR intval($category_id) == intval(wp_get_term_taxonomy_parent_id($currentCategoryId, CMA_Category::TAXONOMY))));
+						?><option value="<?php echo esc_attr($category_id); ?>" data-url="<?php echo esc_attr(get_term_link($category_id, CMA_Category::TAXONOMY));
+						?>"<?php if ($selected) echo ' selected="selected"';
+						?>><?php echo esc_html($categoryName); ?></option><?php
+					endforeach;
+				?></select>
+				<?php $allSubcategoriesOption = '<option value="0">'. CMA_Labels::getLocalized('all_subcategories') .'</option>'; ?>
+				<select class="cma-filter-category-secondary" data-post-only-subcategories="<?php
+					echo intval(CMA_Settings::getOption(CMA_Settings::OPTION_ALLOW_POST_ONLY_SUBCATEGORIES));
+					?>" data-option-allsub="<?php echo esc_attr($allSubcategoriesOption) ?>">
+					<?php if (!CMA_Settings::getOption(CMA_Settings::OPTION_ALLOW_POST_ONLY_SUBCATEGORIES)):
+						echo $allSubcategoriesOption;
+					endif;
+					$parentCategoryId = wp_get_term_taxonomy_parent_id($currentCategoryId, CMA_Category::TAXONOMY);
+					if (!empty($currentCategoryId)):
+						$subcategories = CMA_Category::getSubcategories(empty($parentCategoryId) ? $currentCategoryId : $parentCategoryId);
+						foreach ($subcategories as $category_id => $categoryName):
+							$selected = ($category_id == $currentCategoryId);
+							?><option value="<?php echo esc_attr($category_id); ?>" data-url="<?php echo esc_attr(get_term_link($category_id, CMA_Category::TAXONOMY));
+							?>"<?php if ($selected) echo ' selected="selected"';
+							?>><?php echo esc_html($categoryName); ?></option><?php
+						endforeach;
+					endif;
+				?></select><?php
+				break;
+				
+			case CMA_Settings::CATEGORY_FILTER_MODE_TREE:
+			default:
+				$isSubtree = ($displayOptions['subtree'] AND !empty($category));
+				$categories = CMA_Category::getCategoriesTree($isSubtree ? $category->getId() : 0, $isSubtree ? 1 : 0);
+				if( !empty($categories) ): ?>
+				<select class="cma-filter-category">
+					<option value="" data-url="<?php echo esc_attr(get_post_type_archive_link(CMA_Thread::POST_TYPE)); ?>"><?php
+						echo ($isSubtree ? $category->getName() : CMA_Labels::getLocalized('all_categories'));
+				    ?></option><?php
+				    foreach($categories as $key => $val):
+				    	$selected = ( isset($currentCategoryId) && $currentCategoryId == $key ) ? ' selected="selected"' : '';
+				        ?><option value="<?php echo esc_attr($key); ?>" data-url="<?php echo esc_attr(get_term_link($key, CMA_Category::TAXONOMY));
+				        	?>" <?php echo $selected; ?> ><?php echo esc_html($val); ?></option><?php
+				    endforeach; ?></select><?php
+				endif;
+				
+		}
+	    
+	?></div>
+</div>
+</form>

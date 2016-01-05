@@ -1,0 +1,29 @@
+<?php if( !empty($attachments) ):
+
+	$images = array();
+
+	?>
+	<div class="cma-attachments"><?php echo CMA::__('Attachments'); ?>:
+		<ul class="cma-attachment">
+			<?php foreach ($attachments as $attachment): ?>
+				<?php if (CMA_Settings::getOption(CMA_Settings::OPTION_EMBED_ATTACHED_IMAGES) AND $attachment->isImage()):
+					$images[] = $attachment;
+				else: ?>
+					<li><a href="<?php echo esc_attr($attachment->getURL()); ?>" target="_blank"><?php echo esc_html($attachment->getName()); ?></a></li>
+				<?php endif; ?>
+			<?php endforeach; ?>
+		</ul>
+		<?php if (!empty($images)): ?>
+			<ul class="cma-attachments-images"><?php foreach ($images as $image): ?>
+				<li><?php
+					
+					printf('<a href="%s" target="_blank">%s</a>',
+						esc_attr($image->getURL()),
+						$image->getThumb()
+					);
+					
+				?></li>
+			<?php endforeach; ?></ul>
+		<?php endif; ?>
+   	</div>
+<?php endif; ?>

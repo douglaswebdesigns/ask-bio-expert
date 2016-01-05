@@ -1,0 +1,8 @@
+<?php do_action('cma_index_header_after'); ?>
+<?php do_action('CMA_breadcrumbs'); ?>
+
+<?php
+
+echo CMA_BaseController::_loadView('answer/widget/questions', compact('questions', 'displayOptions'));
+
+?>

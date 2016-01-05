@@ -1,0 +1,19 @@
+<?php if (!empty($categories[$parentCategoryId])): ?>
+	<ul class="cma-categories-list">
+	<?php
+	$writeCategories = function($parentCategoryId) use ($categories, &$writeCategories) {
+		if (!empty($categories[$parentCategoryId])) foreach ($categories[$parentCategoryId] as $category) {
+			$categoryObject = CMA_Category::getInstance($category->term_id);
+			printf('<li><a href="%s">%s</a>', $categoryObject->getPermalink(), $categoryObject->getName());
+			if (!empty($categories[$category->term_id])) {
+				echo '<ul>';
+				$writeCategories($category->term_id);
+				echo '</ul>';
+			}
+		}
+	};
+	$writeCategories($parentCategoryId);
+	
+	?>
+	</ul>
+<?php endif; ?>

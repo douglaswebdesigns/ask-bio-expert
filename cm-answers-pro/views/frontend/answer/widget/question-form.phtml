@@ -1,0 +1,213 @@
+<?php
+
+$populatedData = CMA_BaseController::getPopulatedData();
+$additionalFormClass = (!CMA_Settings::getOption(CMA_Settings::OPTION_MARKUP_BOX)) ? 'no-markup-box' : '';
+$queriedObject = CMA_AnswerController::$query->get_queried_object();
+$selectCategoryId = (isset($queriedObject->term_id) ? $queriedObject->term_id : (!empty($populatedData['thread_category']) ? $populatedData['thread_category'] : null));
+$tiny = isset($tiny) ? $tiny : FALSE;
+$catId = isset($catId) ? $catId : NULL;
+$isAjax = CMA_BaseController::isAjax();
+$threadId = isset($populatedData['thread_id']) ? $populatedData['thread_id'] : null;
+if (!isset($thread)) $thread = null;
+
+?>
+<div class="cma-form-container cma-question-form-container <?php echo esc_attr($additionalFormClass); ?>">
+	
+	<?php if (!empty($edit) AND !$isAjax OR !empty($displayOptions['showBacklink'])): ?>
+		<a class="cma-backlink" href="<?php echo esc_attr(CMA::getReferer()); ?>"> &laquo; <?php echo CMA_Labels::getLocalized('back_to_previous_page'); ?></a>
+	<?php endif; ?>
+	
+    <?php if( CMA_Thread::canPostQuestions() ): ?>
+        <form action="<?php echo esc_attr(empty($edit) ? get_post_type_archive_link(CMA_Thread::POST_TYPE) : $_SERVER['REQUEST_URI']);
+        	?>"  method="post" class="cma-thread-add" id="cma-thread-add" enctype="multipart/form-data">
+            <input type="hidden" name="cma-action" value="<?php echo (empty($edit) ? 'add' : 'edit'); ?>" />
+            <input type="hidden" name="cma-referrer" value="<?php echo esc_attr($_SERVER['REQUEST_URI']); ?>" />
+            <input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('cma_question')); ?>"/>
+            <?php if (!empty($redirectAfterPost)): ?>
+            	<input type="hidden" name="cma-redirect" value="<?php echo esc_attr($redirectAfterPost); ?>" />
+            <?php endif; ?>
+			
+			<?php if (empty($displayOptions['hideTitle'])): ?>
+            	<h3><?php echo (empty($edit) ? CMA_Labels::getLocalized('ask_a_question') : CMA_Labels::getLocalized('edit_your_question')); ?></h3>
+            <?php endif; ?>
+
+            <div class="cma-form-input">
+                <input type="text" size="50" name="thread_title" required placeholder="<?php
+                	echo esc_attr(CMA_Labels::getLocalized('enter_question_title'));
+                	?>" value="<?php if( isset($populatedData['thread_title']) ) echo esc_attr($populatedData['thread_title']);
+                	?>" data-limitify="<?php echo CMA_Settings::getOption(CMA_Settings::OPTION_JS_LIMIT_QUESTION_TITLE) ?>" />
+            </div>
+            
+            <?php if( !$tiny && CMA_Settings::getOption(CMA_Settings::OPTION_MARKUP_BOX) ): ?>
+                <ul class="cma-form-notes">
+                    <li><?php _e('Allow markup', 'cm-answers-pro'); ?>: &lt;strong&gt;, &lt;em&gt;, &lt;a&gt;</li>
+                    <li><?php _e('Wrap your code using', 'cm-answers-pro'); ?> &lt;pre&gt;&lt;/pre&gt;</li>
+                </ul>
+            <?php endif; ?>
+
+            <div class="cma-form-input">
+                <?php
+                $showRichTextEditor = (CMA_Settings::getOption(CMA_Settings::OPTION_RICHTEXT_EDITOR) AND !CMA_AJAX);
+                $questionEditorContent = '';
+                if( isset($populatedData['thread_content']) )
+                {
+                    $questionEditorContent = ($showRichTextEditor ?
+						$populatedData['thread_content'] :
+						stripslashes(esc_html($populatedData['thread_content']))
+					);
+                }
+
+                if ($showRichTextEditor)
+                {
+                	remove_filter ('the_content',  'wpautop');
+                    wp_editor($questionEditorContent, 'question-content-form', array(
+                    	'textarea_name' => 'thread_content',
+						'textarea_rows' => CMA_Settings::getOption(CMA_Settings::OPTION_EDITOR_ROWS),
+                    ));
+                }
+                else
+                {
+                    
+                    if( CMA_Settings::getOption(CMA_Settings::OPTION_QUESTION_DESCRIPTION_OPTIONAL) )
+                    {
+                        $placeholder = CMA_Labels::getLocalized('enter_question_content_optional');
+                    } else {
+						$placeholder = CMA_Labels::getLocalized('enter_question_content');
+					}
+                    ?>
+                    <textarea class="cma-form-content" name="thread_content" cols="50" rows="<?php
+                    	echo CMA_Settings::getOption(CMA_Settings::OPTION_EDITOR_ROWS); ?>" id="question-content-form-<?php echo rand(1, 999999);
+                    	?>" data-limitify="<?php
+                    	echo CMA_Settings::getOption(CMA_Settings::OPTION_JS_LIMIT_QUESTION_DESCRIPTION); ?>" placeholder="<?php
+                    	echo esc_attr($placeholder); ?>" data-tinymce="<?php
+                		echo intval(CMA_Settings::getOption(CMA_Settings::OPTION_RICHTEXT_EDITOR) AND CMA_AJAX); ?>"><?php
+                    	echo esc_html($questionEditorContent); ?></textarea>
+                    <?php
+                }
+                ?>
+                <p class="cma-attach-video-tip"><?php echo CMA::__('Attach YouTube/Vimeo clip putting the URL in brackets:'); ?> [https://youtu.be/Zkdf3kaso]</p>
+            </div>
+            
+            <?php if (CMA_Settings::getOption(CMA_Settings::OPTION_USER_RELATED_QUESTIONS_ENABLE)): ?>
+	            <div class="cma-form-input"><?php echo CMA_Labels::getLocalized('user_related_questions_input_label'); ?>
+	            	<textarea name="cma_related_questions" rows="3" placeholder="<?php
+	            		echo esc_attr(CMA_Labels::getLocalized('user_related_questions_input_placeholder')); ?>"></textarea>
+	            </div>
+            <?php endif; ?>
+            
+            <?php do_action('cma_question_form_after_textarea', $thread, $populatedData); ?>
+            
+            <?php if( CMA_Settings::getOption(CMA_Settings::OPTION_TAGS_SWITCH) ) : ?>
+                <?php do_action('CMA_form_tags', (isset($populatedData['thread_tags']) ? $populatedData['thread_tags'] : '')); ?>
+            <?php endif; ?>
+
+            <?php if (empty($edit)): ?>
+
+	            <?php
+	            if ( $catId ):
+	                echo '<input type="hidden" name="thread_category" value="' . $catId . '" />';
+	            else:
+	            
+	            	echo '<div class="cma-form-input"><label>';
+	            	if ($label = CMA_Labels::getLocalized('choose_category_label')) {
+						echo $label .':<br />';
+					}
+	            	
+	            	$isCategoryRequired = CMA_Settings::getOption(CMA_Settings::OPTION_QUESTION_REQUIRE_CATEGORY);
+	            	switch (CMA_Settings::getOption(CMA_Settings::OPTION_CATEGORY_FILTER_MODE)):
+
+	            		case CMA_Settings::CATEGORY_FILTER_MODE_TWO_LEVEL:
+	            			$categories = CMA_Category::getRootCategories();
+	            			?><select name="thread_category" class="cma-filter-category-primary"<?php
+	            				if ($isCategoryRequired) echo ' required'; ?>>
+            					<option value=""><?php echo esc_html(CMA_Labels::getLocalized('choose_category')); ?></option><?php
+            					foreach ($categories as $category_id => $categoryName):
+            						$selected = (isset($selectCategoryId)
+            							AND ($category_id == $selectCategoryId
+            								OR $category_id == wp_get_term_taxonomy_parent_id($selectCategoryId, CMA_Category::TAXONOMY)));
+            						?><option value="<?php echo esc_attr($category_id); ?>" data-url="<?php echo esc_attr(get_term_link($category_id, CMA_Category::TAXONOMY));
+            						?>"<?php if ($selected) echo ' selected="selected"';
+            						?>><?php echo esc_html($categoryName); ?></option><?php
+            					endforeach;
+            				?></select>
+            				<select name="thread_subcategory" class="cma-filter-category-secondary"><?php
+            					$parentCategoryId = wp_get_term_taxonomy_parent_id($selectCategoryId, CMA_Category::TAXONOMY);
+            					if (!empty($selectCategoryId)):
+            						if (!CMA_Settings::getOption(CMA_Settings::OPTION_ALLOW_POST_ONLY_SUBCATEGORIES)): ?>
+										<option value="0"><?php echo CMA_Labels::getLocalized('all_subcategories') ?></option>
+									<?php endif;
+            						$subcategories = CMA_Category::getSubcategories(empty($parentCategoryId) ? $selectCategoryId : $parentCategoryId);
+            						foreach ($subcategories as $category_id => $categoryName):
+            							$selected = ($category_id == $selectCategoryId);
+            							?><option value="<?php echo esc_attr($category_id); ?>"<?php if ($selected) echo ' selected="selected"';
+            							?>><?php echo esc_html($categoryName); ?></option><?php
+            						endforeach;
+            					endif;
+            				?></select><?php
+            			break;
+            			
+            			case CMA_Settings::CATEGORY_FILTER_MODE_TREE:
+            			default:
+            				
+			                $categories = CMA_Category::getCategoriesTree();
+			                if( $categories ): ?>
+		                        <select name="thread_category"<?php if ($isCategoryRequired) echo ' required'; ?>>
+		                            <option value=""><?php echo CMA_Labels::getLocalized('choose_category'); ?></option>
+		                            <?php foreach($categories as $key => $val):
+		                                $selected = ( (!isset($populatedData['thread_category']) && ( isset($queriedObject->term_id) && $queriedObject->term_id == $key ))
+											|| isset($populatedData['thread_category']) && $populatedData['thread_category'] == $key ) ?
+												' selected="selected"' : '';
+		                                ?><option value="<?php echo esc_attr($key); ?>" <?php echo $selected; ?>><?php echo esc_html($val); ?></option>
+		                            <?php endforeach; ?>
+		                        </select>
+			                    <?php
+			                endif;
+			                
+	                endswitch;
+	                
+	                echo '</label></div>';
+	                
+	            endif;
+	            
+	            
+	        endif; ?>
+	        
+            <div class="cma-category-custom-fields"><?php
+	            if (!empty($selectCategoryId) OR !empty($catId)):
+					do_action('cma_question_form_category_custom_fields', ($selectCategoryId ? $selectCategoryId : $catId), $threadId);
+				endif;
+			?></div>
+			
+			<?php do_action('cma_question_form_after_category', $thread, $populatedData); ?>
+
+			<?php if (empty($edit)): ?>
+				<?php do_action('CMA_display_question_form_upload'); ?>
+	            <div class="cma-form-options">
+	            	<?php if(CMA_Thread::canDisplayNotifyCheckbox()): ?>
+		                <label class="cma-form-option-label">
+		                    <input name="thread_notify" type="checkbox" value="1" <?php
+		                    if( isset($populatedData['thread_notify']) OR CMA_Settings::getOption(CMA_Settings::OPTION_NOTIFY_CHECKBOX_CHECKED) )
+		                    	echo 'checked="checked"'; ?>/>
+		                    <?php echo CMA_Labels::getLocalized('notify_me_of_follow'); ?>
+		                </label>
+		            <?php endif; ?>
+	            </div>
+
+            <?php endif; ?>
+
+            <?php do_action('cma_frontend_question_form_body_after'); ?>
+            
+            <input type="submit" value="<?php echo esc_attr(CMA_Labels::getLocalized(empty($edit) ? 'button_add_question' : 'button_edit_question')); ?>" />
+            
+            <?php do_action('cma_frontend_question_form_bottom'); ?>
+            
+        </form>
+    <?php endif; ?>
+    <?php if (!is_user_logged_in() ) do_action('CMA_login_form'); ?>
+</div>
+
+<script type="text/javascript">
+jQuery(function($) {
+	CMA_tags_init($);
+});
+</script>

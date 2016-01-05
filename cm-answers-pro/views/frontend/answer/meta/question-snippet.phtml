@@ -1,0 +1,150 @@
+<?php
+
+global $cmaQuestionLinkQuery;
+$numberOfAnswers = (CMA_Settings::getOption(CMA_Settings::OPTION_VOTES_NO) && $thread->getNumberOfAnswers() == 0) ? CMA::__('no') : $thread->getNumberOfAnswers();
+$additionalThreadClass = $thread->isSticky() ? 'cma_sticky_background' : '';
+$additionalThreadClass .= ' '. ($thread->getNumberOfAnswers() > 0 ? 'answered' : 'unanswered');
+$additionalThreadClass .= ' '. ($thread->isResolved() ? 'resolved' : '');
+if (empty($cmaQuestionLinkQuery)) $cmaQuestionLinkQuery = array();
+
+?>
+	
+<div class="cma-thread-snippet <?php echo esc_attr($additionalThreadClass); ?>">
+
+	<?php do_action('cma_question_snippet_start', $thread, $displayOptions); ?>
+	
+	<?php if ($displayOptions['votes'] OR $displayOptions['views'] OR $displayOptions['answers'] OR !empty($displayOptions['statusinfo'])): ?>
+		<div class="cma-thread-meta">
+			<div class="cma-thread-meta-div">
+				<?php if( $displayOptions['votes'] ): ?>
+					<div class="cma-thread-numbers cma-thread-votes">
+						<div class="cma-thread-numbers-count cma-thread-votes-count"><?php
+							echo (CMA_Settings::getOption(CMA_Settings::OPTION_VOTES_NO) && $thread->getVotes() === 0) ? 'no' : $thread->getVotes();
+						?></div>
+						<div class="cma-thread-numbers-caption cma-thread-votes-caption"><?php
+							echo CMA_Labels::n('vote', 'votes', $thread->getVotes());
+						?></div>
+					</div>
+				<?php endif; ?>
+				
+				<?php if( $displayOptions['answers'] ): ?>
+					<div class="cma-thread-numbers cma-thread-answers<?php if( $numberOfAnswers == 0 || $numberOfAnswers == 'no' ): ?> cma-thread-no-answers<?php endif; ?>">
+						<div class="cma-thread-numbers-count cma-thread-answers-count"><?php
+							echo $numberOfAnswers;
+						?></div>
+						<div class="cma-thread-numbers-caption cma-thread-answers-caption"><?php
+							echo CMA_Labels::n(strtolower(CMA_Labels::getLabel('Answer')), strtolower(CMA_Labels::getLabel('Answers')), $thread->getNumberOfAnswers());
+						?></div>
+					</div>
+				<?php endif; ?>
+				
+				<?php if( $displayOptions['views'] ): ?>
+					<div class="cma-thread-numbers cma-thread-views">
+						<div class="cma-thread-numbers-count cma-thread-views-count"><?php
+							echo (CMA_Settings::getOption(CMA_Settings::OPTION_VOTES_NO) && $thread->getViews() === 0) ? 'no' : $thread->getViews();
+						?></div>
+						<div class="cma-thread-numbers-caption cma-thread-views-caption"><?php
+							echo CMA_Labels::n('view', 'views', $thread->getViews());
+						?></div>
+					</div>
+				<?php endif; ?>
+				
+				<?php if( !empty($displayOptions['statusinfo']) ): ?>
+					<div class="cma-thread-numbers cma-thread-answers">
+						<div class="cma-thread-numbers-count cma-thread-answers-count">
+							&nbsp;
+						</div>
+						<div class="cma-thread-numbers-caption cma-thread-answers-caption"><?php
+							echo esc_html($thread->getStatus());
+						?></div>
+					</div>
+				<?php endif; ?>
+				
+				<?php do_action('cma_thread_list_row_meta', $thread); ?>
+		
+			</div>
+		</div>
+	<?php endif; ?>
+	
+	<?php if (empty($displayOptions['hideTitle'])): ?>
+		<div class="cma-thread-title">
+			<?php if (!empty($displayOptions['showid'])): ?>
+				<span class="cma-thread-ref-id"><?php echo $thread->getId(); ?></span>
+			<?php endif; ?>
+			<a href="<?php echo esc_attr($thread->getPermalinkWithBacklink($cmaQuestionLinkQuery));
+				?>" title="<?php echo esc_attr($thread->getContent(100, true)); ?>"><?php
+			if( $thread->isResolved() ) {
+	        	echo '<span class="resolved">[' . CMA_Labels::getLocalized('RESOLVED') . '] </span>';
+	        }
+			echo esc_html($thread->getTitle(false)); ?></a>
+		</div>
+	<?php endif; ?>
+
+	<div class="cma-thread-summary-right">
+		<?php if( !empty($displayOptions['authorinfo']) ): ?>
+			<div class="cma-thread-updated">
+				<?php printf(CMA_Labels::getLocalized('asked_on_by'),
+					CMA_Thread::renderDaysAgo($thread->getUnixDate(), false),
+					$thread->getAuthorLink()); ?>
+			</div>
+		<?php endif; ?>
+		
+		<?php if( !empty($displayOptions['dateposted']) ): ?>
+			<div class="cma-thread-updated">
+				<?php printf(CMA_Labels::getLocalized('asked_on'),
+					CMA_Thread::renderDaysAgo($thread->getUnixDate(), false)
+				); ?>
+			</div>
+		<?php endif; ?>
+
+		<?php if( !empty($displayOptions['updated']) AND $lastComment = $thread->getLastComment()): ?>
+			<div class="cma-thread-updated">
+				<?php if( !empty($displayOptions['authorinfo']) ): ?>
+					<?php printf(CMA_Labels::getLocalized('update_on_by'),
+						CMA_Thread::renderDaysAgo(date_i18n('U', strtotime($lastComment->getDate())), false),
+						CMA_Thread::getUser($lastComment->getAuthorId(), $lastComment)->richLink); ?>
+				<?php else: ?>
+					<?php printf(CMA_Labels::getLocalized('update_on'),
+						CMA_Thread::renderDaysAgo(date_i18n('U', strtotime($lastComment->getDate())), false)); ?>
+				<?php endif; ?>
+			</div>
+		<?php endif; ?>
+
+		<?php if( $displayOptions['categories'] && $threadCategory = $thread->getCategory()): ?>
+			<div class="cma-thread-category">
+				<span><?php echo CMA_Labels::getLocalized('category'); ?>:</span>
+
+				<?php
+				
+				if (CMA_Settings::getOption(CMA_Settings::OPTION_CATEGORY_FILTER_MODE) == CMA_Settings::CATEGORY_FILTER_MODE_TWO_LEVEL):
+					if ($parentCategory = $thread->getParentCategory()) {
+						echo $parentCategory->getLink() . ' &raquo; ';
+					}
+				endif; ?>
+
+				<?php echo $threadCategory->getLink(); ?>
+				
+			</div>
+		<?php endif; ?>
+		
+		<?php $usersFavoriteNumber = count($thread->getUsersFavorite());
+		if (CMA_Settings::getOption(CMA_Settings::OPTION_ENABLE_MARK_FAVORITE_QUESTIONS) AND $usersFavoriteNumber > 0): ?>
+			<div class="cma-thread-users-favorite" title="<?php
+				echo esc_attr(sprintf(CMA_Labels::getLocalized('favorite_for_users'), $usersFavoriteNumber));
+				?>">&hearts; <?php echo $usersFavoriteNumber; ?></div>
+		<?php endif; ?>
+		
+	</div>
+
+	<?php if( $displayOptions['tags'] ) echo CMA_Thread::getTags($thread->getId()); ?>
+	
+	<?php if( $displayOptions['showcontent'] ): ?>
+		<?php $content = $thread->getContent(); ?>
+		<?php if (strlen($content) > 0): ?>
+			<div class="cma-thread-content"><?php echo $content; ?></div>
+		<?php endif; ?>
+	<?php endif; ?>
+	
+	<?php do_action('cma_question_snippet_end', $thread, $displayOptions); ?>
+	
+</div>

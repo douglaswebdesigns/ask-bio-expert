@@ -1,0 +1,8 @@
+<p>Show related questions: <select name="<?php echo $fieldName; ?>"><?php
+
+foreach ($options as $val => $label) {
+	printf('<option value="%s"%s>%s</option>', esc_attr($val), selected($val, $currentValue, false), $label);
+}
+
+?></select><input type="hidden" name="<?php echo $nonceField; ?>" value="<?php echo $nonce; ?>" /></p>
+<p>Global setting for this post type is currently: <strong><?php echo ($globalValue ? 'enabled' : 'disabled'); ?></strong></p>

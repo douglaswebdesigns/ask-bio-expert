@@ -1,0 +1,15 @@
+<ul class="cma-breadcrumbs"><?php
+
+echo '<li>'. $indexLink .'</li>';
+
+if (!empty($parentCategoryLink)) {
+	echo '<li>'. $parentCategoryLink .'</li>';
+}
+if (!empty($categoryLink)) {
+	echo '<li>'. $categoryLink .'</li>';
+}
+if (!empty($threadLink)) {
+	echo '<li>'. $threadLink .'</li>';
+}
+
+?></ul>

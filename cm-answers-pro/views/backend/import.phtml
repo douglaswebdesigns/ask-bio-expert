@@ -1,0 +1,126 @@
+<form method="post" id="cma_clear">
+<input type="hidden" name="step" value="clear" />
+<input type="submit" value="Clear Answers" />
+</form>
+
+
+<div class="cma-import">
+
+<form id="cma_import" method="post">
+<div class="step" data-step="database">
+	<h3>Source database connection</h3>
+	<p>Please enter the access credentials to the source database.</p>
+	<input type="hidden" name="step" value="" />
+	Host: <input type="text" name="host" value="mysql5" /><br />
+	Database name: <input type="text" name="database" value="gps_osqa" /><br />
+	User: <input type="text" name="user" value="gps_osqa" /><br />
+	Password: <input type="text" name="pass" value="osqa" /><br />
+</div>
+</form>
+
+
+<div class="step" data-step="users">
+	<h3>Import users</h3>
+</div>
+
+<div class="step" data-step="questions">
+	<h3>Import questions</h3>
+</div>
+
+<div class="step" data-step="answers">
+	<h3>Import answers</h3>
+</div>
+
+<div class="step" data-step="comments">
+	<h3>Import comments</h3>
+</div>
+
+<div class="step" data-step="passwords">
+	<h3>Reset users' passwords</h3>
+	<p>All passwords will be regenerated and every user will receive an email with the new password.</p>
+</div>
+
+<div class="step">
+	<h3>Thank you! Import has been done.</h3>
+</div>
+
+
+</div>
+
+
+<style type="text/css">
+#cma_clear {position: absolute; right: 20px;}
+.cma-import .step {display: none;}
+.cma-import .next {display: none;}
+.cma-import .skip {position: absolute; right: 20px;}
+.cma-import iframe {min-width: 50%; height: 400px;}
+</style>
+
+
+<script type="text/javascript">
+var stepNumber = -1;
+
+function cma_next_step() {
+	var step;
+	stepNumber++;
+	if (stepNumber == 0) {
+		step = jQuery('.step').first();
+	} else {
+		jQuery('.step:visible').hide();
+		step = jQuery('.step:nth-child('+ (stepNumber+1) +')');
+	}
+	step.show();
+	if (stepNumber == 1) jQuery('.cma-import .skip').show();
+	if (stepNumber >= jQuery('.step').length-1) {
+		jQuery('.cma-import .skip').hide();
+	}
+}
+
+jQuery('#cma_import').submit(function() {
+	
+});
+
+
+var CMA_URL = <?php echo json_encode(CMA_URL); ?>;
+jQuery(document).ready(function() {
+	jQuery('#cma_clear').submit(function() {
+		this.target = jQuery('iframe:visible').attr('id');
+		return confirm('Do you really want to clear Ansers database?');
+	});
+	cma_next_step();
+	jQuery('.step').each(function(i) {
+		var step = jQuery(this);
+		var stepName = step.data('step');
+		if (stepName) {
+			var frameName = 'cma_import_' + stepName;
+			if (i < jQuery('.step').length-2) step.append('<input type="button" value="Next step" class="next" />');
+			step.append('<button class="run">Run step</button><button class="skip">Skip step</button><br /><br /><iframe id="'+ frameName +'" name="'+ frameName +'"></iframe>');
+			step.find('.skip').click(function() {
+				cma_next_step();
+				return false;
+			});
+			step.find('h3').prepend('Step '+ (i+1) +': ');
+			step.find('.run').click(function() {
+				console.log('Run step forum submit');
+				jQuery(this).hide().after('<img src="'+ CMA_URL +'/views/resources/imgs/ajax-loader.gif" />');
+				step.find('iframe').load(function() {
+					step.find('img').remove();
+					step.find('button').hide();
+					step.find('.next').show();
+				});
+				var form = jQuery('#cma_import');
+				form.find('input[name=step]').val(stepName);
+				form.attr('target', frameName);
+				form.submit();
+			});
+			step.find('input[type=button]').click(function() {
+				console.log('Next step button');
+				cma_next_step();
+			});
+		}
+	});
+	
+});
+
+
+</script>

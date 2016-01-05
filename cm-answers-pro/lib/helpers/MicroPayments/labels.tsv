@@ -1,0 +1,24 @@
+view_wallet	View Wallet	Text on the "View Wallet" link.	MicroPayments
+your_wallet	Your Wallet	Text for the "Your Wallet" link.	MicroPayments
+mp_info_charge	You will be charged %d points from your wallet.	Message which informs the user that performing current action will charge points (more than 1) from the user's wallet.	MicroPayments
+mp_info_charge_one	You will be charged 1 point from your wallet.	Message which informs the user that performing current action will charge 1 point from the user's wallet.	MicroPayments
+mp_not_enough_points	%s does not have enough points.	Label for the message "Your Wallet does not have enough points".	MicroPayments
+mp_please_purchase_points	Please purchase more points.	Message with request to purchase points if user wants to perform some action that requires charge.	MicroPayments
+mp_info_taken	%d points were taken from your wallet.	Message after user performed an action that has taken points (more that 1) from the user's wallet.	MicroPayments
+mp_info_taken_one	1 point was taken from your wallet.	Message after user performed an action that has taken 1 point from the user's wallet.	MicroPayments
+mp_info_granted	%d points were added to your wallet.	Message after user performed an action that has added points (more that 1) to the user's wallet.	MicroPayments
+mp_info_granted_one	1 point was added to your wallet.	Message after user performed an action that has added 1 point to the user's wallet.	MicroPayments
+mp_posting_question_grants	Posting a question grants you %s points.	Message which informs the user that posting a question will add points (more than 1) to the user's wallet.	MicroPayments
+mp_posting_question_grants_one	Posting a question grants you 1 point.	Message which informs the user that posting a question will add 1 point to the user's wallet.	MicroPayments
+mp_posting_question_grants_no_wallet	You have no wallet. Posting a question will grant you no points.	Message which informs the user that he has not wallet and posting a question will not grant any points.	MicroPayments
+mp_posting_question_costs	Posting a question costs %s points.	Information that posting a question costs points (more than 1).	MicroPayments
+mp_posting_question_costs_one	Posting a question costs 1 point.	Information that posting a question costs 1 point.	MicroPayments
+you_have_no_wallet	You have no wallet.	Message when user have no wallet.	MicroPayments
+mp_posting_answer_grants	Posting an answer grants you %s points.	Message which informs the user that posting an answer will add points (more than 1) to the user's wallet.	MicroPayments
+mp_posting_answer_grants_one	Posting an answer grants you 1 point.	Message which informs the user that posting an answer will add 1 point to the user's wallet.	MicroPayments
+mp_posting_answer_grants_no_wallet	You have no wallet. Posting an answer will grant you no points.	Message which informs the user that he has not wallet and posting an answer will not grant any points.	MicroPayments
+mp_posting_answer_cost	Posting an answer costs %s points.	Information that posting an answers costs points (more than 1).	MicroPayments
+mp_posting_answer_cost_one	Posting an answer costs 1 point.	Information that posting an answers costs 1 point.	MicroPayments
+mp_error_not_enough_points	User has not enough points.	Information that user has not enough points to perform an action.	MicroPayments
+mp_error_wallet_not_exists	User's wallet does not exists.	Information that user's wallet does not exists.	MicroPayments
+mp_thread_reward_best_answer_msg	Author of the best answer has received %d points as a reward.	Success message after marking thread as resolved.	Thread

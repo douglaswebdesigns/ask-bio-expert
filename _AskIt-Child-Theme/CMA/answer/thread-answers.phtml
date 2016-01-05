@@ -1,0 +1,33 @@
+<?php
+/**
+ * Template part for the questions' answers.
+ */
+?>
+<div class="cma-answers-wrapper"><?php
+
+// Needed in child templates:
+global $answers, $answer, $answersSort;
+
+?>
+
+<?php if( !empty($answers) ): ?>
+	<?php do_action('CMA_thread_answers_before'); ?>
+	<?php get_template_part('cma', 'sort-answers'); ?>
+	<table class="cma-answers-list"<?php echo $data; ?>>
+		<?php foreach($answers as $answer): ?>
+			<?php get_template_part('cma', 'single-answer'); ?>
+		<?php endforeach; ?>
+	</table>
+	<?php do_action('CMA_thread_answers_after'); ?>
+<?php endif; ?>
+
+<?php get_template_part('cma', 'form-answer'); ?>
+
+<script type="text/javascript">
+jQuery(function($) {
+	CMA_comments_init($);
+	CMA_private_question_init($);
+});
+</script>
+
+</div>

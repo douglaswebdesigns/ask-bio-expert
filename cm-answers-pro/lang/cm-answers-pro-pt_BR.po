@@ -1,0 +1,1120 @@
+﻿msgid ""
+msgstr ""
+"Project-Id-Version: CM Answers v1.8.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-08-13 19:59:17+0000\n"
+"Last-Translator: admin <info@jensensatelje.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%100/10==1 ? 2 : n%10==1 ? 0 : (n+9)%10>3 ? 2 : 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Brazilian Portuguese\n"
+"X-Poedit-Country: Brazilia\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: cm-answers.php:29
+#, php-format
+#@ default
+msgid "We are sorry, but you need to have at least PHP 5.3 to run this plugin (currently installed version: %s) - please upgrade or contact your system administrator."
+msgstr Desculpe, mas você precisa ter ao menos a versão PHP 5.3 para rodar este plugin (atualmente instalado na versão:%s) - por favor, atualize ou contate o seu webmaster
+
+#: lib/controllers/AnswerController.php:18
+#@ cm-answers
+msgid "CM Answers Sidebar"
+msgstr CM Answers Sidebar
+
+#: lib/controllers/AnswerController.php:19
+#@ cm-answers
+msgid "This sidebar is shown on CM Answers pages"
+msgstr Esta sidebar é mostrada nas páginas CM Answers
+
+#: lib/controllers/AnswerController.php:34
+#: lib/controllers/AnswerController.php:42
+#: lib/models/AnswerThread.php:80
+#@ cm-answers
+msgid "Question"
+msgstr Pergunta feita
+
+#: lib/controllers/AnswerController.php:34
+#, php-format
+#@ default
+msgid "\"%s\" has been succesfully approved"
+msgstr "\"%s\" foi aprovado(a) com sucesso
+
+#: lib/controllers/AnswerController.php:42
+#, php-format
+#@ default
+msgid "\"%s\" has been succesfully moved to trash"
+msgstr "\"%s\" foi movida para a lixeira 
+
+#: lib/controllers/AnswerController.php:115
+#@ cm-answers
+msgid "Your answer has been succesfully added."
+msgstr Sua resposta foi adicionada com sucesso.
+
+#: lib/controllers/AnswerController.php:119
+#@ cm-answers
+msgid "Thank you for your answer, it has been held for moderation."
+msgstr Obrigado pela sua resposta. Será aprovada após moderação.
+
+#: lib/controllers/AnswerController.php:165
+#@ cm-answers
+msgid "New question has been succesfully added."
+msgstr A pergunta foi adicionada com sucesso.
+
+#: lib/controllers/AnswerController.php:168
+#@ cm-answers
+msgid "Thank you for your question, it has been held for moderation."
+msgstr Obrigado pela pergunta. Comentário em moderação.
+
+#: lib/controllers/AnswerController.php:187
+#@ cm-answers
+msgid "There was an error while processing your vote"
+msgstr Houve um erro ao processar o seu voto
+
+#: lib/controllers/AnswerController.php:191
+#@ cm-answers
+msgid "You have to be logged-in to vote"
+msgstr Você precisa estar logado para votar
+
+#: lib/controllers/AnswerController.php:200
+#@ cm-answers
+msgid "You have already voted for this comment"
+msgstr Já votado.
+
+#: lib/controllers/AnswerController.php:238
+#: lib/models/AnswerThread.php:423
+#@ cm-answers
+msgid "Author"
+msgstr Autor
+
+#: lib/controllers/AnswerController.php:239
+#@ cm-answers
+msgid "Views"
+msgstr Views
+
+#: lib/controllers/AnswerController.php:240
+#@ cm-answers
+msgid "Status"
+msgstr Status
+
+#: lib/controllers/AnswerController.php:241
+#: lib/models/AnswerThread.php:115
+#: lib/models/AnswerThread.php:116
+#@ cm-answers
+msgid "Answers"
+msgstr Respostas
+
+#: lib/controllers/AnswerController.php:258
+#: lib/models/AnswerThread.php:161
+#@ cm-answers
+msgid "pending"
+msgstr pendente
+
+#: lib/controllers/AnswerController.php:260
+#@ cm-answers
+msgid "Approve"
+msgstr Aprovar
+
+#: lib/controllers/BaseController.php:467
+#@ cm-answers
+msgid "CM Answers Settings"
+msgstr Configurações CM Answers
+
+#: lib/controllers/BaseController.php:467
+#@ cm-answers
+msgid "Settings"
+msgstr Configurações
+
+#: lib/controllers/BaseController.php:468
+#@ cm-answers
+msgid "About"
+msgstr Sobre
+
+#: lib/controllers/BaseController.php:469
+#@ cm-answers
+msgid "Pro Version"
+msgstr Pro Version
+
+#: lib/controllers/BaseController.php:480
+#@ cm-answers
+msgid "Settings succesfully updated"
+msgstr Configurações atualizadas com sucesso!
+
+#: lib/controllers/BaseController.php:560
+#@ cm-answers
+msgid "Filter by status"
+msgstr Filtro por status
+
+#: lib/controllers/BaseController.php:562
+#@ cm-answers
+msgid "Approved"
+msgstr Aprovado
+
+#: lib/controllers/BaseController.php:564
+#@ cm-answers
+msgid "Pending"
+msgstr Pendente
+
+#: lib/controllers/BaseController.php:566
+#@ cm-answers
+msgid "Trash"
+msgstr Lixeira
+
+#: lib/models/AnswerThread.php:81
+#: lib/models/AnswerThread.php:113
+#: views/frontend/answer/meta/menu-item.phtml:1
+#@ cm-answers
+msgid "Questions"
+msgstr Perguntas"
+
+#: lib/models/AnswerThread.php:118
+#: lib/models/AnswerThread.php:119
+#@ cm-answers
+msgid "Add New"
+msgstr Adicionar novo
+
+#: lib/models/AnswerThread.php:162
+#@ cm-answers
+msgid "approved"
+msgstr Aprovado
+
+#: lib/models/AnswerThread.php:231
+#@ cm-answers
+msgid "RESOLVED"
+msgstr CONCLUÍDO
+
+#: lib/models/AnswerThread.php:373
+#@ cm-answers
+msgid "Title cannot be empty"
+msgstr O título não pode estar vazio
+
+#: lib/models/AnswerThread.php:375
+#: lib/models/AnswerThread.php:524
+#@ cm-answers
+msgid "Content cannot be empty"
+msgstr Não pode estar vazio(a)
+
+#: lib/models/AnswerThread.php:418
+#@ cm-answers
+msgid "Please moderate"
+msgstr Favor, moderar
+
+#: lib/models/AnswerThread.php:420
+#@ cm-answers
+msgid "A new question has been asked and is waiting for your approval"
+msgstr Uma nova pergunta foi adicionada e aguarda aprovação.
+
+#: lib/models/AnswerThread.php:424
+#@ cm-answers
+msgid "E-mail"
+msgstr E-mail
+
+#: lib/models/AnswerThread.php:426
+#@ cm-answers
+msgid "Title"
+msgstr Título
+
+#: lib/models/AnswerThread.php:428
+#@ cm-answers
+msgid "Content"
+msgstr Conteúdo
+
+#: lib/models/AnswerThread.php:433
+#@ cm-answers
+msgid "Approve it"
+msgstr Aprovar
+
+#: lib/models/AnswerThread.php:435
+#@ cm-answers
+msgid "Trash it"
+msgstr Deletar
+
+#: lib/models/AnswerThread.php:437
+#@ cm-answers
+msgid "Please visit the questions moderation panel"
+msgstr Favor visitar o painel de moderação de perguntas
+
+#: lib/models/AnswerThread.php:641
+#@ cm-answers
+msgid "some time ago"
+msgstr momentos atrás
+
+#: lib/models/AnswerThread.php:644
+#, php-format
+#@ cm-answers
+msgid "1 second ago"
+msgid_plural "%d seconds ago"
+msgstr[0] agora há pouco
+msgstr[1] %d segundo atrás
+
+#: lib/models/AnswerThread.php:649
+#, php-format
+#@ cm-answers
+msgid "1 minute ago"
+msgid_plural "%d minutes ago"
+msgstr[0] agora há pouco
+msgstr[1] agora há pouco
+
+#: lib/models/AnswerThread.php:655
+#, php-format
+#@ cm-answers
+msgid "1 hour ago"
+msgid_plural "%d hours ago"
+msgstr[0] agora há pouco
+msgstr[1] agora há pouco
+
+#: lib/models/AnswerThread.php:661
+#, php-format
+#@ cm-answers
+msgid "1 day ago"
+msgid_plural "%d days ago"
+msgstr[0] 1 dia atrás
+msgstr[1] 1 dia atrás
+
+#: lib/models/AnswerThread.php:667
+#, php-format
+#@ cm-answers
+msgid "1 week ago"
+msgid_plural "%d weeks ago"
+msgstr[0] 1 semana atrás
+msgstr[1] 1 semana atrás
+
+#: lib/models/AnswerThread.php:673
+#, php-format
+#@ cm-answers
+msgid "1 month ago"
+msgid_plural "%d months ago"
+msgstr[0] 1 mês atrás
+msgstr[1] 1 mês atrás
+
+#: lib/models/AnswerThread.php:680
+#, php-format
+#@ cm-answers
+msgid "1 year ago"
+msgid_plural "%d ano atrás"
+msgstr[0] 1 ano atrás
+msgstr[1] 1 ano atrás
+
+#: lib/models/PostType.php:64
+#, php-format
+#@ cm-answers
+msgid "Add %s"
+msgstr Adicionar %s
+
+#: lib/models/PostType.php:65
+#, php-format
+#@ cm-answers
+msgid "Add New %s"
+msgstr Adicionar novos(as) %s
+
+#: lib/models/PostType.php:66
+#, php-format
+#@ cm-answers
+msgid "Edit %s"
+msgstr Editar %s
+
+#: lib/models/PostType.php:67
+#, php-format
+#@ cm-answers
+msgid "New %s"
+msgstr Novo %s
+
+#: lib/models/PostType.php:69
+#, php-format
+#@ cm-answers
+msgid "View %s"
+msgstr View %s
+
+#: lib/models/PostType.php:70
+#, php-format
+#@ cm-answers
+msgid "Search %s"
+msgstr Buscar %s
+
+#: lib/models/PostType.php:71
+#, php-format
+#@ cm-answers
+msgid "No %s found"
+msgstr Nenhum(a) encontrado(a)
+
+#: lib/models/PostType.php:72
+#, php-format
+#@ cm-answers
+msgid "No %s found in Trash"
+msgstr Nenhum(a) %s encontrado na lixeira
+
+#: views/backend/settings.phtml:24
+#@ cm-answers
+msgid "General Settings"
+msgstr Configurações gerais
+
+#: views/backend/settings.phtml:25
+#@ cm-answers
+msgid "You can add \"My Questions\" and \"My Answers\" profile views per user anywhere on the site by using shortcodes: [cma-my-questions] and [cma-my-answers]"
+msgstr Você pode adicionar \\ \\\Minhas perguntas\ e \\ \\\Minhas respostas\ visualizações de perfil por usuário(a) em qualquer lugar do site usando shortcodes: [cma-my-questions] e [cma-my-answers]"
+
+#: views/backend/settings.phtml:26
+#@ cm-answers
+msgid "Link to questions frontend list"
+msgstr Link para perguntas da lista da página principal
+
+#: views/backend/settings.phtml:29
+#@ cm-answers
+msgid "Enable ratings for answers"
+msgstr Habilitar avaliações para respostas
+
+#: views/backend/settings.phtml:31
+#: views/backend/settings.phtml:38
+#: views/backend/settings.phtml:54
+#: views/backend/settings.phtml:61
+#: views/backend/settings.phtml:82
+#@ cm-answers
+msgid "No"
+msgstr Nenhum
+
+msgid "no"
+msgstr Nenhum
+
+#: views/backend/settings.phtml:32
+#: views/backend/settings.phtml:39
+#: views/backend/settings.phtml:55
+#: views/backend/settings.phtml:62
+#: views/backend/settings.phtml:83
+#@ cm-answers
+msgid "Yes"
+msgstr Sim
+
+msgid "yes"
+msgstr Sim
+
+#: views/backend/settings.phtml:33
+#@ cm-answers
+msgid "If enabled, users will be able to rate answers"
+msgstr Se habilitado, os usuários(as) poderão avaliar as respostas
+
+#: views/backend/settings.phtml:36
+#@ cm-answers
+msgid "Enable negative ratings"
+msgstr Habilitar avaliações negativas
+
+#: views/backend/settings.phtml:40
+#@ cm-answers
+msgid "If enabled, users will be able to give \"thumbs down\" for an answer. If previous settings is disabled, this will be ignored."
+msgstr Se habilitado, usuários poderão dar \\ \\\curtir\ para uma resposta. Se configurações anteriores forem desabilitadas, este item será ignorado.
+
+#: views/backend/settings.phtml:43
+#@ cm-answers
+msgid "On questions list in \"votes\" box show"
+msgstr Na lista de perguntas em \\ \\\votos\ mostrar box
+
+#: views/backend/settings.phtml:45
+#@ cm-answers
+msgid "Total number of votes of its answers"
+msgstr Total de votos para esta pergunta
+
+#: views/backend/settings.phtml:47
+#@ cm-answers
+msgid "Rating of the best answer"
+msgstr Ranking desta resposta
+
+#: views/backend/settings.phtml:48
+#@ cm-answers
+msgid "If ratings are disabled, this setting will be ignored."
+msgstr Se as avaliações estiverem desabilitadas, esta configuração será ignorada.
+
+#: views/backend/settings.phtml:52
+#@ cm-answers
+msgid "Auto-approve new questions"
+msgstr Auto-aprovar novas perguntas
+
+#: views/backend/settings.phtml:59
+#@ cm-answers
+msgid "Auto-approve answers"
+msgstr Auto-aprovar respostas
+
+#: views/backend/settings.phtml:80
+#@ cm-answers
+msgid "Add \"Answers\" to WP Nav Menu"
+msgstr Adicionar \\ \\\ para\ o Menu Nav WP
+
+#: views/backend/settings.phtml:84
+#@ cm-answers
+msgid "You need to have \"wp_nav_menu\" trigger in your template"
+msgstr Você precisa ter\\ \\\wp_nav_menu \ acionado na sua template
+
+#: views/backend/settings.phtml:87
+#@ cm-answers
+msgid "Notifications"
+msgstr Notificações
+
+#: views/backend/settings.phtml:90
+#@ cm-answers
+msgid "Notify about new questions"
+msgstr Notificar sobre novas perguntas
+
+#: views/backend/settings.phtml:91
+#@ cm-answers
+msgid "Example"
+msgstr Exemplo
+
+#: views/backend/settings.phtml:92
+#@ cm-answers
+msgid "Separate e-mail addresses by commas or leave empty to disable."
+msgstr Separe o e-mail por vírgulas ou deixe em branco para desabilitar.
+
+#: views/backend/settings.phtml:95
+#@ cm-answers
+msgid "New question notification title"
+msgstr Notificação de nova pergunta
+
+#: views/backend/settings.phtml:100
+#@ cm-answers
+msgid "New question notification content"
+msgstr Notificação de novo conteúdo
+
+#: views/backend/settings.phtml:102
+#: views/backend/settings.phtml:116
+#@ cm-answers
+msgid "Name of the site"
+msgstr Nome do site
+
+#: views/backend/settings.phtml:103
+#@ cm-answers
+msgid "Author of the question"
+msgstr Autor da pergunta
+
+#: views/backend/settings.phtml:104
+#: views/backend/settings.phtml:117
+#@ cm-answers
+msgid "Title of the question"
+msgstr Título da pergunta
+
+#: views/backend/settings.phtml:105
+#@ cm-answers
+msgid "Approval status of the question (pending, approved)"
+msgstr Status de aprovação da pergunta (pendente, aprovada)
+
+#: views/backend/settings.phtml:106
+#@ cm-answers
+msgid "Link to the new question"
+msgstr Link para a nova pergunta
+
+#: views/backend/settings.phtml:109
+#@ cm-answers
+msgid "New answer notification title"
+msgstr Título de notificação de nova resposta
+
+#: views/backend/settings.phtml:114
+#@ cm-answers
+msgid "New answer notification content"
+msgstr Notificação e nova resposta
+
+#: views/backend/settings.phtml:118
+#@ cm-answers
+msgid "Link to the new answer"
+msgstr Link para nova resposta
+
+#: views/backend/settings.phtml:122
+#@ cm-answers
+msgid "Update"
+msgstr Atualizar
+
+#: views/frontend/answer/index.phtml:8
+#@ cm-answers
+msgid "All Questions"
+msgstr Todos os tópicos
+
+#: views/frontend/answer/index.phtml:18
+#: views/frontend/answer/single.phtml:55
+#@ cm-answers
+msgid "Newest"
+msgstr Mais recente
+
+#: views/frontend/answer/index.phtml:19
+#@ cm-answers
+msgid "Hottest"
+msgstr Mais visualizado
+
+#: views/frontend/answer/index.phtml:20
+#@ cm-answers
+msgid "Most votes"
+msgstr Mais votados
+
+#: views/frontend/answer/index.phtml:21
+#@ cm-answers
+msgid "Most views"
+msgstr Mais visualizados
+
+#: views/frontend/answer/index.phtml:36
+#: views/frontend/answer/widget/my-answers.phtml:7
+#@ cm-answers
+msgid "Votes"
+msgstr Votos
+
+#: views/frontend/answer/index.phtml:38
+#@ cm-answers
+msgid "views"
+msgstr Views
+
+#: views/frontend/answer/index.phtml:40
+#@ cm-answers
+msgid "answers"
+msgstr Respostas
+
+#: views/frontend/answer/index.phtml:44
+#: views/frontend/answer/widget/my-questions.phtml:19
+#, php-format
+#@ cm-answers
+msgid "updated %s by %s"
+msgstr Atualizado %s por %s
+
+#: views/frontend/answer/index.phtml:65
+#@ cm-answers
+msgid "Ask a Question"
+msgstr » DEIXE ABAIXO SUA PERGUNTA, (SEJA BÁSICA OU AVANÇADA):
+
+#: views/frontend/answer/index.phtml:68
+#: views/frontend/answer/single.phtml:95
+#@ cm-answers
+msgid "Allow markup"
+msgstr Permitir markup
+
+#: views/frontend/answer/index.phtml:69
+#: views/frontend/answer/single.phtml:96
+#@ cm-answers
+msgid "Wrap your code using"
+msgstr Selecione o seu código usando
+
+# @ cm-answers-pro
+#: views/frontend/answer/index.phtml:170
+#: views/frontend/answer/widget/questions.phtml:87
+msgid "Enter your basic question"
+msgstr Digite sua pergunta
+
+# @ cm-answers-pro
+#: views/frontend/answer/index.phtml:172
+#: views/frontend/answer/widget/questions.phtml:88
+msgid "Enter more details about your question"
+msgstr Informe mais detalhes sobre sua pergunta
+
+#: views/frontend/answer/index.phtml:76
+#: views/frontend/answer/single.phtml:103
+#@ cm-answers
+msgid "Notify me of follow"
+msgstr Notificar por e-mail sobre atualizações.
+
+#: views/frontend/answer/index.phtml:78
+#@ cm-answers
+msgid "Add Question"
+msgstr Enviar!
+
+#: views/frontend/answer/single.phtml:9
+#@ cm-answers
+msgid "Back to Questions List"
+msgstr Retornar à página principal
+
+#: views/frontend/answer/single.phtml:28
+#@ cm-answers
+msgid "Thank you for voting!"
+msgstr Obrigado por votar!
+
+#: views/frontend/answer/single.phtml:42
+#: views/frontend/answer/single.phtml:77
+#, php-format
+#@ cm-answers
+msgid "Posted by %s"
+msgstr Postado por %s
+
+#: views/frontend/answer/single.phtml:43
+#, php-format
+#@ cm-answers
+msgid "Asked on %s"
+msgstr Data:  %s
+
+# @ cm-answers-pro
+#: views/frontend/answer/widget/questions.phtml:119
+#, php-format
+msgid "asked %s by %s"
+msgstr Pergunta feita %s por %s"
+
+#: views/frontend/answer/single.phtml:56
+#@ cm-answers
+msgid "Highest Rating"
+msgstr Avaliação mais alta
+
+#: views/frontend/answer/single.phtml:65
+#@ cm-answers
+msgid "Thumbs Up!"
+msgstr Voto positivo
+
+#: views/frontend/answer/single.phtml:67
+#@ cm-answers
+msgid "Thumbs Down!"
+msgstr Resposta Insuficiente
+
+#: views/frontend/answer/single.phtml:78
+#, php-format
+#@ cm-answers
+msgid "Answered on %s"
+msgstr Respondido em %s
+
+#: views/frontend/answer/single.phtml:92
+#: views/frontend/answer/single.phtml:109
+#@ cm-answers
+msgid "Post your Answer"
+msgstr » POSTAR SUA RESPOSTA:
+
+#: views/frontend/answer/single.phtml:99
+#@ cm-answers
+msgid "Write your Answer here"
+msgstr Digite sua resposta aqui
+
+#: views/frontend/answer/single.phtml:107
+#@ cm-answers
+msgid "Mark as resolved"
+msgstr Marcar como concluído
+
+#: views/frontend/answer/widget/my-answers.phtml:16
+#, php-format
+#@ cm-answers
+msgid "posted %s in reply to %s"
+msgstr Postado %s em resposta a %s
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: views/frontend/answer/widget/my-questions.phtml:7
+#: views/frontend/answer/index.phtml:36
+#: views/frontend/answer/widget/my-answers.phtml:7
+#@ cm-answers
+msgid "vote"
+msgid_plural "votes"
+msgstr[0] votos
+msgstr[1] Voto
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: views/frontend/answer/widget/my-questions.phtml:9
+#: views/frontend/answer/index.phtml:38
+#@ cm-answers
+msgid "view"
+msgid_plural "views"
+msgstr[0] Views
+msgstr[1] View
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: views/frontend/answer/widget/my-questions.phtml:11
+#: views/frontend/answer/index.phtml:40
+#@ cm-answers
+msgid "answer"
+msgid_plural "answers"
+msgstr[0] Respostas
+msgstr[1] Resposta
+
+#: views/frontend/error.phtml:8
+#@ cm-answers
+msgid "Go back to previous page"
+msgstr Voltar à página anterior
+
+# @ cm-answers-pro
+#: views/frontend/answer/nav-bar.phtml:8
+msgid "Choose the filter options and click the submit button"
+msgstr Escolha a opção de filtro e clique no botão
+
+# @ cm-answers-pro
+msgid "All questions"
+msgstr Todas as perguntas
+
+# @ cm-answers-pro
+msgid "All categories"
+msgstr Categorias diversas
+
+# @ cm-answers-pro
+msgid "All subcategories"
+msgstr Subcategorias diversas
+
+# @ cm-answers-pro
+msgid "Enter your basic question"
+msgstr Digite sua pergunta resumida
+
+# @ cm-answers-pro
+msgid "Enter more details about your question"
+msgstr Digite mais detalhes sobre sua pergunta
+
+# @ cm-answers-pro
+msgid "Choose category"
+msgstr escolher categoria
+
+# @ cm-answers-pro
+msgid "Mark as best answer"
+msgstr Marcar como melhor resposta
+
+# @ cm-answers-pro
+msgid "An error occurred."
+msgstr Ocorreu um erro.
+
+# @ cm-answers-pro
+msgid "You have to be logged-in."
+msgstr Você deve estar logado
+
+# @ cm-answers-pro
+msgid "The best answer has been marked."
+msgstr A melhor resposta foi marcada
+
+# @ cm-answers-pro
+msgid "Answer not found."
+msgstr Resposta não encontrada
+
+# @ cm-answers-pro
+msgid "Mark as favorite"
+msgstr Marcar como favorito
+
+# @ cm-answers-pro
+msgid "Unmark as favorite"
+msgstr Desmarcar como favorito
+
+# @ cm-answers-pro
+msgid "Favorite"
+msgstr Favorito
+
+# @ cm-answers-pro
+msgid "Favorite for %d users"
+msgstr Favoritado pelo(a) %d usuário(a)
+
+# @ cm-answers-pro
+msgid "Marked as favorite."
+msgstr Marcado como favorito
+
+# @ cm-answers-pro
+msgid "Unmarked as favorite."
+msgstr Desmarcado como favorito.
+
+# @ cm-answers-pro
+msgid "Best answer"
+msgstr Melhor resposta
+
+# @ cm-answers-pro
+msgid "No questions found."
+msgstr Nenhuma pergunta encontrada
+
+# @ cm-answers-pro
+msgid "You have already voted for this question."
+msgstr Você já votou para esta pergunta
+
+# @ cm-answers-pro
+msgid "Edit"
+msgstr Editar
+
+# @ cm-answers-pro
+msgid "Views"
+msgstr Views
+
+# @ cm-answers-pro
+msgid "Category"
+msgstr Categoria:
+
+# @ cm-answers-pro
+msgid "Answered questions"
+msgstr Perguntas respondidas
+
+# @ cm-answers-pro
+msgid "Unanswered questions"
+msgstr Tópicos em aberto
+
+# @ cm-answers-pro
+msgid "Search Questions..."
+msgstr Buscar
+
+# @ cm-answers-pro
+msgid "Unmark best answer"
+msgstr Desmarcar melhor resposta
+
+# @ cm-answers-pro
+msgid "Edit your Answer"
+msgstr Editar sua resposta
+
+# @ cm-answers-pro
+msgid "Edit your Question"
+msgstr Editar sua pergunta
+
+# @ cm-answers-pro
+msgid "Add comment"
+msgstr Adicionar comentário
+
+# @ cm-answers-pro
+msgid "Save comment"
+msgstr Salvar comentário
+
+# @ cm-answers-pro
+msgid "Send private question"
+msgstr Enviar pergunta privada
+
+# @ cm-answers-pro
+msgid "Send private question to %s"
+msgstr Enviar pergunta privada para %s
+
+# @ cm-answers-pro
+msgid "Enter your question title"
+msgstr Digite o título da sua pergunta
+
+# @ cm-answers-pro
+msgid "Send"
+msgstr Enviar
+
+# @ cm-answers-pro
+msgid "Cancel"
+msgstr Cancelar
+
+# @ cm-answers-pro
+msgid "Private question has been sent."
+msgstr Pergunta privada enviada.
+
+# @ cm-answers-pro
+msgid "Save"
+msgstr Salvar
+
+# @ cm-answers-pro
+msgid "Oldest"
+msgstr Anterior
+
+# @ cm-answers-pro
+msgid "Lowest Rating"
+msgstr Avaliação mais baixa
+
+# @ cm-answers-pro
+msgid "Back to Full Questions List"
+msgstr Responder ao questionário completo
+
+# @ cm-answers-pro
+msgid "Follow"
+msgstr Seguir
+
+# @ cm-answers-pro
+msgid "Unfollow"
+msgstr Parar de seguir
+
+# @ cm-answers-pro
+msgid "You have been added to the followers of this thread."
+msgstr Você foi adicionado aos seguidores deste tópico
+
+# @ cm-answers-pro
+msgid "You have been removed from the followers of this thread."
+msgstr Você foi removido dos seguidores deste tópico.
+
+# @ cm-answers-pro
+msgid "Follow category"
+msgstr Seguir categoria
+
+# @ cm-answers-pro
+msgid "Unfollow category"
+msgstr Para de seguir categoria
+
+# @ cm-answers-pro
+msgid "You have been added to the followers of this category."
+msgstr Você foi adicionado(a) aos seguidores desta categoria.
+
+# @ cm-answers-pro
+msgid "You have been removed from the followers of this category."
+msgstr Você foi removido dos seguidores desta categoria.
+
+# @ cm-answers-pro
+msgid "Followed threads and categories"
+msgstr Seguir tópicos e categorias
+
+# @ cm-answers-pro
+msgid "Followed threads"
+msgstr Tópicos seguidos
+
+# @ cm-answers-pro
+msgid "Followed categories"
+msgstr Categorias seguidas
+
+# @ cm-answers-pro
+msgid "Report spam"
+msgstr Reportar spam
+
+# @ cm-answers-pro
+msgid "Thank you! Spam report has been sent."
+msgstr Obrigado! Relatório de spam enviado.
+
+# @ cm-answers-pro
+msgid "Marked as spam"
+msgstr Marcado como spam
+
+# @ cm-answers-pro
+msgid "Please log in to post questions"
+msgstr Por favor, logue para postar perguntas
+
+# @ cm-answers-pro
+msgid "The same question has been already posted. Please use the \"Search\" option."
+msgstr "The same question has been already posted. Please use the \"Search\" option."
+
+# @ cm-answers-pro
+msgid "You cannot vote."
+msgstr "You cannot vote."
+
+# @ cm-answers-pro
+msgid "Do you really want to resolve this thread?"
+msgstr "Do you really want to resolve this thread?"
+
+# @ cm-answers-pro
+msgid "Thread has been marked as resolved."
+msgstr "Thread has been marked as resolved."
+
+# @ cm-answers-pro
+msgid "Thread has been deleted."
+msgstr "Thread has been deleted."
+
+# @ cm-answers-pro
+msgid "You cannot delete this thread."
+msgstr "You cannot delete this thread."
+
+# @ cm-answers-pro
+msgid "Thread not found."
+msgstr "Thread not found."
+
+# @ cm-answers-pro
+msgid "Invalid request."
+msgstr "Invalid request."
+
+# @ cm-answers-pro
+msgid "There was an error while removing your question."
+msgstr "There was an error while removing your question."
+
+# @ cm-answers-pro
+msgid "Do you really want to delete this question?"
+msgstr "Do you really want to delete this question?"
+
+# @ cm-answers-pro
+msgid "You do not have permissions to see this page."
+msgstr "You do not have permissions to see this page."
+
+# @ cm-answers-pro
+msgid "Answer"
+msgstr "Answer"
+
+# @ cm-answers-pro
+msgid "Do you want to remove other answers (instead of the best)? Press OK if yes, press Cancel if no."
+msgstr "Do you want to remove other answers (instead of the best)? Press OK if yes, press Cancel if no."
+
+# @ cm-answers-pro
+msgid "Private answer"
+msgstr "Private answer"
+
+# @ cm-answers-pro
+msgid "votes"
+msgstr "votes"
+
+# @ cm-answers-pro
+msgid "Related questions"
+msgstr "Related questions"
+
+# @ cm-answers-pro
+msgid "Question ID:"
+msgstr "Question ID:"
+
+# @ cm-answers-pro
+msgid "Enter more details about your question (optional)"
+msgstr "Enter more details about your question (optional)"
+
+# @ cm-answers-pro
+msgid "Related questions:"
+msgstr "Related questions:"
+
+# @ cm-answers-pro
+msgid "Enter related questions links or ids separated by new line."
+msgstr "Enter related questions links or ids separated by new line."
+
+# @ cm-answers-pro
+msgid "Cannot post content because of bad word: %s"
+msgstr "Cannot post content because of bad word: %s"
+
+# @ cm-answers-pro
+msgid "Back to Previous Page"
+msgstr "Back to Previous Page"
+
+# @ cm-answers-pro
+msgid "Follow this category"
+msgstr "Follow this category"
+
+# @ cm-answers-pro
+msgid "Unfollow this category"
+msgstr "Unfollow this category"
+
+# @ cm-answers-pro
+msgid "Unfollow all new threads"
+msgstr "Unfollow all new threads"
+
+# @ cm-answers-pro
+msgid "Follow all new threads"
+msgstr "Follow all new threads"
+
+# @ cm-answers-pro
+msgid "Unmark spam"
+msgstr "Unmark spam"
+
+# @ cm-answers-pro
+msgid "Please log in to opt-out the newsletter."
+msgstr "Please log in to opt-out the newsletter."
+
+# @ cm-answers-pro
+msgid "You have been successfully removed from newsletter."
+msgstr "You have been successfully removed from newsletter."
+
+# @ cm-answers-pro
+msgid "The opt-out function is disabled by admin."
+msgstr "The opt-out function is disabled by admin."
+
+# @ cm-answers-pro
+msgid "Opt-out from newsletter"
+msgstr "Opt-out from newsletter"
+
+# @ cm-answers-pro
+msgid "The new threads newsletter has been disabled."
+msgstr "The new threads newsletter has been disabled."
+
+# @ cm-answers-pro
+msgid "The new threads newsletter has been enabled."
+msgstr "The new threads newsletter has been enabled."
+
+# @ cm-answers-pro
+msgid "No results."
+msgstr "No results."
+
+# @ cm-answers-pro
+msgid "Answers Stats"
+msgstr "Answers Stats"
+
+# @ cm-answers-pro
+msgid "Comments"
+msgstr "Comments"
+
+# @ cm-answers-pro
+msgid "Users"
+msgstr "Users"
+
+# @ cm-answers-pro
+msgid "Add tags"
+msgstr "Add tags"
+
+# @ cm-answers-pro
+msgid "Add"
+msgstr "Add"
+
+# @ cm-answers-pro
+msgid "Drag and drop attachments here"
+msgstr "Drag and drop attachments here"
+
+# @ cm-answers-pro
+msgid "Allowed file types"
+msgstr "Allowed file types"
+
+# @ cm-answers-pro
+msgid "Max file size"
+msgstr "Max file size"

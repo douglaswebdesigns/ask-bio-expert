@@ -1,0 +1,16 @@
+<?php
+
+$populatedData = CMA_BaseController::getPopulatedData();
+
+foreach ($fields as $i => $fieldName): ?>
+	<?php if (!empty($fieldName)):
+		$name = CMA_CategoryController::FIELD_CUSTOM_FIELDS;
+		if (isset($populatedData[$name][$i])) {
+			$value = $populatedData[$name][$i];
+		} else {
+			$value = $values[$i];
+		}
+		printf('<div class="cma-form-input"><label>%s: <input type="text" name="%s[%d]" value="%s" /></label>',
+			$fieldName, CMA_CategoryController::FIELD_CUSTOM_FIELDS, $i, esc_attr($value));
+	endif; ?>
+<?php endforeach; ?>

@@ -1,0 +1,22 @@
+<div class="cma-pagination">
+    <?php
+
+    /* @var $maxNumPages integer */
+    /* @var $paged integer */
+    /* @var $arguments array */
+
+    global $wp_rewrite;
+
+    $pagination_args = array(
+    	'base' => $base,
+        'format' => '',
+        'total' => $maxNumPages,
+        'current' => max(1, $paged),
+    );
+
+    $pagination_args['add_args'] = $add_args;
+
+    echo paginate_links($pagination_args);
+    
+    ?>
+</div>

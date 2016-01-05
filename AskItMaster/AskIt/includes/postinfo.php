@@ -1,0 +1,9 @@
+<?php if (!is_single() && get_option('askit_postinfo1') ) { ?>
+	<div class="postmeta">
+		<p class="postinfo"><?php esc_html_e('Posted','AskIt'); ?> <?php if (in_array('author', get_option('askit_postinfo1'))) { ?> <?php esc_html_e('by','AskIt'); ?> <?php the_author_posts_link(); ?><?php }; ?><?php if (in_array('date', get_option('askit_postinfo1'))) { ?> <?php esc_html_e('on','AskIt'); ?> <?php the_time(get_option('askit_date_format')) ?><?php }; ?><?php if (in_array('categories', get_option('askit_postinfo1'))) { ?> <?php esc_html_e('in','AskIt'); ?> <?php the_category(', ') ?><?php }; ?><?php if (in_array('comments', get_option('askit_postinfo1'))) { ?> | <?php comments_popup_link(esc_html__('0 comments','AskIt'), esc_html__('1 comment','AskIt'), '% '.esc_html__('comments','AskIt')); ?><?php }; ?></p>
+	</div> <!-- end .postmeta -->
+<?php } elseif (is_single() && get_option('askit_postinfo2') ) { ?>
+	<div class="postmeta">
+		<p class="postinfo"><?php esc_html_e('Posted','AskIt'); ?> <?php if (in_array('author', get_option('askit_postinfo2'))) { ?> <?php esc_html_e('by','AskIt'); ?> <?php the_author_posts_link(); ?><?php }; ?><?php if (in_array('date', get_option('askit_postinfo2'))) { ?> <?php esc_html_e('on','AskIt'); ?> <?php the_time(get_option('askit_date_format')) ?><?php }; ?><?php if (in_array('categories', get_option('askit_postinfo2'))) { ?> <?php esc_html_e('in','AskIt'); ?> <?php the_category(', ') ?><?php }; ?><?php if (in_array('comments', get_option('askit_postinfo2'))) { ?> | <?php comments_popup_link(esc_html__('0 comments','AskIt'), esc_html__('1 comment','AskIt'), '% '.esc_html__('comments','AskIt')); ?><?php }; ?></p>
+	</div> <!-- end .postmeta -->
+<?php }; ?>

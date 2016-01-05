@@ -1,0 +1,57 @@
+<?php
+
+$wp_query = CMA_AnswerController::$query;
+
+CMA_AnswerController::get_header();
+$sidebarEnabled = (CMA_Thread::isSidebarEnabled() && is_active_sidebar('cm-answers-sidebar'));
+
+?>
+
+<div id="primary" class="content-area cma-content<?php echo ($sidebarEnabled ? ' cma-col-left' : ' full-width'); ?>">
+	<div id="content" role="main" class="site-content">
+    	<div class="cma-main">
+    		<div class="cma-wrapper">
+          
+            
+                <?php
+                /*
+                 * Load the single question view
+                 */
+                the_post();
+                ?>
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php
+						// Page thumbnail and title.
+// 						twentyfourteen_post_thumbnail();
+						the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
+					?>
+				
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div><!-- .entry-content -->
+				</article><!-- #post-## -->
+                
+                <div class="cma-clear"></div>
+            </div><!-- cma-wrapper -->
+     <h1 style="color:#000">This is the single template</h1>
+            <?php if( CMA_Thread::isReferralEnabled() && CMA_Thread::getAffiliateCode() ): ?>
+                <span class="cma_referral_link">
+                    <a href="http://www.cminds.com/store/answers/?af=<?php echo CMA_Thread::getAffiliateCode() ?>">
+                        <img src="http://static.cminds.com/wp-content/uploads/download_answer.png" height="22" alt="Code" />
+                    </a>
+                </span>
+            <?php endif; ?>
+
+            <div class="cma-clear"></div>
+        </div><!-- cma-main -->
+    </div><!-- #content.site-content -->
+</div><!-- cma-content -->
+<?php
+/*
+* CMA-Sidebar
+*/
+if ($sidebarEnabled) echo CMA_BaseController::_loadView('answer/widget/sidebar');
+
+?>
+<?php
+get_footer();

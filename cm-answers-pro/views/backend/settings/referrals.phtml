@@ -1,0 +1,21 @@
+<h3><?php echo CMA_Settings::__('Referrals'); ?></h3>
+<p><?php echo CMA_Settings::__('Refer new users to any of the CM Plugins and you\'ll receive <strong>a minimum of 16%</strong> of their purchase! For more information please visit CM Plugins');
+	?> <a href="http://www.cminds.com/referral-program/" target="new"><?php echo CMA_Settings::__('Affiliate page'); ?></a></p>
+<table>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" ><?php echo CMA_Settings::__('Enable referrals'); ?>:</th>
+        <td ><input type="radio" name="referral_enable" id="referral_enable_0" value="0" <?php
+		if( !$referralEnable ) echo 'checked="checked"';
+		?>/><label for="referral_enable_0"> <?php echo CMA_Settings::__('No');
+		?></label> &nbsp; <input type="radio" name="referral_enable" id="referral_enable_1" value="1" <?php
+        if( $referralEnable ) echo 'checked="checked"';
+        ?>/><label for="referral_enable_1"> <?php echo CMA_Settings::__('Yes'); ?></label></td>
+        <td><?php echo CMA_Settings::__('Enable referrals link at the bottom of the question and the answer page.'); ?></td>
+    </tr>
+    <tr valign="top">
+        <th scope="row" valign="middle" align="left" ><?php echo CMA_Settings::__('Affiliate Code'); ?>:</th>
+        <td ><input type="text" name="affiliate_code" value="<?php echo esc_attr($affiliateCode); ?>" /></td>
+        <td><?php echo CMA_Settings::__('Please add your affiliate code in here.'); ?></td>
+    </tr>
+
+</table>

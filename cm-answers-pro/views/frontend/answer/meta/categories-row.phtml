@@ -1,0 +1,23 @@
+<?php $categoryObject = CMA_Category::getInstance($category->term_id); ?>
+<tr<?php if (!empty($category->parent)) echo ' class="cma-subcategory-row"';
+?> data-is-follower="<?php echo intval($categoryObject->getFollowersEngine()->isFollower()); ?>">
+	<td class="name"><a href="<?php echo esc_attr($categoryObject->getPermalink());
+		?>" style="padding-left:<?php echo $depth*20; ?>px"><strong><?php echo esc_html($category->name) ?></strong>
+		<span><?php echo esc_html($category->description) ?></span></a></td>
+	<td class="num col-questions"><?php echo CMA_Category::getCategoriesQACount($category->term_id, 'question_count') ?></td>
+	<td class="num col-unanswered"><?php echo $categoryObject->getUnansweredQuestionsCount(); ?></td>
+	<td class="num col-answers"><?php echo CMA_Category::getCategoriesQACount($category->term_id, 'answer_count') ?></td>
+	<td class="num col-activity"><?php echo $categoryObject->getLastActivity(); ?></td>
+	<?php if (CMA_Settings::getOption(CMA_Settings::OPTION_ENABLE_CATEGORY_FOLLOWING)): ?>
+		<td class="col-follow">
+			<a href="<?php echo esc_attr(get_post_type_archive_link(CMA_Thread::POST_TYPE));
+				?>" data-category-id="<?php echo $categoryObject->getId() ?>" data-nonce="<?php
+				echo wp_create_nonce('cma_follow'); ?>" class="cma-follow-link"><?php
+				echo CMA_Labels::getLocalized('follow_category'); ?></a>
+			<a href="<?php echo esc_attr(get_post_type_archive_link(CMA_Thread::POST_TYPE));
+				?>" data-category-id="<?php echo $categoryObject->getId() ?>" data-nonce="<?php
+				echo wp_create_nonce('cma_follow'); ?>" class="cma-unfollow-link"><?php
+				echo CMA_Labels::getLocalized('unfollow_category'); ?></a>
+			</td>
+	<?php endif; ?>
+</tr>

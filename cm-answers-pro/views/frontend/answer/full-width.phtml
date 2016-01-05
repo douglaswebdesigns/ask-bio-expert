@@ -1,0 +1,37 @@
+<?php
+/**
+ * Question/answer edit template.
+ */
+
+global $cmaPageContent;
+
+the_post();
+
+CMA_AnswerController::get_header();
+
+?>
+
+<div id="main-content" class="main-content full-width">
+<div id="primary" class="content-area cma-content">
+	<div id="content" role="main" class="site-content">
+    	<div class="cma-main">
+    		<div class="cma-wrapper page type-page hentry">
+    		<div class="entry-content">
+                             <h1 style="color:#000">This is the full-width template</h1>
+
+			<?php
+			
+			do_action('cma_flash_messages');
+			
+			echo $cmaPageContent;
+			
+			?>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<?php
+
+get_footer();

@@ -1,0 +1,35 @@
+<div class="cma-question-meta">
+	
+	<?php if (CMA_Settings::getOption(CMA_Settings::OPTION_SHOW_QUESTION_AUTHOR)): ?>
+		<div class="cma-question-author">
+			<?php echo $avatar; ?>
+			<?php echo $author; ?>
+		</div>
+	<?php endif; ?>
+
+	<div class="cma-question-date"><?php printf(CMA_Labels::getLocalized('asked_on'), $thread->getCreationDate()); ?></div>
+	
+	<?php if (!empty($displayOptions['displaycategories']) AND $category = $thread->getCategory()): ?>
+		<div class="cma-question-category">
+			<?php echo CMA_Labels::getLocalized('category'); ?>:
+			<?php if (CMA_Settings::getOption(CMA_Settings::OPTION_CATEGORY_FILTER_MODE) == CMA_Settings::CATEGORY_FILTER_MODE_TWO_LEVEL) {
+				if ($parentCategory = $thread->getParentCategory()) {
+					echo $parentCategory->getLink() . ' &raquo; ';
+				}
+			} ?>
+			<?php echo $category->getLink(); ?>
+		</div>
+	<?php endif; ?>
+	<div class="cma-question-views"><?php echo $thread->getViews() .' '. CMA_Labels::getLocalized('views'); ?></div>
+	
+	<?php if ($category = $thread->getCategory()):
+		$customFields = $category->getCustomFields();
+		$values = $thread->getCategoryCustomFields();
+		foreach ($customFields as $i => $fieldName):
+			if (!empty($fieldName) AND strlen($values[$i])) {
+				printf('<div class="cma-question-custom-field"><strong>%s:</strong> <span>%s</span></div>', $fieldName, esc_attr($values[$i]));
+			}
+		endforeach;
+	endif; ?>
+	
+</div>

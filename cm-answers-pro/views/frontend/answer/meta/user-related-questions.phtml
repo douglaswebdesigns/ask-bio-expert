@@ -1,0 +1,10 @@
+<?php if( !empty($questions) ): ?>
+	<div class="cma-user-related-questions">
+		<h3><?php echo CMA_Labels::getLocalized('thread_user_related_questions'); ?></h3>
+		<ul>
+			<?php foreach ($questions as $question): ?>
+				<?php if ($question->isVisible()) printf('<li><a href="%s">%s</a></li>', esc_attr($question->getPermalink()), $question->getTitle()); ?>
+			<?php endforeach; ?>
+		</ul>
+   	</div>
+<?php endif; ?>

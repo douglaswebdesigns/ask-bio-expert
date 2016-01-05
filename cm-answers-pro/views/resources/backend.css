@@ -1,0 +1,5 @@
+@CHARSET "UTF-8";
+
+.suggest-user input[type=text] {width: 150px; margin-left: 0.5em;}
+th.cma-narrow, td.cma-narrow {width: 100px; text-align: center !important;}
+.cma-user-related-questions table {margin-bottom: 1em;}

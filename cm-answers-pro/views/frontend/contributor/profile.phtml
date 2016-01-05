@@ -1,0 +1,34 @@
+<?php
+
+CMA_ContributorController::get_header();
+$sidebarEnabled = (CMA_Thread::isSidebarEnabled() && is_active_sidebar('cm-answers-sidebar') AND CMA_Thread::isSidebarContributorEnabled());
+
+?>
+
+<div id="primary" class="content-area cma-content<?php echo ($sidebarEnabled ? ' cma-col-left' : ' full-width'); ?>">
+    <div id="content" role="main" class="site-content">
+    	<div class="cma-main">
+    		<div class="cma-wrapper page type-page hentry">
+    			<div class="entry-content">
+	                <?php the_content() ?>
+	                <?php if( CMA_Thread::isReferralEnabled() && CMA_Thread::getAffiliateCode() ): ?>
+		                <span class="cma_referral_link">
+		                    <a href="http://www.cminds.com/store/answers/?af=<?php echo CMA_Thread::getAffiliateCode() ?>">
+		                        <img src="http://static.cminds.com/wp-content/uploads/download_answer.png" height="22" alt="Code" />
+		                    </a>
+		                </span>
+		            <?php endif; ?>
+	                <div class="cma-clear"></div>
+	            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+/*
+ * CMA-Sidebar
+ */
+if($sidebarEnabled) echo CMA_BaseController::_loadView('answer/widget/sidebar');
+?>
+<?php
+get_footer();

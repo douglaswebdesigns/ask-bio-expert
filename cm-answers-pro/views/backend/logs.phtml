@@ -1,0 +1,108 @@
+<form class="cma-logs-nav" method="GET">
+<input type="hidden" name="page" value="<?php echo CMA_BaseController::ADMIN_LOGS ?>" />
+<?php echo self::getSelectBox('action', self::getNavigationActions(), self::$action);
+?> <?php echo CMA_Settings::__('for'); ?> <?php echo self::getSelectBox('log_type', self::$logTypes, self::$logType); ?>
+<input type="submit" value="OK" class="button" />
+</form>
+
+
+<div class="cma-logs-content">
+<?php
+
+include 'logs/'. $view .'.phtml';
+
+?>
+</div>
+
+
+
+
+
+<style type="text/css">
+
+.cma-logs-nav {margin-top: 1em;}
+.cma-logs-content {margin-top: 1em;}
+#cma-logs-table th select {margin-left: 1em;}
+#cma-logs-table .time {width: 20em;}
+#cma-logs-table .time input {width: 6em; margin: 0; padding-left: 2px; padding-right: 2px;}
+.pagination {text-align: right;}
+#cma-logs-graph {margin-top: 2em;}
+#cma-logs-graph input {padding-left: 1em; padding-right: 1em;}
+#cma-logs-graph input, #cma-logs-graph select {vertical-align: middle;}
+#cma-logs-graph .plot {width: 100%; height: 500px; display: none;}
+</style>
+
+<script type="text/javascript">
+
+jQuery('cma-logs-nav').submit(function() {
+	var form = $(this);
+	var nonce = <?php echo json_encode(sprintf('<input type="hidden" name="%s" value="%s" />', self::PARAM_NONCE, esc_attr(wp_create_nonce(self::NONCE_ACTION)))) ?>;
+	if (form.find('select[name=action]').val() == 'clear') {
+		if (confirm(<?php echo json_encode(CMA_Settings::__('Do you want to erase logs?')); ?>)) {
+			form.append(nonce);
+		} else {
+			return false;
+		}
+	}
+});
+
+</script>
+
+
+<script type="text/javascript">
+// Table
+
+jQuery(function() {
+	jQuery('#cma-logs-table .time input').datepicker({
+		dateFormat: 'yy-mm-dd',
+		closeText: "OK",
+		nextText: "Next",
+		prevText: "Previous",
+		onClose: function () { this.blur(); }
+	});
+});
+
+
+jQuery('#cma-logs-table-filter input, #cma-logs-table-filter select').change(function() {
+	jQuery(this).parents('form').submit();
+});
+
+</script>
+
+<script type="text/javascript">
+// Graph
+
+jQuery('#cma-logs-graph form').submit(function() {
+	var category = jQuery(this).find('select[name=category]').val();
+	var plot = jQuery('#cma-logs-graph .plot');
+	plot.hide();
+	jQuery.ajax(<?php echo json_encode($urlJSON) ?> + "&category="+ category, {
+		success: function(data) {
+			plot.show();
+			jQuery.plot(plot, [data], {
+	            series: {
+	                bars: {
+	                    show: true,
+	                    barWidth: 0.5,
+	                    align: "center"
+	                }
+	            },
+	            xaxis: {
+	                mode: "categories",
+	                tickLength: 0
+	            },
+	            yaxis: {
+	                minTickSize: 1
+	            }
+	        });
+		}
+	});
+	return false;
+}).submit();
+
+jQuery('#cma-logs-graph form select').change(function() {
+	jQuery(this).parents('form').submit();
+});
+
+
+</script>

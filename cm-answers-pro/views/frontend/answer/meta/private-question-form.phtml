@@ -1,0 +1,17 @@
+<fieldset data-title="<?php echo esc_attr(sprintf(CMA_Labels::getLocalized('send_private_question_to'), $user->display_name));
+	?>" data-label-send="<?php echo esc_attr(CMA_Labels::getLocalized('button_send_private_question'));
+	?>" data-label-cancel="<?php echo esc_attr(CMA_Labels::getLocalized('button_cancel_private_question')); ?>">
+	<div class="cma-form-input">
+		<input type="text" size="50" name="title" class="text ui-widget-content ui-corner-all" placeholder="<?php
+			echo esc_attr(CMA_Labels::getLocalized('private_question_enter_title')); ?>" data-limitify="<?php
+			echo esc_attr(CMA_Settings::getOption(CMA_Settings::OPTION_JS_LIMIT_QUESTION_TITLE)); ?>" />
+	</div>
+	<div class="cma-form-input">
+		<textarea id="question-content-form" name="question" cols="50" rows="5" data-limitify="<?php
+			echo esc_attr(CMA_Settings::getOption(CMA_Settings::OPTION_JS_LIMIT_QUESTION_DESCRIPTION));
+			?>" placeholder="<?php echo esc_attr(CMA_Labels::getLocalized('private_question_enter_content')); ?>"></textarea>
+	</div>
+	<input type="hidden" name="user" value="<?php echo $user->ID ?>" />
+	<input type="hidden" name="cma-action" value="private-question-send" />
+	<input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('private_question')); ?>" />
+</fieldset>

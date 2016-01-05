@@ -1,0 +1,11 @@
+<p><?php echo CMA_Labels::getLocalized('no_permissions'); ?></p>
+<p><a href="javascript:history.back(-1)"><?php echo CMA_Labels::getLocalized('back_to_previous_page'); ?></a></p>
+
+<?php
+
+if (!is_user_logged_in() AND CMA_Settings::getOption(CMA_Settings::OPTION_SHOW_LOGIN_WIDGET)) {
+	$widget = true;
+	echo CMA_BaseController::_loadView('answer/widget/login', compact('widget'));
+}
+
+?>

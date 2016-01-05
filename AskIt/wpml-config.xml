@@ -1,0 +1,8 @@
+<wpml-config>
+	<admin-texts>
+		<key name="askit_date_format"/>
+		<key name="askit_seo_home_titletext"/>
+		<key name="askit_seo_home_descriptiontext"/>
+		<key name="askit_seo_home_keywordstext"/>
+	</admin-texts>
+</wpml-config>

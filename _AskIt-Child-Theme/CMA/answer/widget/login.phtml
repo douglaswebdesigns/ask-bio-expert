@@ -1,0 +1,57 @@
+<div class="cma-login">
+
+	<?php if (empty($widget)) {
+		echo '<p>';
+		if (isset($text)) echo $text;
+		else echo CMA_Labels::getLocalized('please_login_to_post_questions') .'.';
+		echo '</p>';
+	} ?>
+	
+	<?php if (CMA_Settings::getOption(CMA_Settings::OPTION_SHOW_LOGIN_FORM)): ?>
+		<div class="cma-login-wp">
+			<?php wp_login_form(); ?>
+		</div>
+	<?php endif; ?>
+	<?php
+	
+	$links = '';
+	$loginPageLinkTitle = CMA_Settings::getOption(CMA_Settings::OPTION_LOGIN_PAGE_LINK_TITLE);
+	if( !empty($loginPageLinkTitle) ) {
+		$links .= sprintf('<li><a href="%s">%s</a></li>', esc_attr(CMA_Settings::getLoginPageURL(get_permalink())), CMA::__($loginPageLinkTitle));
+	}
+	if( CMA_Settings::getOption(CMA_Settings::OPTION_SHOW_REGISTRATION_LINK) ) {
+		$url = CMA_Settings::getOption(CMA_Settings::OPTION_REGISTRATION_URL);
+		if (empty($url) AND function_exists('wp_registration_url')) {
+			$url = wp_registration_url();
+		}
+		if (!empty($url)) {
+			$links .= sprintf('<li><a href="%s">%s</a></li>', esc_attr($url), __('Register'));
+		}
+	}
+	if (!empty($links)) {
+		echo '<ul class="cma-controls">'. $links .'</ul>';
+	}
+	
+	
+	$socialProviders = array('facebook', 'google', 'linkedin', 'twitter', 'live');
+	$socialLoginLinks = array();
+	foreach($socialProviders as $provider)
+	{
+		if( CMA_AuthController::isProviderConfigured($provider) )
+		{
+			$providerimage = CMA_RESOURCE_URL . '/imgs/s_' . $provider . '.png';
+			$redirect = (empty($_GET['widgetCacheId']) ? ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] : CMA::permalink());
+			$socialLoginLinks[] = '<li><img src="' . esc_attr($providerimage) . '"  height="18" alt="'. esc_attr(ucfirst($provider))
+			.'" ><a href="' . esc_attr(CMA_BaseController::getUrl('auth', $provider, array('redirect' => $redirect)))
+			. '" class="cma-' . $provider . '-login">' . ucfirst($provider) . '</a></li>';
+		}
+	}
+	if( !empty($socialLoginLinks) )
+	{
+		echo '<ul class="cma-login-social">
+			<li>' . __('Social Login via', 'cm-answers-pro') . ':</li>';
+		echo implode('', $socialLoginLinks);
+		echo '</ul><div style="clear:left"></div>';
+	}
+	?>
+</div>

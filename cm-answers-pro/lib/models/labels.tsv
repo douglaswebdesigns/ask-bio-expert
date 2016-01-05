@@ -1,0 +1,130 @@
+Questions	Questions	The single "Questions" word occurrences.	General
+Question	Question	The single "Question" word occurrences.	General
+Answers	Answers	The single "Answers" word occurrences.	General
+Answer	Answer	The single "Answer" word occurrences.	General
+index_page_title	Questions	Index page title.	General
+
+mark_as_best_answer	Mark as best answer	Appears on the link to mark the best answer.	Thread
+unmark_best_answer	Unmark best answer	Appears on the link to unmark the best answer.	Thread
+best_answer_remove_other_confirm	Do you want to remove other answers (instead of the best)? Press OK if yes, press Cancel if no.	Confirmation message when marking best answer if the removing option is enabled.	Thread
+best_answer	Best answer	Appears next to best answer.	Thread
+favorite_for_users	Favorite for %d users	Displays the number of users which marked question as favorite.	Thread
+edit_your_answer	Edit your Answer	Appears above the answer form when editing.	Thread
+edit_your_question	Edit your Question	Appears above the question form when editing.	Thread
+add_comment_link	Add comment	Text on the link to add new comment.	Thread
+add_comment_button	Add comment	Text on the button to post new comment.	Thread
+save_comment_button	Save comment	Text on the button to save edited comment.	Thread
+asked_on	Asked on %s	Appears on the question meta box to show posting date. Remember to add %s which will be replaced by date.	Thread
+asked_on_by	asked %s by %s	Appears next to the question on questions index. First occurence of the %s is date, second %s is author name.	Thread
+answered_on	Answered on %s	Appears on the answer meta box to show posting date. Remember to add %s which will be replaced by date.	Thread
+update_on_by	updated %s by %s	Appears next to the question on questions index. First occurence of the %s is date, second %s is author name.	Thread
+update_on	updated %s	Appears next to the question on questions index. Occurence of the %s is date.	Thread
+RESOLVED	RESOLVED	Label for the RESOLVED flag which appears next to the resolved question.	Thread
+private_answer_flag	Private answer	Label for the private answer.	Thread
+votes_col	Votes	Label for the "Votes" column on the questions table.	Thread
+views_col	Views	Label for the "Views" column on the questions table.	Thread
+status_col	Status	Label for the "Status" column on the questions table.	Thread
+questions_col	Questions	Label for the "Questions" column.	Thread
+answers_header	Answers	Label for the "Answers" column on the questions table.	Thread
+votes	votes	Label for the "votes" label.	Thread
+vote	vote	Label for the "vote" label.	Thread
+views	views	Label for the "views" label.	Thread
+view	view	Label for the "view" label.	Thread
+thread_user_related_questions	Related questions	Label for the user's related questions section.	Thread
+thread_ref_id	Question ID:	Label for the question referal number (ID).	Thread
+thread_resolved_success	Thread has been marked as resolved.	Success message after marking thread as resolved.	Thread
+
+
+ask_a_question	Ask a Question	Appears above the question form when adding new question.	Posting
+post_your_answer	Post your Answer	Appears above the answer form when adding new question.	Posting
+enter_question_title	Enter your basic question	Placeholder for question title input field.	Posting
+enter_question_content	Enter more details about your question	Placeholder for question content input field.	Posting
+enter_question_content_optional	Enter more details about your question (optional)	Placeholder for optional question content input field.	Posting
+answer_input_label	Write your Answer here	Label for the answer input field.	Posting
+notify_me_of_follow	Notify me of follow	Label for the option to notify user about new answers.	Posting
+mark_as_resolved	Mark as resolved	Label for the option to resolve thread on posting answer.	Posting
+private_answer	Private answer	Label for the option on the answer form to post answer as a private (visible only for the author of the question).	Posting
+choose_category	Choose category	Placeholder for the dropbox to choose category when posting a question.	Posting
+choose_category_label	Choose category	Label for the categories fields on the question form.	Posting
+user_related_questions_input_label	Related questions:	Label for the user's related questions input.	Posting
+user_related_questions_input_placeholder	Enter related questions links or ids separated by new line.	Label for the user's related questions input placeholder.	Posting
+msg_content_includes_bad_word	Cannot post content because of bad word: %s	Error message when posting a content containing a bad word.	Posting
+msg_post_question_success	New question has been succesfully added.	Success message when the question has been posted.	Posting
+msg_post_question_moderation	Thank you for your question, it has been held for moderation.	Success message when the question has been posted but waiting for moderation.	Posting
+msg_post_question_uniq_error	The same question has been already posted. Please use the "Search" option.	Error when posted same question as existing.	Posting
+
+
+send_private_question	Send private question	Label on the link next to user name to send him a private question.	Private question
+send_private_question_to	Send private question to %s	Label on the form to specyfy user which will receive a private question.	Private question
+private_question_enter_title	Enter your question title	Placeholder for the private question title.	Private question
+private_question_enter_content	Enter more details about your question	Placeholder for the private question content.	Private question
+button_send_private_question	Send	Label on the button to send a private question.	Private question
+button_cancel_private_question	Cancel	Label on the button to cancel posting a private question.	Private question
+private_question_sent_success	Private question has been sent.	Success message after a private question was sent.	Private question
+
+
+
+button_post_your_answer	Post your Answer	Appears on the posting answer button.	Buttons
+button_edit_your_answer	Edit your Answer	Appears on the editing answer button.	Buttons
+button_add_question	Add Question	Appears on the adding question button.	Buttons
+button_edit_question	Save	Appears on the editing question button.	Buttons
+
+
+orderby_newest	Newest	Appears on the Newest sorting link.	Sorting
+orderby_oldest	Oldest	Appears on the Oldest sorting link.	Sorting
+orderby_hottest	Hottest	Appears on the Hottest sorting link.	Sorting
+orderby_most_votes	Most votes	Appears on the Most votes sorting link.	Sorting
+orderby_most_views	Most views	Appears on the Most views sorting link.	Sorting
+orderby_highest_rating	Highest Rating	Appears on the Highest Rating sorting link.	Sorting
+orderby_lowest_rating	Lowest Rating	Appears on the Lowest Rating sorting link.	Sorting
+
+
+all_categories	All categories	Appears on the category select box of the navigation bar.	Navigation
+all_subcategories	All subcategories	Appears on the subcategory select box.	Navigation
+all_questions	All questions	The "All questions" occurrences.	Navigation
+answered_questions	Answered questions	The "Answered questions" occurrences.	Navigation
+unanswered_questions	Unanswered questions	The "Unanswered questions" occurrences.	Navigation
+back_full_questions_list	Back to Full Questions List	Link to return back to the questions list after searching or filtering.	Navigation
+search_questions	Search Questions...	Label for the search input.	Navigation
+back_to_previous_page	Back to Previous Page	Label for the "Back to Previous Page" link.	Navigation
+
+
+Follow	Follow	Label for thread follow button.	Following
+Unfollow	Unfollow	Label for thread unfollow button.	Following
+follow_success	You have been added to the followers of this thread.	Message on enabling thread notifications.	Following
+unfollow_success	You have been removed from the followers of this thread.	Message on disabling thread notifications.	Following
+follow_category	Follow category	Label for category follow button	Following
+unfollow_category	Unfollow category	Label for category unfollow button	Following
+follow_category_header	Follow category	Label for the column header for the follow button.	Following
+follow_category_success	You have been added to the followers of this category.	Message on enabling category notifications.	Following
+unfollow_category_success	You have been removed from the followers of this category.	Message on disabling category notifications.	Following
+dashboard_followed	Followed threads and categories	Title of the user's dashboard with followed threads and categories.	Following
+dashboard_followed_threads	Followed threads	Header of the followed threads in the user's dashboard.	Following
+dashboard_followed_categories	Followed categories	Header of the followed categories in the user's dashboard.	Following
+unfollow_new_threads	Unfollow all new threads	Label for the button to disable following new questions.	Following
+follow_new_threads	Follow all new threads	Label for the button to enable following new questions.	Following
+
+
+report_spam	Report spam	Text on the "Report spam" link.	Spam reporting
+spam_report_sent	Thank you! Spam report has been sent.	Message after successful spam report was send.	Spam reporting
+thread_marked_spam	Marked as spam	Message on thread when marked as spam.	Spam reporting
+answer_marked_spam	Marked as spam	Message on answer when marked as spam.	Spam reporting
+unmark_as_spam	Unmark spam	Unmark content as a spam.	Spam reporting
+
+category	Category	Category label.	Categories
+category_name_header	Category name	Header for the category name column.	Categories
+unanswered_header	Unanswered	Label for the column header for number of unanswered questions in category.	Categories
+last_activity_header	Last activity	Label for the column header for last activity date for category.	Categories
+
+
+please_login_to_optout_newsletter	Please log in to opt-out the newsletter.	Appears on the newsletter's opt-out page when user is not logged-in.	Newsletter
+newsletter_optout_success	You have been successfully removed from newsletter.	Message appears when user opt-out the newsletter.	Newsletter
+newsletter_optout_disabled	The opt-out function is disabled by admin.	Message appears when user is trying to opt-out the newsletter but the option is disabled.	Newsletter
+newsletter_page_title	Opt-out from newsletter	Newsletter's page title	Newsletter
+newsletter_new_therads_disabled_success	The new threads newsletter has been disabled.	Message appears when user disabled the new thread following on the CMA page.	Newsletter
+newsletter_new_therads_enabled_success	The new threads newsletter has been enabled.	Message appears when user enabled the new thread following on the CMA page.	Newsletter
+
+
+please_login_to_post_questions	Please log in to post questions	Appears instead of the question form, on the login widget when user is not logged-in.	Other
+no_questions_found	No questions found.	Appears when no questions found in the category or search.	Other
+no_permissions	You do not have permissions to see this page.	Appears when user or guest is trying to open restricted page (eg. for logged-in users only).	Other

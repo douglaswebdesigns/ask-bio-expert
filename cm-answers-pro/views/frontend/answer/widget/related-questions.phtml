@@ -1,0 +1,8 @@
+<div class="cma-related-questions-widget">
+	<ul><?php foreach ($questions as $thread) {
+		if ($thread AND $thread->isVisible()) {
+			printf('<li><a href="%s"><span>%d</span><span>%s</span></a></li>', $thread->getPermalink(), $thread->getViews(), $thread->getTitle());
+		}
+	}
+	?></ul>
+</div>

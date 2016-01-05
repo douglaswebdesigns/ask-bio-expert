@@ -1,0 +1,42 @@
+<?php
+
+require_once CMA_PATH . '/lib/helpers/SettingsView.php';
+$settingsView = new CMA_SettingsView();
+
+$tabs = apply_filters('cma_settings_pages', CMA_Settings::$categories);
+
+?>
+
+<p class="clear">
+<?php do_action('cma_flash_messages'); ?>
+<?php if( !empty($messages) ):
+	foreach($messages as $message):
+    	?><div class="updated"><p><?php echo $message; ?></p></div><?php
+    endforeach;
+endif; ?>
+
+<?php require('settings/top.phtml'); ?>
+
+<form method="post" enctype="multipart/form-data" id="cm-answers-settings-form">
+    <div id="tabs">
+        <ul><?php foreach ($tabs as $id => $name ): ?>
+            <li><a href="#tab_<?php echo $id; ?>"><?php echo CMA_Settings::__($name); ?></a></li>
+        <?php endforeach; ?></ul>
+
+
+        <?php foreach ($tabs as $id => $name): ?>
+        	<div id="tab_<?php echo $id; ?>" class="cma-tab-content"><?php
+        	
+        	$path = dirname(__FILE__) . '/settings/'. $id .'.phtml';
+        	ob_start();
+        	if (file_exists($path)) require($path);
+        	else echo $settingsView->renderCategory($id);
+        	$output = ob_get_clean();
+        	echo apply_filters('cma_settings_page_content', $output, $id, $name, $path);
+        	
+        	?></div>
+        <?php endforeach; ?>
+    </div>
+    <input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce(CMA_BaseController::ADMIN_SETTINGS)); ?>" />
+    <input type="submit" class="button button-primary" value="<?php echo esc_attr(CMA_Settings::__('Update')); ?>" />
+</form>

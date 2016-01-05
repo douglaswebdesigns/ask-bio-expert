@@ -1,0 +1,16 @@
+<div id="comments" class="comments-area cma-wp-comments-replacement" data-post-id="<?php echo $id; ?>"><?php
+
+$category = CMA_Category::getPostCommentsCategory($id);
+if (!empty($category) AND !empty($category->term_id)) {
+	echo do_shortcode(sprintf('[cma-comments cat=%d post_id=%d form=0 %s ]',
+		$category->term_id,
+		$id,
+		CMA_Settings::getOption(CMA_Settings::OPTION_REPLACE_POST_COMMENTS_SHORTCODE_ATTR)
+	));
+	echo CMA_BaseController::_loadView('answer/widget/question-form', array(
+			'catId' => $category->term_id,
+			'redirectAfterPost' => get_permalink($id) .'#comments'
+		));
+}
+
+?></div>

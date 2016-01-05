@@ -1,0 +1,12 @@
+<div class="cma-rating">
+	<a class="cma-thumbs-up" title="<?php echo esc_attr(CMA::__('Thumbs Up')); ?>">&#9650;</a>
+	<div class="cma-rating-count"><?php echo $rating; ?></div>
+	<a class="cma-thumbs-down" title="<?php echo esc_attr(CMA::__('Thumbs Down')); ?>">&#9660;</a>
+</div>
+
+<a href="" class="cma-question-favorite-link" title="<?php echo esc_attr($favoriteTitle); ?>">
+	<span class="icon">&hearts;</span>
+	<span class="number" title="<?php echo esc_attr($favoriteNumberTitle); ?>">
+		<?php echo $usersFavoriteNumber; ?>
+	</span>
+</a>

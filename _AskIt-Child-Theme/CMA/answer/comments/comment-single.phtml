@@ -1,0 +1,10 @@
+<div class="cma-single-comment" id="cma-comment-id-<?php echo $comment->getId() ?>" data-comment-id="<?php echo $comment->getId() ?>">
+	<div class="cma-comment-inner">
+		<div class="cma-comment-content"><?php echo $comment->getContent(); ?></div>
+		<div class="cma-comment-meta">(<?php echo $comment->getAuthorLink() ?> <?php echo CMA::__('at') ?> <?php echo $comment->getCreationDate(); ?>)</div>
+		<ul class="cma-controls">
+			<?php if ($comment->canEdit()) printf('<li><a href="" class="cma-comment-edit-link">%s</a></li>', CMA::__('Edit')); ?>
+			<?php if ($comment->canDelete()) printf('<li><a href="" class="cma-comment-delete-link" data-nonce="%s">%s</a></li>', wp_create_nonce('cma_comment_delete'), CMA::__('Delete')); ?>
+		</ul>
+	</div>
+</div>

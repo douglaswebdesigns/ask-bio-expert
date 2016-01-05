@@ -1,0 +1,17 @@
+<ul class="cma-controls controls">
+	<?php if( $answer->canEdit() ): ?>
+		<li><a href="<?php echo esc_attr($answer->getEditURL()); ?>" class="cma-answer-edit-link"><?php echo CMA::__('Edit'); ?></a></li>
+	<?php endif; ?>
+	<?php if( $answer->canMarkBestAnswer() ): ?>
+		<li class="cma-mark-best-answer"><a href=""><?php echo CMA_Labels::getLocalized('mark_as_best_answer'); ?></a></li>
+		<?php if( $thread->canUnmarkBestAnswer() ): ?>
+	   		<li class="cma-unmark-best-answer"><a href=""><?php echo CMA_Labels::getLocalized('unmark_best_answer'); ?></a></li>
+   		<?php endif; ?>
+	<?php endif; ?>
+	<?php if (CMA_Settings::canReportSpam()): ?>
+		<li><a href="<?php echo esc_attr($answer->getPermalink()); ?>" class="cma-report-spam"><?php echo CMA_Labels::getLocalized('report_spam') ?></a></li>
+	<?php endif; ?>
+	<?php if (current_user_can('manage_options')): ?>
+		<li><a href="<?php echo esc_attr($answer->getPermalink()); ?>" class="cma-unmark-spam"><?php echo CMA_Labels::getLocalized('unmark_as_spam') ?></a></li>
+	<?php endif; ?>
+</ul>

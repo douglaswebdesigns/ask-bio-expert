@@ -1,0 +1,28 @@
+<?php if (!empty($categories[$parentCategoryId])): ?>
+	<table class="cma-categories-table<?php if (!empty($shortcode)) echo ' cma-shortcode';
+		?><?php if (!empty($widget)) echo ' cma-widget'; ?>"<?php
+		
+		foreach ($displayOptions as $name => $val) {
+			echo ' data-display-'. htmlspecialchars($name) .'="'. intval($val) .'"';
+		}
+		
+		?>>
+		<thead>
+			<tr>
+				<th class="col-category-name"><?php echo CMA_Labels::getLocalized('category_name_header') ?></th>
+				<th class="num col-questions"><?php echo CMA_Labels::getLocalized('questions_col') ?></th>
+				<th class="num col-unanswered"><?php echo CMA_Labels::getLocalized('unanswered_header') ?></th>
+				<th class="num col-answers"><?php echo CMA_Labels::getLocalized('answers_header') ?></th>
+				<th class="col-activity"><?php echo CMA_Labels::getLocalized('last_activity_header') ?></th>
+				<?php if (CMA_Settings::getOption(CMA_Settings::OPTION_ENABLE_CATEGORY_FOLLOWING)): ?>
+					<th class="col-follow"><?php echo CMA_Labels::getLocalized('follow_category_header') ?></th>
+				<?php endif; ?>
+			</tr>
+		</thead>
+		<tbody><?php
+		
+		CMA_AnswerController::writeCategoriesTableBody($categories, $parentCategoryId);
+		
+		?></tbody>
+	</table>
+<?php endif; ?>

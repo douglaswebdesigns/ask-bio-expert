@@ -1,0 +1,184 @@
+<?php include 'sharebox.phtml'; ?>
+
+<div>
+	<p><?php echo CMA_Settings::__('Shortcodes'); ?>:
+		<a href="#" onclick="jQuery('.cma-shortcodes').slideToggle()"><?php echo CMA_Settings::__('Show/Hide'); ?></a></p>
+	<ul class="cma-shortcodes">
+	    <li><?php echo CMA_Settings::__('You can add "My Questions" and "My Answers" profile views per user anywhere on the site by using shortcodes:'); ?>
+	    	<strong>[cma-my-questions]</strong>, <strong>[cma-my-answers]</strong>.
+	    	<?php echo CMA_Settings::__('The AJAX support can be disabled by parameter ajax=0.'); ?>
+	    </li>
+	    <li><?php echo CMA_Settings::__('Generate questions list by using shortcode:'); ?>  <strong>[cma-questions]</strong>.
+	    	<?php echo CMA_Settings::__('"Questions" and "My questions" recognize following additional parameters:'); ?>
+	    	<a href="javascript:void(0)" onclick="jQuery(this).parent().find('ul').slideToggle()"><?php echo CMA_Settings::__('Show/Hide'); ?></a>
+		    <ul style="display:none;list-style-type:disc;margin-left:20px;">
+		        <li><strong>limit</strong> - <?php echo CMA_Settings::__('number of questions/page to display (default: "Questions" 5 | "My questions" -1 [no limit])'); ?></li>
+		        <li><strong>author</strong> - <?php echo CMA_Settings::__('ID of the question author (default: empty) [Question only]'); ?></li>
+		        <li><strong>contributor</strong> - <?php echo CMA_Settings::__('ID of the question author or user who has answered for the question (default: empty) [Question only]'); ?></li>
+		        <li><strong>cat</strong> - <?php echo CMA_Settings::__('slug of category (categories separate by commas) (default: empty)'); ?></li>
+		        <li><strong>answered</strong> - <?php echo CMA_Settings::__('show only unanswered (0) or only answered (1) questions. Default: empty (all questions).'); ?></li>
+		        <li><strong>resolved</strong> - <?php echo CMA_Settings::__('show only unresolved (0) or only resolved (1) questions. Default: empty (all questions).'); ?></li>
+		        <li><strong>sort</strong> - <?php echo CMA_Settings::__('one of following: newest, hottest, views, votes (default: newest)'); ?></li>
+		        <li><strong>form</strong> - <?php echo CMA_Settings::__('add "question form" (default: 0)'); ?></li>
+		        <li><strong>formontop</strong> - <?php echo CMA_Settings::__('display the question form above the questions table (default: 0)'); ?></li>
+		        <li><strong>dateposted</strong> - <?php echo CMA_Settings::__('display the thread posted date (default: 0)'); ?></li>
+		        <li><strong>showcontent</strong> - <?php echo CMA_Settings::__('display the question\'s content below the title (default: 0)'); ?></li>
+		        <li><strong>search</strong> - <?php echo CMA_Settings::__('add "search form" above list (default: 1)'); ?></li>
+		        <li><strong>pagination</strong> - <?php echo CMA_Settings::__('show pagination (default: 1)'); ?></li>
+		        <li><strong>hidequestions</strong> - <?php echo CMA_Settings::__('hides the question list (default: 0)'); ?></li>
+		        <li><strong>votes</strong> - <?php echo CMA_Settings::__('show the number of votes (default: 1)'); ?></li>
+		        <li><strong>views</strong> - <?php echo CMA_Settings::__('show the number of views (default: 1)'); ?></li>
+		        <li><strong>answers</strong> - <?php echo CMA_Settings::__('show the number of answers (default: 1)'); ?></li>
+		        <li><strong>updated</strong> - <?php echo CMA_Settings::__('show the information about question\'s last update (default: 1)'); ?></li>
+		        <li><strong>authorinfo</strong> - <?php echo CMA_Settings::__('show the infformation about question\'s author (default: 1)'); ?></li>
+		        <li><strong>statusinfo</strong> - <?php echo CMA_Settings::__('show the information about question\'s status (default: 0)'); ?></li>
+		        <li><strong>tags</strong> - <?php echo CMA_Settings::__('show questions\' tags (default: 1)'); ?></li>
+		        <li><strong>navbar</strong> - <?php echo CMA_Settings::__('show the full navigation bar (default: 0)'); ?></li>
+		        <li><strong>subtree</strong> - <?php echo CMA_Settings::__('limit the categories filter options only to subcategories of the current category given by the cat parameter (default: 0)'); ?></li>
+		        <li><strong>displaycategories</strong> - <?php echo CMA_Settings::__('display category name next to the question (default: 0)'); ?></li>
+		        <li><strong>ajax</strong> - <?php echo CMA_Settings::__('enable or disable AJAX support (default: 1)'); ?></li>
+		        <li><strong>sortbar</strong> - <?php echo CMA_Settings::__('show the sorting bar (default: 0)'); ?></li>
+		        <li><?php echo CMA_Settings::__('Example'); ?>: <strong>[cma-questions limit="10" author="123" sort="hottest" form="1"]</strong></li>
+		    </ul></li>
+	    <li><?php echo CMA_Settings::__('You can add the Categories table anywhere on the site by using shortcode:'); ?> <strong>[cma-categories questions=1 answers=1 follow=1 header=1 unanswered=1 parent=category]</strong> or <strong>[cma-categories-list]</strong></li>
+	    <li><?php echo CMA_Settings::__('User\'s followed threads and categories:'); ?> <strong>[cma-followed]</strong></li>
+	    <li><?php echo CMA_Settings::__('Question form:'); ?> <strong>[cma-question-form cat=optionalCategory title=0 backlink=1]</strong></li>
+	    <li><?php echo CMA_Settings::__('Questions index similar like on the Answers main page:'); ?> <strong>[cma-index]</strong> - <?php
+	    	echo CMA_Settings::__('Notice: this shortcode is the same as cma-questions and accepts the same parameters. Only difference are the default parameters values.'); ?></li>
+	    <li><?php echo CMA_Settings::__('To attach a YouTube or Vimeo clip to the thread just put the URL in brackets:'); ?> [https://youtu.be/Zkdf3kaso]</li>
+	    <li><strong><?php echo CMA_Settings::__('Notice: shortcodes are case-sensitive.'); ?></strong></li>
+	</ul>
+</div>
+    
+    <?php include dirname(__FILE__) . '/moderation-table.phtml'; ?>
+    
+    <p><?php echo CMA_Settings::__('Link to questions frontend list:'); ?> <a href="<?php echo esc_attr(CMA::permalink());
+    	?>" target="_blank"><?php echo esc_html(CMA::permalink()); ?></a></p>
+    <?php if ($ajaxPage = CMA_Shortcodes::getCustomQuestionsIndexPage($publish = true)): ?>
+    	<p><?php echo CMA_Settings::__('Link to questions frontend list (AJAX):'); ?> <a href="<?php $url = get_permalink($ajaxPage->ID); echo esc_attr($url);
+    		?>" target="_blank"><?php echo esc_html($url); ?></a> (<a href="<?php echo get_edit_post_link($ajaxPage->ID);
+    		?>"><?php echo CMA_Settings::__('Edit page'); ?></a>)</p>
+    <?php endif; ?>
+
+<style type="text/css">
+	#tabs {clear: right;}
+	#cm-answers-settings-form table {border-spacing:0; width: 100%;}
+	#cm-answers-settings-form tr td, #cm-answers-settings-form tr th {padding:10px; border-bottom: solid 1px #f0f0f0; width: 30%;}
+	#cm-answers-settings-form tr th[colspan] {width: 100% !important;}
+	#cm-answers-settings-form table td input[type=text] {width: 90%; min-width: 100px; max-width: 300px;}
+	#cm-answers-settings-form table th {padding-left: 20px; font-weight: normal; text-align: right; vertical-align: top;}
+	#cm-answers-settings-form table td {vertical-align: top;}
+	#cm-answers-settings-form caption {color: #222; font: 600 1.3em verdana; margin: 1em 0; text-align: left;}
+	#cm-answers-settings-form tr:last-child td, #cm-answers-settings-form tr:last-child th {border-bottom: none}
+	#cm-answers-settings-form label {margin-right: 2em;}
+	#cm-answers-settings-form .multiline label {display: block; margin-right: 0 !important;}
+	textarea.cma-custom-css {min-width: 300px; max-width: 840px; width: 70%; height: 200px;}
+	#cm-answers-settings-form .tg-table-plain td, #cm-answers-settings-form .tg-table-plain th { border: 1px #555 solid; padding: 5px;border-collapse: collapse;text-align: center;vertical-align: middle; }
+	#cm-answers-settings-form .cma-tab-content ul {list-style: circle; margin: 1em 0 1em 30px;}
+	#cm-answers-settings-form td ul, #cm-answers-settings-form td li {margin-top: 0 !important; padding: 0; list-style: disc;}
+	.server-info-table td:nth-child(3) {}
+	.server-info-table span {color: green; font-weight: bold;}
+	.server-info-table strong {color: red; font-weight: bold;}
+	h4 {font-weight: bold; margin: 2em 0 0.3em 0;}
+	#authorsAutoApprovedResults {list-style: none; margin: 0 0 0 100px !important; margin-top: -14px; border:solid 1px #ccc; padding:5px !important; width:190px; display: none;}
+	#authorsAutoApprovedResults li {list-style: none !important; margin: 0; padding: 0;}
+	#authorsAutoApprovedSearch {width: 200px;}
+	.cma-frontend-link {font-size: 120%;}
+	.cma-warning {border: 1px solid #dddddd; border-left: 4px solid #ff9900; font-size: 90%; margin: 5px 0 15px; padding: 1px 12px;}
+	.cma-warning p {margin: .5em 0; padding: 2px;}
+	.ac_results {
+	padding: 0.3em;
+	margin: 0;
+	list-style: none;
+	position: absolute;
+	z-index: 10000;
+	display: none;
+	border-width: 1px;
+	border-style: solid;
+	background: white;
+}
+
+.cma-shortcodes {display: none;}
+
+.ac_results li {
+	padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.ac_over {
+	cursor: pointer;
+}
+
+.ac_match {
+	text-decoration: underline;
+}
+	
+</style>
+<script type="text/javascript">
+	jQuery(function ($) {
+		jQuery('#tabs').tabs();
+		jQuery('#tabs ul[role=tablist] a').click(function() {
+			var tab = this.href.substr(this.href.lastIndexOf('#')+1, this.href.length).replace(/_/g, '-');
+			location.hash = tab;
+			$('#cm-answers-settings-form input[name=tab]').val(tab);
+			this.blur();
+		});
+		jQuery('#tabs ul[role=tablist] a[href="'+ location.hash.replace(/\-/g, '_') +'"]').click();
+
+		jQuery('input[name="accessView"]').on('click cmaShowHide', function(){
+			if(jQuery(this).val() === '2' && jQuery(this).is(':checked'))
+			{
+				jQuery('#accessViewRoles').show();
+			}
+			else
+			{
+				jQuery('#accessViewRoles').hide();
+			};
+		}).trigger('cmaShowHide');
+
+		jQuery('input[name="accessPostQuestions"]').on('click cmaShowHide', function(){
+			if(jQuery(this).val() === '2' && jQuery(this).is(':checked'))
+			{
+				jQuery('#accessPostQuestionsRoles').show();
+			}
+			else
+			{
+				jQuery('#accessPostQuestionsRoles').hide();
+			};
+		}).trigger('cmaShowHide');
+
+		jQuery('input[name="accessPostAnswers"]').on('click cmaShowHide', function(){
+			if(jQuery(this).val() === '2' && jQuery(this).is(':checked'))
+			{
+				jQuery('#accessPostAnswersRoles').show();
+			}
+			else
+			{
+				jQuery('#accessPostAnswersRoles').hide();
+			};
+		}).trigger('cmaShowHide');
+
+		$('.settings_access_control select[multiple][name*="_roles"]').each(function() {
+			var obj = $(this);
+			var byRole = <?php echo CMA_Settings::ACCESS_ROLE; ?>;
+			var container = obj.parents('tr');
+			var select = container.prev().find('select[name="'+ obj.attr('name').replace('_roles[]', '') +'"]');
+			if (select.length == 1) {
+				if (select.val() == byRole) {
+					container.show();
+				} else {
+					container.hide();
+				}
+				select.change(function() {
+					if (select.val() == byRole) {
+						container.show();
+					} else {
+						container.hide();
+					}
+				});
+			}
+		});
+		
+	});
+</script>

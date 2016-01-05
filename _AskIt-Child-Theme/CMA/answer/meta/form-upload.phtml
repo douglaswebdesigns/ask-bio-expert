@@ -1,0 +1,32 @@
+<?php
+
+$attachmentMaxFileSize = CMA_Settings::getOption(CMA_Settings::OPTION_ATTACHMENTS_MAX_SIZE);
+if ($maxUploadSize = ini_get('upload_max_filesize')) {
+	$maxFileSize = min(CMA_Thread::units2bytes($maxUploadSize), $attachmentMaxFileSize);
+} else {
+	$maxFileSize = $attachmentMaxFileSize;
+}
+$attachmentLabel = CMA::__('Drag and drop attachments here') .' - '
+		. implode(', ', CMA_Settings::getOption(CMA_Settings::OPTION_ATTACHMENTS_FILE_EXTENSIONS)) . ' (max. ' . number_format($maxFileSize/1024/1024, 1) . ' MB)';
+
+?>
+<div class="cma-form-input">
+	<div class="cma-drop-label"><div><?php echo CMA::__('Drop files here'); ?></div></div>
+	<div class="cma-file-upload">
+		
+		<label>
+			<strong><?php echo CMA::__('Drag and drop attachments here'); ?></strong>
+			<input type="file" name="attachment[]" multiple="multiple" />
+			<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo esc_attr(CMA_Thread::units2bytes($maxFileSize)); ?>" />
+		</label>
+		
+		<?php $extensions = array_filter(CMA_Settings::getOption(CMA_Settings::OPTION_ATTACHMENTS_FILE_EXTENSIONS));
+		if ($extensions): ?>
+			<div class="cma-file-upload-extensions"><?php echo CMA::__('Allowed file types'); ?>: <?php echo implode(',', $extensions); ?></div>
+		<?php endif; ?>
+		<div class="cma-file-upload-maxsize"><?php echo CMA::__('Max file size'); ?>: <?php echo number_format($maxFileSize/1024/1024, 1); ?> MB</div>
+		
+		<ul class="cma-file-upload-list"></ul>
+		
+	</div>
+</div>

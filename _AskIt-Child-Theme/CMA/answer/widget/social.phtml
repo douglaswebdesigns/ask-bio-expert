@@ -1,0 +1,15 @@
+<div class="cma-social-box">
+	<div><iframe src="//www.facebook.com/plugins/like.php?href=<?php echo esc_attr(urlencode(the_permalink())) ?>&amp;width=120&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe></div>
+    <script type="in/share" data-counter="right"></script>
+    <div class="google-plus"><div class="g-plus" data-action="share" data-annotation="bubble"></div></div>
+    <a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php echo esc_attr(get_permalink()); ?>" data-counturl="<?php echo esc_attr(get_permalink()); ?>" data-text="<?php echo esc_attr(get_the_title()); ?>"<?php
+    	$twitterName = CMA_BaseController::getUsersTwitterName($thread->getAuthorId());
+    	if (strlen($twitterName)) {
+			echo ' data-via="'. esc_attr($twitterName) .'" data-related="'. esc_attr($twitterName) .'"';
+		}
+    	?>>Tweet</a>
+    <div><iframe src="//www.facebook.com/plugins/share_button.php?href=<?php echo esc_attr(urlencode(get_permalink())); ?>&amp;layout=button_count" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowTransparency="true" style="border:none; overflow:hidden;" width="120" height="21"></iframe></div>
+</div>
+<script type="text/javascript">
+window.CMA_social_box_enabled = true;
+</script>

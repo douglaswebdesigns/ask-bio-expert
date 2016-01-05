@@ -1,0 +1,59 @@
+<a class="cma-backlink" href="<?php echo esc_attr(CMA::getReferer()); ?>"> &laquo; <?php echo CMA_Labels::getLocalized('back_to_previous_page'); ?></a>
+<h1><?php
+
+$user = get_userdata($user_id);
+echo $user->display_name; ?></h1>
+
+<?php if( CMA_Settings::getOption(CMA_Settings::OPTION_SHOW_GRAVATARS) ) {
+	echo '<a href="' . esc_attr(CMA_Thread::getGravatarLink($user_id)) . '" rel="nofollow">' . get_avatar($user_id) . '</a>'; 
+} ?>
+
+<?php if( !empty($socialLinks) ): ?>
+    <h2><?php _e('Social Profiles', 'cm-answers-pro'); ?>:</h2>
+    <?php
+    foreach($socialLinks as $provider => $link)
+    {
+        $providerimage = CMA_RESOURCE_URL . '/imgs/s_' . $provider . '.png';
+        ?>
+        <a href="<?php echo esc_attr($link); ?>" target="_blank" rel="nofollow"><img src="<?php echo esc_attr($providerimage);
+        	?>" alt="<?php echo esc_attr(ucfirst($provider)) ?>" /></a>
+        <?php
+    }
+    ?>
+<?php endif; ?>
+
+
+<?php if (!CMA_Thread::showOnlyOwnQuestions() OR $user_id == get_current_user_id()): ?>
+	
+	<h2><?php echo CMA_Labels::getLocalized('Questions'); ?>:</h2>
+	<?php
+	$public = true;
+	
+	$displayOptions = array_merge(CMA_Settings::getDisplayOptionsDefaults(), array(
+	    'hideQuestions' => 0,
+	    'tags'          => 0,
+	    'pagination'    => 0,
+	    'form'          => 0,
+	    'categories'    => 0,
+	    'search'        => 0,
+	    'views'         => 1,
+	    'votes'         => 1,
+	    'answers'       => 1,
+		'navbar'        => 0,
+		'sortbar'       => 0,
+	));
+	
+	echo CMA_BaseController::_loadView('answer/widget/questions', compact('questions', 'public', 'displayOptions'));
+	?>
+	
+	<div class="cma-answers-list">
+	    <h2><?php echo CMA_Labels::getLocalized('Answers'); ?>:</h2>
+	    <?php echo do_shortcode(sprintf('[cma-answers author=%d limit=5 ajax=1]', $user->ID)); ?>
+	</div>
+	
+<?php endif; ?>
+
+<?php if( CMA_Thread::isReferralEnabled() && CMA_Thread::getAffiliateCode() ): ?>
+	<span class="cma_referral_link"><a href="http://www.cminds.com/store/answers/?af=<?php echo CMA_Thread::getAffiliateCode();
+		?>"><img src="http://static.cminds.com/wp-content/uploads/download_answer.png" height="22" alt="Code" /></a></span>
+<?php endif; ?>

@@ -1,0 +1,43 @@
+<div class="cma-thread-wrapper">
+
+<?php
+
+get_template_part('cma', 'header');
+get_template_part('cma', 'breadcrumbs');
+if (!empty($displayOptions['navbar'])) {
+	get_template_part('cma', 'navbar');
+}
+get_template_part('cma', 'backlink');
+get_template_part('cma', 'messages');
+get_template_part('cma', 'tags');
+get_template_part('cma', 'social-icons');
+get_template_part('cma', 'thread-ref-id');
+
+do_action('CMA_thread_before', $thread, $displayOptions);
+
+?>
+
+<table class="cma-question-table"<?php echo $data; ?>>
+	<tr>
+		<td class="cma-left-col">
+			<?php get_template_part('cma', 'rating-question'); ?>
+		</td>
+		<td class="cma-question-content">
+			<?php get_template_part('cma', 'question-body-before'); ?>
+			<div class="cma-question-body">
+				<?php echo $content; ?>
+				<?php get_template_part('cma', 'attachments'); ?>
+			</div>
+			<?php get_template_part('cma', 'resolve-question'); ?>
+			<div class="cma-spam-flag"><strong><?php echo CMA_Labels::getLocalized('thread_marked_spam'); ?></strong></div>
+			<?php get_template_part('cma', 'meta-question'); ?>
+			<?php get_template_part('cma', 'user-related-questions'); ?>
+			<?php get_template_part('cma', 'controls-question'); ?>
+			<?php get_template_part('cma', 'comments-question'); ?>
+		</td>
+	</tr>
+</table>
+
+<?php get_template_part('cma', 'answers'); ?>
+
+</div>

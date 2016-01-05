@@ -1,0 +1,1961 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CM Answers Pro v2.4.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-12 10:26+0200\n"
+"PO-Revision-Date: 2014-11-12 10:26+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+
+# @ cm-answers-pro-backend
+msgid "Answers permalink"
+msgstr "Answers permalink"
+
+# @ cm-answers-pro-backend
+msgid "You can replace default \"answers\" slug to whatever you want."
+msgstr "You can replace default \"answers\" slug to whatever you want."
+
+# @ cm-answers-pro-backend
+msgid "Set as homepage"
+msgstr "Set as homepage"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, questions listing will be displayed as your site's homepage."
+msgstr "If enabled, questions listing will be displayed as your site's homepage."
+
+# @ cm-answers-pro-backend
+msgid "Add \"Answers\" to WP Nav Menu"
+msgstr "Add \"Answers\" to WP Nav Menu"
+
+# @ cm-answers-pro-backend
+msgid "You need to have \"wp_nav_menu\" trigger in your template."
+msgstr "You need to have \"wp_nav_menu\" trigger in your template."
+
+# @ cm-answers-pro-backend
+msgid "Disable \"Answers\" page"
+msgstr "Disable \"Answers\" page"
+
+# @ cm-answers-pro-backend
+msgid "Disable the \"Answers\" page completely (it will show 404 instead)."
+msgstr "Disable the \"Answers\" page completely (it will show 404 instead)."
+
+# @ cm-answers-pro-backend
+msgid "Enable the meta tags rewrite"
+msgstr "Enable the meta tags rewrite"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, CMA will add an extra meta-tags for the SEO purpose.<br />If disabled, then the following SEO features will be disabled also.<br /><strong>Note:</strong> meta rewrite uses the output buffering and may cause conflicts with some themes or plugins. If you noticed any issues with the CMA pages displaying, try to turn this option off."
+msgstr "If enabled, CMA will add an extra meta-tags for the SEO purpose.<br />If disabled, then the following SEO features will be disabled also.<br /><strong>Note:</strong> meta rewrite uses the output buffering and may cause conflicts with some themes or plugins. If you noticed any issues with the CMA pages displaying, try to turn this option off."
+
+# @ cm-answers-pro-backend
+msgid "Title bar for index page"
+msgstr "Title bar for index page"
+
+# @ cm-answers-pro-backend
+msgid "Enter text which appears on the browser's title bar on the Answers index page for better search engines positioning. If blank then default title will be used."
+msgstr "Enter text which appears on the browser's title bar on the Answers index page for better search engines positioning. If blank then default title will be used."
+
+# @ cm-answers-pro-backend
+msgid "Meta description for index page"
+msgstr "Meta description for index page"
+
+# @ cm-answers-pro-backend
+msgid "Enter the meta description for the index page for better search engines positioning."
+msgstr "Enter the meta description for the index page for better search engines positioning."
+
+# @ cm-answers-pro-backend
+msgid "Meta keywords"
+msgstr "Meta keywords"
+
+# @ cm-answers-pro-backend
+msgid "Enter the meta keywords for better search engines positioning."
+msgstr "Enter the meta keywords for better search engines positioning."
+
+# @ cm-answers-pro-backend
+msgid "Geolocation API key"
+msgstr "Geolocation API key"
+
+# @ cm-answers-pro-backend
+msgid "Enter an ipinfodb.com IP Location API key to track the downloads locations in logs. If you don't have an API key, <a href=\"http://ipinfodb.com/register.php\" target=\"_blank\">register new account</a>."
+msgstr "Enter an ipinfodb.com IP Location API key to track the downloads locations in logs. If you don't have an API key, <a href=\"http://ipinfodb.com/register.php\" target=\"_blank\">register new account</a>."
+
+# @ cm-answers-pro-backend
+msgid "Questions listing title"
+msgstr "Questions listing title"
+
+# @ cm-answers-pro-backend
+msgid "Define what will appear in CM Answers questions page title."
+msgstr "Define what will appear in CM Answers questions page title."
+
+# @ cm-answers-pro-backend
+msgid "Show number of questions next to category header's title"
+msgstr "Show number of questions next to category header's title"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, number of questions will be added to the category title in the header, for example: Answers (19)."
+msgstr "If enabled, number of questions will be added to the category title in the header, for example: Answers (19)."
+
+# @ cm-answers-pro-backend
+msgid "Show index page title"
+msgstr "Show index page title"
+
+# @ cm-answers-pro-backend
+msgid "Amount of Questions per page"
+msgstr "Amount of Questions per page"
+
+# @ cm-answers-pro-backend
+msgid "Limit of the questions per page."
+msgstr "Limit of the questions per page."
+
+# @ cm-answers-pro-backend
+msgid "Show number of votes for a question"
+msgstr "Show number of votes for a question"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will see rating column, based on chosen votes mode for questions."
+msgstr "If enabled, users will see rating column, based on chosen votes mode for questions."
+
+# @ cm-answers-pro-backend
+msgid "Show number of views for a question"
+msgstr "Show number of views for a question"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will see number of views next to the question name (main Answers page only)."
+msgstr "If enabled, users will see number of views next to the question name (main Answers page only)."
+
+# @ cm-answers-pro-backend
+msgid "Show number of answers for a question"
+msgstr "Show number of answers for a question"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will see number of answers next to the question name (main Answers page only)."
+msgstr "If enabled, users will see number of answers next to the question name (main Answers page only)."
+
+# @ cm-answers-pro-backend
+msgid "Display numbers vertically"
+msgstr "Display numbers vertically"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, the votes, answers and views numbers will displayed vertically. If disabled - horizontally."
+msgstr "If enabled, the votes, answers and views numbers will displayed vertically. If disabled - horizontally."
+
+# @ cm-answers-pro-backend
+msgid "Show information about the author of a question"
+msgstr "Show information about the author of a question"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will see the information about the author of the question next to the question name (main Answers page only)."
+msgstr "If enabled, users will see the information about the author of the question next to the question name (main Answers page only)."
+
+# @ cm-answers-pro-backend
+msgid "Show information about the updates for a question"
+msgstr "Show information about the updates for a question"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will see the information about the last update (the author and time/date) next to the question name (main Answers page only)."
+msgstr "If enabled, users will see the information about the last update (the author and time/date) next to the question name (main Answers page only)."
+
+# @ cm-answers-pro-backend
+msgid "On questions list in \"votes\" box show"
+msgstr "On questions list in \"votes\" box show"
+
+# @ cm-answers-pro-backend
+msgid "If ratings are disabled, this setting will be ignored."
+msgstr "If ratings are disabled, this setting will be ignored."
+
+# @ cm-answers-pro-backend
+msgid "Total number of votes of its answers"
+msgstr "Total number of votes of its answers"
+
+# @ cm-answers-pro-backend
+msgid "Rating of the best answer"
+msgstr "Rating of the best answer"
+
+# @ cm-answers-pro-backend
+msgid "Total number of votes for the question"
+msgstr "Total number of votes for the question"
+
+# @ cm-answers-pro-backend
+msgid "Sum of votes for the question and its answers"
+msgstr "Sum of votes for the question and its answers"
+
+# @ cm-answers-pro-backend
+msgid "Rating of the question"
+msgstr "Rating of the question"
+
+# @ cm-answers-pro-backend
+msgid "Replace \"0\" votes/answers to \"no\""
+msgstr "Replace \"0\" votes/answers to \"no\""
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will see \"no\" instead of 0."
+msgstr "If enabled, users will see \"no\" instead of 0."
+
+# @ cm-answers-pro-backend
+msgid "Sticky questions background color"
+msgstr "Sticky questions background color"
+
+# @ cm-answers-pro-backend
+msgid "You can write color by name: white, red, lightblue. Or you can use html format #CCCCCC, #0000FF etc."
+msgstr "You can write color by name: white, red, lightblue. Or you can use html format #CCCCCC, #0000FF etc."
+
+# @ cm-answers-pro-backend
+msgid "Text below header"
+msgstr "Text below header"
+
+# @ cm-answers-pro-backend
+msgid "You can enter text which will appear below the header of the questions index."
+msgstr "You can enter text which will appear below the header of the questions index."
+
+# @ cm-answers-pro-backend
+msgid "Question form on top"
+msgstr "Question form on top"
+
+# @ cm-answers-pro-backend
+msgid "Display the question form above the questions table (if enabled) or below (if disabled)."
+msgstr "Display the question form above the questions table (if enabled) or below (if disabled)."
+
+# @ cm-answers-pro-backend
+msgid "Show richtext editor for question/answer form"
+msgstr "Show richtext editor for question/answer form"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, the question/answer textarea will be replaced with RichText editor (TinyMCE)."
+msgstr "If enabled, the question/answer textarea will be replaced with RichText editor (TinyMCE)."
+
+# @ cm-answers-pro-backend
+msgid "Show markup box near question/answer form"
+msgstr "Show markup box near question/answer form"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, the box showing the markup and codewrap possibility will appear."
+msgstr "If enabled, the box showing the markup and codewrap possibility will appear."
+
+# @ cm-answers-pro-backend
+msgid "Enable JS limit"
+msgstr "Enable JS limit"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, below input fields will be displayed an information about entered text length and the characters left."
+msgstr "If enabled, below input fields will be displayed an information about entered text length and the characters left."
+
+# @ cm-answers-pro-backend
+msgid "Limit for question title"
+msgstr "Limit for question title"
+
+# @ cm-answers-pro-backend
+msgid "Enter characters limit for a question title. Enter 0 to disable."
+msgstr "Enter characters limit for a question title. Enter 0 to disable."
+
+# @ cm-answers-pro-backend
+msgid "Limit for question description"
+msgstr "Limit for question description"
+
+# @ cm-answers-pro-backend
+msgid "Enter characters limit for a question title. Enter 0 to disable. Works only if rich text editor is disabled."
+msgstr "Enter characters limit for a question title. Enter 0 to disable. Works only if rich text editor is disabled."
+
+# @ cm-answers-pro-backend
+msgid "Limit for question comment"
+msgstr "Limit for question comment"
+
+# @ cm-answers-pro-backend
+msgid "Enter characters limit for a comment to question. Enter 0 to disable."
+msgstr "Enter characters limit for a comment to question. Enter 0 to disable."
+
+# @ cm-answers-pro-backend
+msgid "Limit for answer comment"
+msgstr "Limit for answer comment"
+
+# @ cm-answers-pro-backend
+msgid "Enter characters limit for a comment to answer. Enter 0 to disable."
+msgstr "Enter characters limit for a comment to answer. Enter 0 to disable."
+
+# @ cm-answers-pro-backend
+msgid "Notification option checked by default"
+msgstr "Notification option checked by default"
+
+# @ cm-answers-pro-backend
+msgid "Make the \"Notify me of follow\" option on the question/answer form to be checked by default."
+msgstr "Make the \"Notify me of follow\" option on the question/answer form to be checked by default."
+
+# @ cm-answers-pro-backend
+msgid "Submit button background color"
+msgstr "Submit button background color"
+
+# @ cm-answers-pro-backend
+msgid "Set the custom background for the submit button or leave empty to use default.<br />Example: #66cc66"
+msgstr "Set the custom background for the submit button or leave empty to use default.<br />Example: #66cc66"
+
+# @ cm-answers-pro-backend
+msgid "Escape the &lt;pre&gt; tag content"
+msgstr "Escape the &lt;pre&gt; tag content"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, HTML code inside the &lt;pre&gt; tag will be escaped. If disabled, HTML code inside won't be escaped."
+msgstr "If enabled, HTML code inside the &lt;pre&gt; tag will be escaped. If disabled, HTML code inside won't be escaped."
+
+# @ cm-answers-pro-backend
+msgid "Allowed HTML tags and attributes"
+msgstr "Allowed HTML tags and attributes"
+
+# @ cm-answers-pro-backend
+msgid "Enter list of the allowed tags and it's attributes. Other tags will be escaped from the question or answer content.<br />Separate tags with commas or new lines. Allowed tag's attributes type next to the tag, separated by spaces.<br /><br />Example:<pre>a href title, img src, p style</pre>"
+msgstr "Enter list of the allowed tags and it's attributes. Other tags will be escaped from the question or answer content.<br />Separate tags with commas or new lines. Allowed tag's attributes type next to the tag, separated by spaces.<br /><br />Example:<pre>a href title, img src, p style</pre>"
+
+# @ cm-answers-pro-backend
+msgid "Show navigation bar on the question page"
+msgstr "Show navigation bar on the question page"
+
+# @ cm-answers-pro-backend
+msgid "If disabled, the navigation bar will be not displayed on the single question page."
+msgstr "If disabled, the navigation bar will be not displayed on the single question page."
+
+# @ cm-answers-pro-backend
+msgid "Category filter mode"
+msgstr "Category filter mode"
+
+# @ cm-answers-pro-backend
+msgid "Category filter which displays on the thread list."
+msgstr "Category filter which displays on the thread list."
+
+# @ cm-answers-pro-backend
+msgid "Single select box with categories tree"
+msgstr "Single select box with categories tree"
+
+# @ cm-answers-pro-backend
+msgid "Two-level filter"
+msgstr "Two-level filter"
+
+# @ cm-answers-pro-backend
+msgid "Show breadcrumbs"
+msgstr "Show breadcrumbs"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, the breadcrumbs will be added above the title on the index page and the thread page."
+msgstr "If enabled, the breadcrumbs will be added above the title on the index page and the thread page."
+
+# @ cm-answers-pro-backend
+msgid "Allow to post questions only in subcategories when the two-level categories filter enabled"
+msgstr "Allow to post questions only in subcategories when the two-level categories filter enabled"
+
+# @ cm-answers-pro-backend
+msgid "Works only when two-level categories filter is set.<br />If disabled, users will be able to post questions to any category.<br />If enabled, users will be ale to post questions only in the subcategories."
+msgstr "Works only when two-level categories filter is set.<br />If disabled, users will be able to post questions to any category.<br />If enabled, users will be ale to post questions only in the subcategories."
+
+# @ cm-answers-pro-backend
+msgid "Add a backlink parameter to URL"
+msgstr "Add a backlink parameter to URL"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, the backlink parameter will be added to the thread's permalink to create backlinks. If disbled, plugin will use HTTP referer instead."
+msgstr "If enabled, the backlink parameter will be added to the thread's permalink to create backlinks. If disbled, plugin will use HTTP referer instead."
+
+# @ cm-answers-pro-backend
+msgid "Show login widget"
+msgstr "Show login widget"
+
+# @ cm-answers-pro-backend
+msgid "If disabled, users will not see the login widget with login form and social login links on the CM Answers pages at all."
+msgstr "If disabled, users will not see the login widget with login form and social login links on the CM Answers pages at all."
+
+# @ cm-answers-pro-backend
+msgid "Show WP login form on the login widget"
+msgstr "Show WP login form on the login widget"
+
+# @ cm-answers-pro-backend
+msgid "If disabled, users will not see WP login form on the login widget, but they will see Social Login buttons, if defined."
+msgstr "If disabled, users will not see WP login form on the login widget, but they will see Social Login buttons, if defined."
+
+# @ cm-answers-pro-backend
+msgid "WP login page link title"
+msgstr "WP login page link title"
+
+# @ cm-answers-pro-backend
+msgid "The title of the link which leads to the WP login page if the user is not logged in. Leave blank to disable."
+msgstr "The title of the link which leads to the WP login page if the user is not logged in. Leave blank to disable."
+
+# @ cm-answers-pro-backend
+msgid "WP login page link URL"
+msgstr "WP login page link URL"
+
+# @ cm-answers-pro-backend
+msgid "Enter the custom login page URL if using non-default. Leave blank to use default WP login page."
+msgstr "Enter the custom login page URL if using non-default. Leave blank to use default WP login page."
+
+# @ cm-answers-pro-backend
+msgid "Attributes for shortcode replacing default comments"
+msgstr "Attributes for shortcode replacing default comments"
+
+# @ cm-answers-pro-backend
+msgid "If you replaced the default comments on a post or page, instead of default comments, the questions from chosen category will be displayed using this shortcode attributes. You can use the same attributes like in the cma-questions shortcode."
+msgstr "If you replaced the default comments on a post or page, instead of default comments, the questions from chosen category will be displayed using this shortcode attributes. You can use the same attributes like in the cma-questions shortcode."
+
+# @ cm-answers-pro-backend
+msgid "User's profile custom URL"
+msgstr "User's profile custom URL"
+
+# @ cm-answers-pro-backend
+msgid "Enter the custom URL of the user's profile page, for example if you are using BuddyPress.<br />Leave blank to use default CMA contributor's page.<br /><br />%s - user's nicename<br />%d - user's ID<br />Example: /user/profile/%s (will give /user/profile/admin)."
+msgstr "Enter the custom URL of the user's profile page, for example if you are using BuddyPress.<br />Leave blank to use default CMA contributor's page.<br /><br />%s - user's nicename<br />%d - user's ID<br />Example: /user/profile/%s (will give /user/profile/admin)."
+
+# @ cm-answers-pro-backend
+msgid "Allow questions with no description"
+msgstr "Allow questions with no description"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will be able to post questions without description."
+msgstr "If enabled, users will be able to post questions without description."
+
+# @ cm-answers-pro-backend
+msgid "Enable tags in questions"
+msgstr "Enable tags in questions"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, tags field will appear when submitting a question."
+msgstr "If enabled, tags field will appear when submitting a question."
+
+# @ cm-answers-pro-backend
+msgid "Allow to mark question as favorite"
+msgstr "Allow to mark question as favorite"
+
+# @ cm-answers-pro-backend
+msgid "Enable ratings for questions"
+msgstr "Enable ratings for questions"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will be able to rate questions."
+msgstr "If enabled, users will be able to rate questions."
+
+# @ cm-answers-pro-backend
+msgid "Allow author to resolve thread"
+msgstr "Allow author to resolve thread"
+
+# @ cm-answers-pro-backend
+msgid "If this is enabled, author can mark thread as resolved. You can disable posting answers in the resolved thread."
+msgstr "If this is enabled, author can mark thread as resolved. You can disable posting answers in the resolved thread."
+
+# @ cm-answers-pro-backend
+msgid "Show only users own questions"
+msgstr "Show only users own questions"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, user will be able to display only questions that he posted."
+msgstr "If enabled, user will be able to display only questions that he posted."
+
+# @ cm-answers-pro-backend
+msgid "Allow answers after the question has been resolved"
+msgstr "Allow answers after the question has been resolved"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will be able to post answers even after the question was resolved."
+msgstr "If enabled, users will be able to post answers even after the question was resolved."
+
+# @ cm-answers-pro-backend
+msgid "Enable ratings for answers"
+msgstr "Enable ratings for answers"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will be able to rate answers and will see the number of answers next to the question name (main Answers page only)."
+msgstr "If enabled, users will be able to rate answers and will see the number of answers next to the question name (main Answers page only)."
+
+# @ cm-answers-pro-backend
+msgid "Enable marking as the best answer"
+msgstr "Enable marking as the best answer"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, author will be able to mark the best answer for his question which will be highlighted."
+msgstr "If enabled, author will be able to mark the best answer for his question which will be highlighted."
+
+# @ cm-answers-pro-backend
+msgid "Allow private answers"
+msgstr "Allow private answers"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, user will be allowed to post answers which can be viewed only by the author of the question."
+msgstr "If enabled, user will be allowed to post answers which can be viewed only by the author of the question."
+
+# @ cm-answers-pro-backend
+msgid "Private answer background color"
+msgstr "Private answer background color"
+
+# @ cm-answers-pro-backend
+msgid "CSS color for the .cma-answer-private selector."
+msgstr "CSS color for the .cma-answer-private selector."
+
+# @ cm-answers-pro-backend
+msgid "Enable spam reporting for questions/answers"
+msgstr "Enable spam reporting for questions/answers"
+
+# @ cm-answers-pro-backend
+msgid "Allow guests to report a spam"
+msgstr "Allow guests to report a spam"
+
+# @ cm-answers-pro-backend
+msgid "If set to Yes then non-logged users also will can send a spam report."
+msgstr "If set to Yes then non-logged users also will can send a spam report."
+
+# @ cm-answers-pro-backend
+msgid "Send spam report to an email address"
+msgstr "Send spam report to an email address"
+
+# @ cm-answers-pro-backend
+msgid "Multiple addresses separate by comma."
+msgstr "Multiple addresses separate by comma."
+
+# @ cm-answers-pro-backend
+msgid "Spam report email subject"
+msgstr "Spam report email subject"
+
+# @ cm-answers-pro-backend
+msgid "You can use the following tokens: [blogname], [url], [title], [author], [content], [user], [datetime], [trash], [spam]."
+msgstr "You can use the following tokens: [blogname], [url], [title], [author], [content], [user], [datetime], [trash], [spam]."
+
+# @ cm-answers-pro-backend
+msgid "Spam report email template"
+msgstr "Spam report email template"
+
+# @ cm-answers-pro-backend
+msgid "Enable the question comments"
+msgstr "Enable the question comments"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users except normal answers will be able to post comments to the question."
+msgstr "If enabled, users except normal answers will be able to post comments to the question."
+
+# @ cm-answers-pro-backend
+msgid "Enable the answer comments"
+msgstr "Enable the answer comments"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will be able to post comments to the answers."
+msgstr "If enabled, users will be able to post comments to the answers."
+
+# @ cm-answers-pro-backend
+msgid "Increment number of views every time the page is refreshed"
+msgstr "Increment number of views every time the page is refreshed"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, views counter will be increased every time the page is refreshed. If disabled, cookie will be set to block user from increasing the counter on current machine."
+msgstr "If enabled, views counter will be increased every time the page is refreshed. If disabled, cookie will be set to block user from increasing the counter on current machine."
+
+# @ cm-answers-pro-backend
+msgid "Enable negative ratings"
+msgstr "Enable negative ratings"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, users will be able to give \"thumbs down\" for an answer. If previous settings is disabled, this will be ignored."
+msgstr "If enabled, users will be able to give \"thumbs down\" for an answer. If previous settings is disabled, this will be ignored."
+
+# @ cm-answers-pro-backend
+msgid "Editing question or answer by its author"
+msgstr "Editing question or answer by its author"
+
+# @ cm-answers-pro-backend
+msgid "Choose the mode of editing questions and answers."
+msgstr "Choose the mode of editing questions and answers."
+
+# @ cm-answers-pro-backend
+msgid "Disallowed"
+msgstr "Disallowed"
+
+# @ cm-answers-pro-backend
+msgid "Within one hour"
+msgstr "Within one hour"
+
+# @ cm-answers-pro-backend
+msgid "Within one day"
+msgstr "Within one day"
+
+# @ cm-answers-pro-backend
+msgid "Anytime"
+msgstr "Anytime"
+
+# @ cm-answers-pro-backend
+msgid "Allow to edit resolved questions or its answers"
+msgstr "Allow to edit resolved questions or its answers"
+
+# @ cm-answers-pro-backend
+msgid "If this is enabled, user can edit resolved questions and answers of a resolved question."
+msgstr "If this is enabled, user can edit resolved questions and answers of a resolved question."
+
+# @ cm-answers-pro-backend
+msgid "Allow user to vote for content posted by himself"
+msgstr "Allow user to vote for content posted by himself"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, user can vote for a question or answer posted by himself."
+msgstr "If enabled, user can vote for a question or answer posted by himself."
+
+# @ cm-answers-pro-backend
+msgid "Allow attachments in questions"
+msgstr "Allow attachments in questions"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, user will be able to upload files which will be attached to the posted question."
+msgstr "If enabled, user will be able to upload files which will be attached to the posted question."
+
+# @ cm-answers-pro-backend
+msgid "Allow attachments in answer"
+msgstr "Allow attachments in answer"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, user will be able to upload files which will be attached to the posted answer."
+msgstr "If enabled, user will be able to upload files which will be attached to the posted answer."
+
+# @ cm-answers-pro-backend
+msgid "Allowed attachment file types"
+msgstr "Allowed attachment file types"
+
+# @ cm-answers-pro-backend
+msgid "Comma-separated list of allowed attachment file types. Leave empty to disable. (example: zip,doc,docx)."
+msgstr "Comma-separated list of allowed attachment file types. Leave empty to disable. (example: zip,doc,docx)."
+
+# @ cm-answers-pro-backend
+msgid "Allowed attachment max size (in bytes)"
+msgstr "Allowed attachment max size (in bytes)"
+
+# @ cm-answers-pro-backend
+msgid "Max size in bytes of attachment. Cannot exceed server max, which is: 2M where 1M equals to 1,048,576 bytes."
+msgstr "Max size in bytes of attachment. Cannot exceed server max, which is: 2M where 1M equals to 1,048,576 bytes."
+
+# @ cm-answers-pro-backend
+msgid "Enable private questions"
+msgstr "Enable private questions"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, each user will be able to send private question to the other user. Question will be send by email, using recipient's email address from Wordpress and put sender's email in the Reply-To header, so recipient will be able to reply directly to the sender's email address, bypassing the Wordpress."
+msgstr "If enabled, each user will be able to send private question to the other user. Question will be send by email, using recipient's email address from Wordpress and put sender's email in the Reply-To header, so recipient will be able to reply directly to the sender's email address, bypassing the Wordpress."
+
+# @ cm-answers-pro-backend
+msgid "Email subject"
+msgstr "Email subject"
+
+# @ cm-answers-pro-backend
+msgid "Private question will be send by email with this subject."
+msgstr "Private question will be send by email with this subject."
+
+# @ cm-answers-pro-backend
+msgid "Email template"
+msgstr "Email template"
+
+# @ cm-answers-pro-backend
+msgid "Private question will be send by email using this template.<br />You can use following tokens: [blogname], [username], [title], [question]."
+msgstr "Private question will be send by email using this template.<br />You can use following tokens: [blogname], [username], [title], [question]."
+
+# @ cm-answers-pro-backend
+msgid "Auto-approve new questions"
+msgstr "Auto-approve new questions"
+
+# @ cm-answers-pro-backend
+msgid "This option overrides following options. Turning this option ON - turnes OFF the question moderation."
+msgstr "This option overrides following options. Turning this option ON - turnes OFF the question moderation."
+
+# @ cm-answers-pro-backend
+msgid "Simulate comment add when question is added"
+msgstr "Simulate comment add when question is added"
+
+# @ cm-answers-pro-backend
+msgid "Try to add questions as if they were comments. Tip: Triggers external spam filtering functions for comments (e.g. Akismet)."
+msgstr "Try to add questions as if they were comments. Tip: Triggers external spam filtering functions for comments (e.g. Akismet)."
+
+# @ cm-answers-pro-backend
+msgid "Auto-approve answers"
+msgstr "Auto-approve answers"
+
+# @ cm-answers-pro-backend
+msgid "Auto-approve new comments"
+msgstr "Auto-approve new comments"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, comments will appear in the thread without moderation. In disabled, admin must approve every comment before it will be visible."
+msgstr "If enabled, comments will appear in the thread without moderation. In disabled, admin must approve every comment before it will be visible."
+
+# @ cm-answers-pro-backend
+msgid "Auto-approve content from following users"
+msgstr "Auto-approve content from following users"
+
+# @ cm-answers-pro-backend
+msgid "Who can view questions"
+msgstr "Who can view questions"
+
+# @ cm-answers-pro-backend
+msgid "Everyone"
+msgstr "Everyone"
+
+# @ cm-answers-pro-backend
+msgid "Logged in users"
+msgstr "Logged in users"
+
+# @ cm-answers-pro-backend
+msgid "By role"
+msgstr "By role"
+
+# @ cm-answers-pro-backend
+msgid "Which roles can view questions"
+msgstr "Which roles can view questions"
+
+# @ cm-answers-pro-backend
+msgid "Works only if chosen \"By role\" access."
+msgstr "Works only if chosen \"By role\" access."
+
+# @ cm-answers-pro-backend
+msgid "CMA_Settings"
+msgstr "CMA_Settings"
+
+# @ cm-answers-pro-backend
+msgid "getRolesOptions"
+msgstr "getRolesOptions"
+
+# @ cm-answers-pro-backend
+msgid "Who can post questions"
+msgstr "Who can post questions"
+
+# @ cm-answers-pro-backend
+msgid "Which roles can post questions"
+msgstr "Which roles can post questions"
+
+# @ cm-answers-pro-backend
+msgid "Who can post answers"
+msgstr "Who can post answers"
+
+# @ cm-answers-pro-backend
+msgid "Which roles can post answers"
+msgstr "Which roles can post answers"
+
+# @ cm-answers-pro-backend
+msgid "Who can post comments"
+msgstr "Who can post comments"
+
+# @ cm-answers-pro-backend
+msgid "Which roles can post comments"
+msgstr "Which roles can post comments"
+
+# @ cm-answers-pro-backend
+msgid "Which roles can post content with full HTML support"
+msgstr "Which roles can post content with full HTML support"
+
+# @ cm-answers-pro-backend
+msgid "Other roles' posts will be filtered from HTML tags containing URLs, scripts and unsupported tags."
+msgstr "Other roles' posts will be filtered from HTML tags containing URLs, scripts and unsupported tags."
+
+# @ cm-answers-pro-backend
+msgid "Email address for the admin notifications"
+msgstr "Email address for the admin notifications"
+
+# @ cm-answers-pro-backend
+msgid "Separate e-mail addresses by commas or leave empty to disable."
+msgstr "Separate e-mail addresses by commas or leave empty to disable."
+
+# @ cm-answers-pro-backend
+msgid "Add all users as new thread followers"
+msgstr "Add all users as new thread followers"
+
+# @ cm-answers-pro-backend
+msgid "When posting new question, mark all users as thread followers. Until user won't unfollow the thread he will receive notifications about new answers."
+msgstr "When posting new question, mark all users as thread followers. Until user won't unfollow the thread he will receive notifications about new answers."
+
+# @ cm-answers-pro-backend
+msgid "Enable notification for admin"
+msgstr "Enable notification for admin"
+
+# @ cm-answers-pro-backend
+msgid "Notify all users"
+msgstr "Notify all users"
+
+# @ cm-answers-pro-backend
+msgid "Send notification email to all users after a new question will be posted.<br /><strong>Warning: all Wordpress users will receive an email.</strong>"
+msgstr "Send notification email to all users after a new question will be posted.<br /><strong>Warning: all Wordpress users will receive an email.</strong>"
+
+# @ cm-answers-pro-backend
+msgid "Subject of the notification email"
+msgstr "Subject of the notification email"
+
+# @ cm-answers-pro-backend
+msgid "Category subscribers and admin will receive a notification email with this subject."
+msgstr "Category subscribers and admin will receive a notification email with this subject."
+
+# @ cm-answers-pro-backend
+msgid "Content of the admin notification email"
+msgstr "Content of the admin notification email"
+
+# @ cm-answers-pro-backend
+msgid "Category subscribers and admin will receive a notification email with this content.<br /><br />[blogname] - Name of the site<br />[author] - Author of the question<br />[question_title] - Title of the question<br />[question_status] - Approval status of the question (pending, approved)<br />[question_link] - Link to the new question"
+msgstr "Category subscribers and admin will receive a notification email with this content.<br /><br />[blogname] - Name of the site<br />[author] - Author of the question<br />[question_title] - Title of the question<br />[question_status] - Approval status of the question (pending, approved)<br />[question_link] - Link to the new question"
+
+# @ cm-answers-pro-backend
+msgid "Send notification email to all users after a new answer will be posted.<br /><strong>Warning: all Wordpress users will receive an email.</strong>"
+msgstr "Send notification email to all users after a new answer will be posted.<br /><strong>Warning: all Wordpress users will receive an email.</strong>"
+
+# @ cm-answers-pro-backend
+msgid "Subscribers and admin will receive a notification email with this subject.<br />(Subscribers are users who have checked the \"Notify me of follow\" option or following the question thread or whole category.)"
+msgstr "Subscribers and admin will receive a notification email with this subject.<br />(Subscribers are users who have checked the \"Notify me of follow\" option or following the question thread or whole category.)"
+
+# @ cm-answers-pro-backend
+msgid "Content of the notification email"
+msgstr "Content of the notification email"
+
+# @ cm-answers-pro-backend
+msgid "Subscribers and admin will receive a notification email with this content.<br /><br />You can use the following shortcodes:<br />[blogname] - Name of the site<br />[question_title] - Title of the question<br />[comment_link] - Link to the new answer"
+msgstr "Subscribers and admin will receive a notification email with this content.<br /><br />You can use the following shortcodes:<br />[blogname] - Name of the site<br />[question_title] - Title of the question<br />[comment_link] - Link to the new answer"
+
+# @ cm-answers-pro-backend
+msgid "Enable notification for subscribers"
+msgstr "Enable notification for subscribers"
+
+# @ cm-answers-pro-backend
+msgid "Subscribers are users who have checked the \"Notify me of follow\" option or following the question thread/whole category."
+msgstr "Subscribers are users who have checked the \"Notify me of follow\" option or following the question thread/whole category."
+
+# @ cm-answers-pro-backend
+msgid "Subscribers and admin will receive a notification email with this subject."
+msgstr "Subscribers and admin will receive a notification email with this subject."
+
+# @ cm-answers-pro-backend
+msgid "Subscribers and admin will receive a notification email with this content.<br /><br />You can use the following shortcodes:<br />[blogname] - Name of the site<br />[question_title] - Title of the question<br />[comment_link] - Link to the new comment"
+msgstr "Subscribers and admin will receive a notification email with this content.<br /><br />You can use the following shortcodes:<br />[blogname] - Name of the site<br />[question_title] - Title of the question<br />[comment_link] - Link to the new comment"
+
+# @ cm-answers-pro-backend
+msgid "Enable thread following"
+msgstr "Enable thread following"
+
+# @ cm-answers-pro-backend
+msgid "If disabled, the \"Notify me of follow\" and the \"Follow\" options will be not available and the notifications about new answers and comments won't be send."
+msgstr "If disabled, the \"Notify me of follow\" and the \"Follow\" options will be not available and the notifications about new answers and comments won't be send."
+
+# @ cm-answers-pro-backend
+msgid "Enable category following"
+msgstr "Enable category following"
+
+# @ cm-answers-pro-backend
+msgid "Category following allow users to receive notifications about all new threads added to the category and its subcategories."
+msgstr "Category following allow users to receive notifications about all new threads added to the category and its subcategories."
+
+# @ cm-answers-pro-backend
+msgid "Action on question post"
+msgstr "Action on question post"
+
+# @ cm-answers-pro-backend
+msgid "Choose what action to do when user posted a question."
+msgstr "Choose what action to do when user posted a question."
+
+# @ cm-answers-pro-backend
+msgid "disable"
+msgstr "disable"
+
+# @ cm-answers-pro-backend
+msgid "grant"
+msgstr "grant"
+
+# @ cm-answers-pro-backend
+msgid "charge"
+msgstr "charge"
+
+# @ cm-answers-pro-backend
+msgid "Number of points to grant/charge on question post"
+msgstr "Number of points to grant/charge on question post"
+
+# @ cm-answers-pro-backend
+msgid "Action on answer post"
+msgstr "Action on answer post"
+
+# @ cm-answers-pro-backend
+msgid "Choose what action to do when user posted an answer."
+msgstr "Choose what action to do when user posted an answer."
+
+# @ cm-answers-pro-backend
+msgid "Number of points to grant/charge on answer post"
+msgstr "Number of points to grant/charge on answer post"
+
+# @ cm-answers-pro-backend
+msgid "Before questions table"
+msgstr "Before questions table"
+
+# @ cm-answers-pro-backend
+msgid "Enter the AdSense JavaScript code, a Wordpress shortcode or any HTML source."
+msgstr "Enter the AdSense JavaScript code, a Wordpress shortcode or any HTML source."
+
+# @ cm-answers-pro-backend
+msgid "After questions table"
+msgstr "After questions table"
+
+# @ cm-answers-pro-backend
+msgid "Before question"
+msgstr "Before question"
+
+# @ cm-answers-pro-backend
+msgid "Between question and answers"
+msgstr "Between question and answers"
+
+# @ cm-answers-pro-backend
+msgid "Between answers and the answer form"
+msgstr "Between answers and the answer form"
+
+# @ cm-answers-pro-backend
+msgid "After the answer form"
+msgstr "After the answer form"
+
+# @ cm-answers-pro-backend
+msgid "General"
+msgstr "Ogólne"
+
+# @ cm-answers-pro-backend
+msgid "SEO"
+msgstr "SEO"
+
+# @ cm-answers-pro-backend
+msgid "Other"
+msgstr "Inne"
+
+# @ cm-answers-pro-backend
+msgid "Appearance"
+msgstr "Wygląd"
+
+# @ cm-answers-pro-backend
+msgid "Index page"
+msgstr "Indeks pytań"
+
+# @ cm-answers-pro-backend
+msgid "Editor"
+msgstr "Edytor"
+
+# @ cm-answers-pro-backend
+msgid "Navigation"
+msgstr "Nawigacja"
+
+# @ cm-answers-pro-backend
+msgid "Miscellaneous"
+msgstr "Różne"
+
+# @ cm-answers-pro-backend
+msgid "Thread"
+msgstr "Wątek"
+
+# @ cm-answers-pro-backend
+msgid "Questions"
+msgstr "Pytania"
+
+# @ cm-answers-pro-backend
+msgid "Answers"
+msgstr "Odpowiedzi"
+
+# @ cm-answers-pro-backend
+msgid "Comments"
+msgstr "Komentarze"
+
+# @ cm-answers-pro-backend
+msgid "Common"
+msgstr "Wspólne"
+
+# @ cm-answers-pro-backend
+msgid "Attachments"
+msgstr "Załączniki"
+
+# @ cm-answers-pro-backend
+msgid "Spam reporting"
+msgstr "Raportowanie spamu"
+
+# @ cm-answers-pro-backend
+msgid "Private questions"
+msgstr "Prywatne pytania"
+
+# @ cm-answers-pro-backend
+msgid "Labels"
+msgstr "Etykiety"
+
+# @ cm-answers-pro-backend
+msgid "Moderation"
+msgstr "Moderacja"
+
+# @ cm-answers-pro-backend
+msgid "Access Control"
+msgstr "Kontrola dostępu"
+
+# @ cm-answers-pro-backend
+msgid "Notifications"
+msgstr "Powiadomienia"
+
+# @ cm-answers-pro-backend
+msgid "New questions"
+msgstr "Nowe pytania"
+
+# @ cm-answers-pro-backend
+msgid "New answers"
+msgstr "Nowa odpowiedzi"
+
+# @ cm-answers-pro-backend
+msgid "New comments"
+msgstr "Nowe komentarze"
+
+# @ cm-answers-pro-backend
+msgid "Disclaimer"
+msgstr "Regulamin"
+
+# @ cm-answers-pro-backend
+msgid "Social Login"
+msgstr "Logowanie społecznościowe"
+
+# @ cm-answers-pro-backend
+msgid "Sidebar"
+msgstr "Kolumna"
+
+# @ cm-answers-pro-backend
+msgid "Referrals"
+msgstr "Polecenia"
+
+# @ cm-answers-pro-backend
+msgid "Advertisements"
+msgstr "Reklamy"
+
+# @ cm-answers-pro-backend
+msgid "Thread page"
+msgstr "Strona wątku"
+
+# @ cm-answers-pro-backend
+msgid "Custom CSS"
+msgstr "Dodatkowy CSS"
+
+# @ cm-answers-pro-backend
+msgid "Server Information"
+msgstr "Serwer"
+
+# @ cm-answers-pro-backend
+msgid "Shortcodes"
+msgstr "Krótkie kody"
+
+# @ cm-answers-pro-backend
+msgid "Show/Hide"
+msgstr "Pokaż/Ukryj"
+
+# @ cm-answers-pro-backend
+msgid "You can add \"My Questions\" and \"My Answers\" profile views per user anywhere on the site by using shortcodes:"
+msgstr "You can add \"My Questions\" and \"My Answers\" profile views per user anywhere on the site by using shortcodes:"
+
+# @ cm-answers-pro-backend
+msgid "The AJAX support can be disabled by parameter ajax=0."
+msgstr "The AJAX support can be disabled by parameter ajax=0."
+
+# @ cm-answers-pro-backend
+msgid "Generate questions list by using shortcode:"
+msgstr "Generate questions list by using shortcode:"
+
+# @ cm-answers-pro-backend
+msgid "\"Questions\" and \"My questions\" recognize following additional parameters:"
+msgstr "\"Questions\" and \"My questions\" recognize following additional parameters:"
+
+# @ cm-answers-pro-backend
+msgid "Replace comments with the CM Answers category"
+msgstr "Replace comments with the CM Answers category"
+
+# @ cm-answers-pro-backend
+msgid "disabled"
+msgstr "disabled"
+
+# @ cm-answers-pro-backend
+msgid "Create new category"
+msgstr "Create new category"
+
+# @ cm-answers-pro-backend
+msgid "New category name"
+msgstr "New category name"
+
+# @ cm-answers-pro-backend
+msgid "Show from last"
+msgstr "Show from last"
+
+# @ cm-answers-pro-backend
+msgid "Time from"
+msgstr "Time from"
+
+# @ cm-answers-pro-backend
+msgid "User's email"
+msgstr "User's email"
+
+# @ cm-answers-pro-backend
+msgid "IP address"
+msgstr "IP address"
+
+# @ cm-answers-pro-backend
+msgid "Country"
+msgstr "Country"
+
+# @ cm-answers-pro-backend
+msgid "Next page"
+msgstr "Next page"
+
+# @ cm-answers-pro-backend
+msgid "Previous page"
+msgstr "Previous page"
+
+# @ cm-answers-pro-backend
+msgid "up"
+msgstr "up"
+
+# @ cm-answers-pro-backend
+msgid "down"
+msgstr "down"
+
+# @ cm-answers-pro-backend
+msgid "to"
+msgstr "to"
+
+# @ cm-answers-pro-backend
+msgid "User"
+msgstr "User"
+
+# @ cm-answers-pro-backend
+msgid "week"
+msgstr "week"
+
+# @ cm-answers-pro-backend
+msgid "month"
+msgstr "month"
+
+# @ cm-answers-pro-backend
+msgid "year"
+msgstr "year"
+
+# @ cm-answers-pro-backend
+msgid "Vote"
+msgstr "Vote"
+
+# @ cm-answers-pro-backend
+msgid "Restrict access to chosen roles"
+msgstr "Restrict access to chosen roles"
+
+# @ cm-answers-pro-backend
+msgid "No"
+msgstr "No"
+
+# @ cm-answers-pro-backend
+msgid "Yes"
+msgstr "Yes"
+
+# @ cm-answers-pro-backend
+msgid "Choose roles which will have access to the category. If no roles selected, then every user can view it."
+msgstr "Choose roles which will have access to the category. If no roles selected, then every user can view it."
+
+# @ cm-answers-pro-backend
+msgid "Show number of questions and answers next to username"
+msgstr "Show number of questions and answers next to username"
+
+# @ cm-answers-pro-backend
+msgid "If enabled, number of questions and answers posted by user will be displayed on answers page next to username."
+msgstr "If enabled, number of questions and answers posted by user will be displayed on answers page next to username."
+
+# @ cm-answers-pro-backend
+msgid "Show gravatar photos"
+msgstr "Show gravatar photos"
+
+# @ cm-answers-pro-backend
+msgid "If this is enabled, photos from gravatar (http://www.gravatar.com/) will be shown next to user name and in his profile page."
+msgstr "If this is enabled, photos from gravatar (http://www.gravatar.com/) will be shown next to user name and in his profile page."
+
+# @ cm-answers-pro-backend
+msgid "Show social share icons in question page"
+msgstr "Show social share icons in question page"
+
+# @ cm-answers-pro-backend
+msgid "If this is enabled, social media links (Facebook, Linkedin, G+, Twitter) will be shown in the question page."
+msgstr "If this is enabled, social media links (Facebook, Linkedin, G+, Twitter) will be shown in the question page."
+
+# @ cm-answers-pro-backend
+msgid "date"
+msgstr "date"
+
+# @ cm-answers-pro-backend
+msgid "votes"
+msgstr "votes"
+
+# @ cm-answers-pro-backend
+msgid "Sort answers by"
+msgstr "Sort answers by"
+
+# @ cm-answers-pro-backend
+msgid "Default: by date."
+msgstr "Default: by date."
+
+# @ cm-answers-pro-backend
+msgid "Ascending order (oldest or lowest rate first)"
+msgstr "Ascending order (oldest or lowest rate first)"
+
+# @ cm-answers-pro-backend
+msgid "Descending order (newest or highest rate first)"
+msgstr "Descending order (newest or highest rate first)"
+
+# @ cm-answers-pro-backend
+msgid "Sort answers in"
+msgstr "Sort answers in"
+
+# @ cm-answers-pro-backend
+msgid "Specify how answers to a question should be sorted (default: descending)."
+msgstr "Specify how answers to a question should be sorted (default: descending)."
+
+# @ cm-answers-pro-backend
+msgid "Place your styles here to override any CSS rule of the plugin."
+msgstr "Place your styles here to override any CSS rule of the plugin."
+
+# @ cm-answers-pro-backend
+msgid "Typical style modifications"
+msgstr "Typical style modifications"
+
+# @ cm-answers-pro-backend
+msgid "Click on the red value to change it. Press \"Add\" button to add custom CSS to the textarea."
+msgstr "Click on the red value to change it. Press \"Add\" button to add custom CSS to the textarea."
+
+# @ cm-answers-pro-backend
+msgid "Change background for wrapper"
+msgstr "Change background for wrapper"
+
+# @ cm-answers-pro-backend
+msgid "Change background for content"
+msgstr "Change background for content"
+
+# @ cm-answers-pro-backend
+msgid "Change header's title"
+msgstr "Change header's title"
+
+# @ cm-answers-pro-backend
+msgid "Right side widget font size and color"
+msgstr "Right side widget font size and color"
+
+# @ cm-answers-pro-backend
+msgid "Question font size in question page"
+msgstr "Question font size in question page"
+
+# @ cm-answers-pro-backend
+msgid "Size of Answers in question page"
+msgstr "Size of Answers in question page"
+
+# @ cm-answers-pro-backend
+msgid "Best Answer font size"
+msgstr "Best Answer font size"
+
+# @ cm-answers-pro-backend
+msgid "Best Answer icon size"
+msgstr "Best Answer icon size"
+
+# @ cm-answers-pro-backend
+msgid "Hide rating column"
+msgstr "Hide rating column"
+
+# @ cm-answers-pro-backend
+msgid "Questions font size (on questions table)"
+msgstr "Questions font size (on questions table)"
+
+# @ cm-answers-pro-backend
+msgid "Question title font size (in thread page)"
+msgstr "Question title font size (in thread page)"
+
+# @ cm-answers-pro-backend
+msgid "Answers font size (in thread page)"
+msgstr "Answers font size (in thread page)"
+
+# @ cm-answers-pro-backend
+msgid "Comments font size"
+msgstr "Comments font size"
+
+# @ cm-answers-pro-backend
+msgid "Add"
+msgstr "Add"
+
+# @ cm-answers-pro-backend
+msgid "Edit"
+msgstr "Edit"
+
+# @ cm-answers-pro-backend
+msgid "Show disclaimer for first time users"
+msgstr "Show disclaimer for first time users"
+
+# @ cm-answers-pro-backend
+msgid "In case you want disclaimer to appear for new user you need to select yes."
+msgstr "In case you want disclaimer to appear for new user you need to select yes."
+
+# @ cm-answers-pro-backend
+msgid "Disclaimer Text"
+msgstr "Disclaimer Text"
+
+# @ cm-answers-pro-backend
+msgid "Please describe in details the message which will appear in the disclaimer."
+msgstr "Please describe in details the message which will appear in the disclaimer."
+
+# @ cm-answers-pro-backend
+msgid "Disclaimer Accept Button text"
+msgstr "Disclaimer Accept Button text"
+
+# @ cm-answers-pro-backend
+msgid "Please specify what will appear in the disclaimer accept button."
+msgstr "Please specify what will appear in the disclaimer accept button."
+
+# @ cm-answers-pro-backend
+msgid "Disclaimer Reject Button text"
+msgstr "Disclaimer Reject Button text"
+
+# @ cm-answers-pro-backend
+msgid "Please specify what will appear in the disclaimer reject button."
+msgstr "Please specify what will appear in the disclaimer reject button."
+
+# @ cm-answers-pro-backend
+msgid "Moderation options table"
+msgstr "Moderation options table"
+
+# @ cm-answers-pro-backend
+msgid "Option - where is it located? Is it enabled?"
+msgstr "Option - where is it located? Is it enabled?"
+
+# @ cm-answers-pro-backend
+msgid "Effect"
+msgstr "Effect"
+
+# @ cm-answers-pro-backend
+msgid "Always publish"
+msgstr "Always publish"
+
+# @ cm-answers-pro-backend
+msgid "Always moderate (never publish)"
+msgstr "Always moderate (never publish)"
+
+# @ cm-answers-pro-backend
+msgid "Use internal WP Discussion settings to decide wheter moderate/publish"
+msgstr "Use internal WP Discussion settings to decide wheter moderate/publish"
+
+# @ cm-answers-pro-backend
+msgid "Note: admin's and moderator's questions are always published"
+msgstr "Note: admin's and moderator's questions are always published"
+
+# @ cm-answers-pro-backend
+msgid "Refer new users to any of the CM Plugins and you'll receive 10% of their purchase!. For more information please visit CM Plugins"
+msgstr "Refer new users to any of the CM Plugins and you'll receive 10% of their purchase!. For more information please visit CM Plugins"
+
+# @ cm-answers-pro-backend
+msgid "Affiliate page"
+msgstr "Affiliate page"
+
+# @ cm-answers-pro-backend
+msgid "Enable referrals"
+msgstr "Enable referrals"
+
+# @ cm-answers-pro-backend
+msgid "Enable referrals link at the bottom of the question and the answer page."
+msgstr "Enable referrals link at the bottom of the question and the answer page."
+
+# @ cm-answers-pro-backend
+msgid "Affiliate Code"
+msgstr "Affiliate Code"
+
+# @ cm-answers-pro-backend
+msgid "Please add your affiliate code in here."
+msgstr "Please add your affiliate code in here."
+
+# @ cm-answers-pro-backend
+msgid "Off"
+msgstr "Off"
+
+# @ cm-answers-pro-backend
+msgid "On"
+msgstr "On"
+
+# @ cm-answers-pro-backend
+msgid "This information is useful to check if plugin might have some incompabilities with you server."
+msgstr "This information is useful to check if plugin might have some incompabilities with you server."
+
+# @ cm-answers-pro-backend
+msgid "PHP Version"
+msgstr "PHP Version"
+
+# @ cm-answers-pro-backend
+msgid "PHP Safe Mode"
+msgstr "PHP Safe Mode"
+
+# @ cm-answers-pro-backend
+msgid "Recommended 5.3 or higher"
+msgstr "Recommended 5.3 or higher"
+
+# @ cm-answers-pro-backend
+msgid "Safe mode is deprecated"
+msgstr "Safe mode is deprecated"
+
+# @ cm-answers-pro-backend
+msgid "PHP Max Upload Size"
+msgstr "PHP Max Upload Size"
+
+# @ cm-answers-pro-backend
+msgid "This value can be too lower to upload large files."
+msgstr "This value can be too lower to upload large files."
+
+# @ cm-answers-pro-backend
+msgid "PHP Max Post Size"
+msgstr "PHP Max Post Size"
+
+# @ cm-answers-pro-backend
+msgid "PHP Memory Limit"
+msgstr "PHP Memory Limit"
+
+# @ cm-answers-pro-backend
+msgid "This value can be too lower to Wordpress with plugins work properly."
+msgstr "This value can be too lower to Wordpress with plugins work properly."
+
+# @ cm-answers-pro-backend
+msgid "cURL library is required to use the Social Login."
+msgstr "cURL library is required to use the Social Login."
+
+# @ cm-answers-pro-backend
+msgid "WP permalinks"
+msgstr "WP permalinks"
+
+# @ cm-answers-pro-backend
+msgid "Permalinks in Wordpress are required."
+msgstr "Permalinks in Wordpress are required."
+
+# @ cm-answers-pro-backend
+msgid "PHP allow URL fopen"
+msgstr "PHP allow URL fopen"
+
+# @ cm-answers-pro-backend
+msgid "Required to display screenshots."
+msgstr "Required to display screenshots."
+
+# @ cm-answers-pro-backend
+msgid "Checkout the CM Answers"
+msgstr "Checkout the CM Answers"
+
+# @ cm-answers-pro-backend
+msgid "Share your Appreciation"
+msgstr "Share your Appreciation"
+
+# @ cm-answers-pro-backend
+msgid "Submit a review"
+msgstr "Submit a review"
+
+# @ cm-answers-pro-backend
+msgid "Tweet"
+msgstr "Tweet"
+
+# @ cm-answers-pro-backend
+msgid "Stay Up-to-Date"
+msgstr "Stay Up-to-Date"
+
+# @ cm-answers-pro-backend
+msgid "Follow"
+msgstr "Follow"
+
+# @ cm-answers-pro-backend
+msgid "Enable sidebar"
+msgstr "Enable sidebar"
+
+# @ cm-answers-pro-backend
+msgid "Enable separate sidebar for CM Answers pages."
+msgstr "Enable separate sidebar for CM Answers pages."
+
+# @ cm-answers-pro-backend
+msgid "Enable Contributor Profile sidebar"
+msgstr "Enable Contributor Profile sidebar"
+
+# @ cm-answers-pro-backend
+msgid "Enable sidebar on the Contributor Profile page."
+msgstr "Enable sidebar on the Contributor Profile page."
+
+# @ cm-answers-pro-backend
+msgid "Set sidebar max width (in px)"
+msgstr "Set sidebar max width (in px)"
+
+# @ cm-answers-pro-backend
+msgid "Set maximum width of sidebar or leave 0 to auto-adjust"
+msgstr "Set maximum width of sidebar or leave 0 to auto-adjust"
+
+# @ cm-answers-pro-backend
+msgid "HTML before widget block"
+msgstr "HTML before widget block"
+
+# @ cm-answers-pro-backend
+msgid "Leave blank to set default."
+msgstr "Leave blank to set default."
+
+# @ cm-answers-pro-backend
+msgid "HTML after widget block"
+msgstr "HTML after widget block"
+
+# @ cm-answers-pro-backend
+msgid "HTML after widget title"
+msgstr "HTML after widget title"
+
+# @ cm-answers-pro-backend
+msgid "HTML before widget title"
+msgstr "HTML before widget title"
+
+# @ cm-answers-pro-backend
+msgid "Your server configuration needs to be changed to allow social login. Please enable allow_url_fopen in your global php.ini file on the server."
+msgstr "Your server configuration needs to be changed to allow social login. Please enable allow_url_fopen in your global php.ini file on the server."
+
+# @ cm-answers-pro-backend
+msgid "Create Facebook application at %s and go to Settings on the left side of the screen."
+msgstr "Create Facebook application at %s and go to Settings on the left side of the screen."
+
+# @ cm-answers-pro-backend
+msgid "In the \"Basic\" tab, click the \"Add Platform\" button below the settings configuration. Select \"Website\" in the platform dialog."
+msgstr "In the \"Basic\" tab, click the \"Add Platform\" button below the settings configuration. Select \"Website\" in the platform dialog."
+
+# @ cm-answers-pro-backend
+msgid "Enter your Site URL:"
+msgstr "Enter your Site URL:"
+
+# @ cm-answers-pro-backend
+msgid "Press the \"Save Changes\" button."
+msgstr "Press the \"Save Changes\" button."
+
+# @ cm-answers-pro-backend
+msgid "Facebook App ID"
+msgstr "Facebook App ID"
+
+# @ cm-answers-pro-backend
+msgid "Facebook App Secret"
+msgstr "Facebook App Secret"
+
+# @ cm-answers-pro-backend
+msgid "Create project at %s"
+msgstr "Create project at %s"
+
+# @ cm-answers-pro-backend
+msgid "Go to the APIs &amp; auth &gt; Credentials."
+msgstr "Go to the APIs &amp; auth &gt; Credentials."
+
+# @ cm-answers-pro-backend
+msgid "Press the \"Create new client ID\" button."
+msgstr "Press the \"Create new client ID\" button."
+
+# @ cm-answers-pro-backend
+msgid "In the dialog choose the Application type: Web application."
+msgstr "In the dialog choose the Application type: Web application."
+
+# @ cm-answers-pro-backend
+msgid "Enter the Authorized JavaScript origins:"
+msgstr "Enter the Authorized JavaScript origins:"
+
+# @ cm-answers-pro-backend
+msgid "Enter the Authorized redirect URI:"
+msgstr "Enter the Authorized redirect URI:"
+
+# @ cm-answers-pro-backend
+msgid "Press the \"Create client ID\" button."
+msgstr "Press the \"Create client ID\" button."
+
+# @ cm-answers-pro-backend
+msgid "Copy Client ID for web application and Client secret to the inputs below."
+msgstr "Copy Client ID for web application and Client secret to the inputs below."
+
+# @ cm-answers-pro-backend
+msgid "Google Client ID for web application"
+msgstr "Google Client ID for web application"
+
+# @ cm-answers-pro-backend
+msgid "Google Client Secret"
+msgstr "Google Client Secret"
+
+# @ cm-answers-pro-backend
+msgid "Create LinkedIn application at %s"
+msgstr "Create LinkedIn application at %s"
+
+# @ cm-answers-pro-backend
+msgid "Enter your website url:"
+msgstr "Enter your website url:"
+
+# @ cm-answers-pro-backend
+msgid "There is no need to enter OAuth Redirect URL."
+msgstr "There is no need to enter OAuth Redirect URL."
+
+# @ cm-answers-pro-backend
+msgid "Enter your domain at JavaScript API Domain:"
+msgstr "Enter your domain at JavaScript API Domain:"
+
+# @ cm-answers-pro-backend
+msgid "Warning: the cURL functions are not available on this server. Contact your server administrator to enable support for cURL. Until that, login by this provider will be not available for users."
+msgstr "Warning: the cURL functions are not available on this server. Contact your server administrator to enable support for cURL. Until that, login by this provider will be not available for users."
+
+# @ cm-answers-pro-backend
+msgid "LinkedIn API Key"
+msgstr "LinkedIn API Key"
+
+# @ cm-answers-pro-backend
+msgid "LinkedIn Secret Key"
+msgstr "LinkedIn Secret Key"
+
+# @ cm-answers-pro-backend
+msgid "Create Twitter application at %s"
+msgstr "Create Twitter application at %s"
+
+# @ cm-answers-pro-backend
+msgid "Make sure that callback URL is set to:"
+msgstr "Make sure that callback URL is set to:"
+
+# @ cm-answers-pro-backend
+msgid "On settings tab check option \"Allow this application to be used to Sign in with Twitter\"."
+msgstr "On settings tab check option \"Allow this application to be used to Sign in with Twitter\"."
+
+# @ cm-answers-pro-backend
+msgid "Twitter Consumer Key"
+msgstr "Twitter Consumer Key"
+
+# @ cm-answers-pro-backend
+msgid "Twitter Consumer Secret"
+msgstr "Twitter Consumer Secret"
+
+# @ cm-answers-pro-backend
+msgid "Create Microsoft Live application at %s"
+msgstr "Create Microsoft Live application at %s"
+
+# @ cm-answers-pro-backend
+msgid "Choose option \"No\" for question of whether application is for mobile devices."
+msgstr "Choose option \"No\" for question of whether application is for mobile devices."
+
+# @ cm-answers-pro-backend
+msgid "Live Client ID"
+msgstr "Live Client ID"
+
+# @ cm-answers-pro-backend
+msgid "Live Client Secret"
+msgstr "Live Client Secret"
+
+# @ cm-answers-pro-backend
+msgid "number of questions/page to display (default: \"Questions\" 5 | \"My questions\" -1 [no limit])"
+msgstr "number of questions/page to display (default: \"Questions\" 5 | \"My questions\" -1 [no limit])"
+
+# @ cm-answers-pro-backend
+msgid "ID of the question author (default: empty) [Question only]"
+msgstr "ID of the question author (default: empty) [Question only]"
+
+# @ cm-answers-pro-backend
+msgid "ID of the question author or user who has answered for the question (default: empty) [Question only]"
+msgstr "ID of the question author or user who has answered for the question (default: empty) [Question only]"
+
+# @ cm-answers-pro-backend
+msgid "slug of category (categories separate by commas) (default: empty)"
+msgstr "slug of category (categories separate by commas) (default: empty)"
+
+# @ cm-answers-pro-backend
+msgid "show only unanswered (0) or only answered (1) questions. Default: empty (all questions)."
+msgstr "show only unanswered (0) or only answered (1) questions. Default: empty (all questions)."
+
+# @ cm-answers-pro-backend
+msgid "show only unresolved (0) or only resolved (1) questions. Default: empty (all questions)."
+msgstr "show only unresolved (0) or only resolved (1) questions. Default: empty (all questions)."
+
+# @ cm-answers-pro-backend
+msgid "one of following: newest, hottest, views, votes (default: newest)"
+msgstr "one of following: newest, hottest, views, votes (default: newest)"
+
+# @ cm-answers-pro-backend
+msgid "add \"question form\" (default: 0)"
+msgstr "add \"question form\" (default: 0)"
+
+# @ cm-answers-pro-backend
+msgid "display the question form above the questions table (default: 0)"
+msgstr "display the question form above the questions table (default: 0)"
+
+# @ cm-answers-pro-backend
+msgid "add \"search form\" above list (default: 1)"
+msgstr "add \"search form\" above list (default: 1)"
+
+# @ cm-answers-pro-backend
+msgid "show pagination (default: 1)"
+msgstr "show pagination (default: 1)"
+
+# @ cm-answers-pro-backend
+msgid "hides the question list (default: 0)"
+msgstr "hides the question list (default: 0)"
+
+# @ cm-answers-pro-backend
+msgid "show the number of votes (default: 1)"
+msgstr "show the number of votes (default: 1)"
+
+# @ cm-answers-pro-backend
+msgid "show the number of views (default: 1)"
+msgstr "show the number of views (default: 1)"
+
+# @ cm-answers-pro-backend
+msgid "show the number of answers (default: 1)"
+msgstr "show the number of answers (default: 1)"
+
+# @ cm-answers-pro-backend
+msgid "show the information about question's last update (default: 1)"
+msgstr "show the information about question's last update (default: 1)"
+
+# @ cm-answers-pro-backend
+msgid "show the infformation about question's author (default: 1)"
+msgstr "show the infformation about question's author (default: 1)"
+
+# @ cm-answers-pro-backend
+msgid "show the information about question's status (default: 0)"
+msgstr "show the information about question's status (default: 0)"
+
+# @ cm-answers-pro-backend
+msgid "show questions' tags (default: 1)"
+msgstr "show questions' tags (default: 1)"
+
+# @ cm-answers-pro-backend
+msgid "show the full navigation bar (default: 0)"
+msgstr "show the full navigation bar (default: 0)"
+
+# @ cm-answers-pro-backend
+msgid "display category name next to the question (default: 0)"
+msgstr "display category name next to the question (default: 0)"
+
+# @ cm-answers-pro-backend
+msgid "enable or disable AJAX support (default: 1)"
+msgstr "enable or disable AJAX support (default: 1)"
+
+# @ cm-answers-pro-backend
+msgid "Example"
+msgstr "Example"
+
+# @ cm-answers-pro-backend
+msgid "You can add the Categories table anywhere on the site by using shortcode:"
+msgstr "You can add the Categories table anywhere on the site by using shortcode:"
+
+# @ cm-answers-pro-backend
+msgid "User's followed threads and categories:"
+msgstr "User's followed threads and categories:"
+
+# @ cm-answers-pro-backend
+msgid "Questions index similar like on the Answers main page:"
+msgstr "Questions index similar like on the Answers main page:"
+
+# @ cm-answers-pro-backend
+msgid "To attach a YouTube or Vimeo clip to the thread just put the URL in brackets:"
+msgstr "To attach a YouTube or Vimeo clip to the thread just put the URL in brackets:"
+
+# @ cm-answers-pro-backend
+msgid "Notice: shortcodes are case-sensitive."
+msgstr "Notice: shortcodes are case-sensitive."
+
+# @ cm-answers-pro-backend
+msgid "Link to questions frontend list:"
+msgstr "Link to questions frontend list:"
+
+# @ cm-answers-pro-backend
+msgid "Link to questions frontend list (AJAX):"
+msgstr "Link to questions frontend list (AJAX):"
+
+# @ cm-answers-pro-backend
+msgid "Edit page"
+msgstr "Edit page"
+
+# @ cm-answers-pro-backend
+msgid "This plugin was developed by %s"
+msgstr "This plugin was developed by %s"
+
+# @ cm-answers-pro-backend
+msgid "You can find more information about CM Answers on website: %s"
+msgstr "You can find more information about CM Answers on website: %s"
+
+# @ cm-answers-pro-backend
+msgid "Premium Plugins by CreativeMinds"
+msgstr "Premium Plugins by CreativeMinds"
+
+# @ cm-answers-pro-backend
+msgid "We Are Experts in Custom Plugin Development"
+msgstr "We Are Experts in Custom Plugin Development"
+
+# @ cm-answers-pro-backend
+msgid "Professional Quality Work"
+msgstr "Professional Quality Work"
+
+# @ cm-answers-pro-backend
+msgid "We follow a detailed coding standard that ensures we deliver only the highest quality products and services. You can count on maintainable code that fulfills your requirements completely."
+msgstr "We follow a detailed coding standard that ensures we deliver only the highest quality products and services. You can count on maintainable code that fulfills your requirements completely."
+
+# @ cm-answers-pro-backend
+msgid "Expert Knowledge"
+msgstr "Expert Knowledge"
+
+# @ cm-answers-pro-backend
+msgid "Custom WordPress plugins are our specialty. We devote a lot of work and time for testing to deliver to our customers bug free products. We use WP custom functions and we excel in PHP / SQL / JavaScript and related technologies like JQuery or Ajax."
+msgstr "Custom WordPress plugins are our specialty. We devote a lot of work and time for testing to deliver to our customers bug free products. We use WP custom functions and we excel in PHP / SQL / JavaScript and related technologies like JQuery or Ajax."
+
+# @ cm-answers-pro-backend
+msgid "Integration with 3rd-party Plugins"
+msgstr "Integration with 3rd-party Plugins"
+
+# @ cm-answers-pro-backend
+msgid "Upon request we integrate our plugins with external 3-rd party tools and services such as GoToMeeting, Vimeo, Google and many others."
+msgstr "Upon request we integrate our plugins with external 3-rd party tools and services such as GoToMeeting, Vimeo, Google and many others."
+
+# @ cm-answers-pro-backend
+msgid "Fixed Price Quotes"
+msgstr "Fixed Price Quotes"
+
+# @ cm-answers-pro-backend
+msgid "We provide fixed price quotes so you know exactly what your total and final development cost will be."
+msgstr "We provide fixed price quotes so you know exactly what your total and final development cost will be."
+
+# @ cm-answers-pro-backend
+msgid "Support and Warranty"
+msgstr "Support and Warranty"
+
+# @ cm-answers-pro-backend
+msgid "Once your plugin is completed we will not leave you out in the cold. We believe that your success is our success and we want happy customers who will use our products again."
+msgstr "Once your plugin is completed we will not leave you out in the cold. We believe that your success is our success and we want happy customers who will use our products again."
+
+# @ cm-answers-pro-backend
+msgid "for"
+msgstr "for"
+
+# @ cm-answers-pro-backend
+msgid "Do you want to erase logs?"
+msgstr "Do you want to erase logs?"
+
+# @ cm-answers-pro-backend
+msgid "Logs table"
+msgstr "Logs table"
+
+# @ cm-answers-pro-backend
+msgid "Graph"
+msgstr "Graph"
+
+# @ cm-answers-pro-backend
+msgid "Download CSV"
+msgstr "Download CSV"
+
+# @ cm-answers-pro-backend
+msgid "Clear log"
+msgstr "Clear log"
+
+# @ cm-answers-pro-backend
+msgid "Posted questions"
+msgstr "Posted questions"
+
+# @ cm-answers-pro-backend
+msgid "Posted answers"
+msgstr "Posted answers"
+
+# @ cm-answers-pro-backend
+msgid "Votes on questions"
+msgstr "Votes on questions"
+
+# @ cm-answers-pro-backend
+msgid "Votes on answers"
+msgstr "Votes on answers"
+
+# @ cm-answers-pro-backend
+msgid "Update"
+msgstr "Update"
+
+# @ cm-answers-pro-backend
+msgid "CM Answers Logs"
+msgstr "CM Answers Logs"
+
+# @ cm-answers-pro-backend
+msgid "Logs"
+msgstr "Logs"
+
+# @ cm-answers-pro-backend
+msgid "CM Answers Settings"
+msgstr "CM Answers Settings"
+
+# @ cm-answers-pro-backend
+msgid "Settings"
+msgstr "Settings"
+
+# @ cm-answers-pro-backend
+msgid "About"
+msgstr "About"
+
+# @ cm-answers-pro-backend
+msgid "Add-ons"
+msgstr "Add-ons"
+
+# @ cm-answers-pro-backend
+msgid "User Guide"
+msgstr "User Guide"
+
+# @ cm-answers-pro-backend
+msgid "Find user"
+msgstr "Find user"
+
+# @ cm-answers-pro-backend
+msgid "Plugin pages will appear correctly if you choose non-default <a href=\"%s\">permalink structure</a> in your Wordpress settings and enable URL rewrite rules."
+msgstr "Plugin pages will appear correctly if you choose non-default <a href=\"%s\">permalink structure</a> in your Wordpress settings and enable URL rewrite rules."
+
+# @ cm-answers-pro-backend
+msgid "Settings succesfully updated"
+msgstr "Settings succesfully updated"
+
+# @ cm-answers-pro-backend
+msgid "Unmark this answer as possibly spam."
+msgstr "Unmark this answer as possibly spam."
+
+# @ cm-answers-pro-backend
+msgid "Unmark spam"
+msgstr "Unmark spam"
+
+# @ cm-answers-pro-backend
+msgid "Show private answer to all users."
+msgstr "Show private answer to all users."
+
+# @ cm-answers-pro-backend
+msgid "Make answer available only for the question author."
+msgstr "Make answer available only for the question author."
+
+# @ cm-answers-pro-backend
+msgid "Mark as private"
+msgstr "Oznacz jako prywatne"
+
+# @ cm-answers-pro-backend
+msgid "Unmark as private"
+msgstr "Cofnij oznaczenie jako prywatne"
+
+# @ cm-answers-pro-backend
+msgid "CM Answers Sidebar"
+msgstr "CM Answers Sidebar"
+
+# @ cm-answers-pro-backend
+msgid "This sidebar is shown on CM Answers pages"
+msgstr "This sidebar is shown on CM Answers pages"
+
+# @ cm-answers-pro-backend
+msgid "Mark as unresolved"
+msgstr "Oznacz jako nierozwiązane"
+
+# @ cm-answers-pro-backend
+msgid "Mark as resolved"
+msgstr "Oznacz jako rozwiązane"
+
+# @ cm-answers-pro-backend
+msgid "Question \"%s\" has been succesfully approved."
+msgstr "Question \"%s\" has been succesfully approved."
+
+# @ cm-answers-pro-backend
+msgid "Question \"%s\" has been succesfully moved to trash."
+msgstr "Question \"%s\" has been succesfully moved to trash."
+
+# @ cm-answers-pro-backend
+msgid "Question \"%s\" has been succesfully marked as resolved."
+msgstr "Question \"%s\" has been succesfully marked as resolved."
+
+# @ cm-answers-pro-backend
+msgid "Question \"%s\" has been succesfully marked as unresolved."
+msgstr "Question \"%s\" has been succesfully marked as unresolved."
+
+# @ cm-answers-pro-backend
+msgid "Author"
+msgstr "Autor"
+
+# @ cm-answers-pro-backend
+msgid "Views"
+msgstr "Wyświetlenia"
+
+# @ cm-answers-pro-backend
+msgid "Status"
+msgstr "Status"

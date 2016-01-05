@@ -1,0 +1,171 @@
+<?php
+
+global $wp;
+$wp_query = CMA_AnswerController::$query;
+
+// ----------------------------------------------------------------------------------------
+// If AJAX request - restore some params
+if ($widgetOptions = CMA_AnswerController::restoreWidgetOptions()) {
+	if (!empty($widgetOptions['displayOptions'])) $displayOptions = $widgetOptions['displayOptions'];
+}
+
+if (empty($displayOptions) OR !is_array($displayOptions)) $displayOptions = array();
+// if (empty($questions)) {
+// 	$questions = array_filter(array_map(function($post) {
+// 		return CMA_Thread::getInstance($post->ID);
+// 	}, $wp_query->posts));
+// }
+
+// -----------------------------------------------------------------------------------------
+
+$current_url = home_url(add_query_arg(array(), $wp->request), 'relative');
+if (isset($wp_query->queried_object) AND isset($wp_query->queried_object->term_id)) {
+	$currentCategoryId = $wp_query->queried_object->term_id;
+}
+else if (!empty($category)) {
+	$currentCategoryId = $category->getId();
+} else {
+	$currentCategoryId = null;
+}
+if (empty($currentCategoryId) AND !empty($cat)) {
+	$categorySlug = explode(',', $cat);
+	if ($category = new CMA_Category(get_term_by('slug', $categorySlug[0], CMA_Category::TAXONOMY))) {
+		$currentCategoryId = $category->getId();
+	}
+}
+if ($currentCategoryId) {
+	$category = CMA_Category::getInstance($currentCategoryId);
+}
+$paginationArguments = compact('maxNumPages');
+if (!empty($widget)) $paginationArguments['paged'] = 0;
+$dataPagination = json_encode($paginationArguments);
+$paginationArguments = isset($paginationArguments) ? array_merge($paginationArguments, $_GET) : array();
+$paginationArguments['search'] = isset($_GET['search']) ? $_GET['search'] : '';
+$paginationArguments['widgetCacheId'] = (!empty($widgetCacheId) ? $widgetCacheId : (!empty($_GET['widgetCacheId']) ? $_GET['widgetCacheId'] : null));
+
+$paginationBase = (empty($category) ? get_post_type_archive_link(CMA_Thread::POST_TYPE) : $category->getPermalink());
+$currentPage = $wp_query->get('paged');
+$permalink = add_query_arg(urlencode_deep(array_filter($paginationArguments)), trailingslashit(trailingslashit($paginationBase) . ($currentPage ? 'page/'. $currentPage : '')));
+$permalink = apply_filters('cma_questions_ajax_permalink', $permalink);
+
+?>
+
+<div class="cma-questions-widget<?php if (is_main_query()) echo ' cma-main-query'; ?>" data-permalink="<?php
+	echo esc_attr($permalink); ?>" data-backlink="<?php echo esc_attr(base64_encode($permalink)); ?>">
+
+<?php do_action('cma_flash_messages'); ?>
+	
+<?php if (!empty($displayOptions['navbar'])):
+	echo CMA_BaseController::_loadView('answer/nav/nav-bar', compact('displayOptions'));
+endif; ?>
+
+<div class="cma-questions-container cma-container <?php if (isset($displayOptions['wrapperclass'])) echo $displayOptions['wrapperclass'];
+?>" data-pagination='<?php echo esc_attr($dataPagination); ?>'>
+
+	<?php if( $displayOptions['form'] AND $displayOptions['formontop'] ) :
+		 // CMA-QuestionForm
+		 // - Question form if the user is logged in
+		 // - Login form if the user is not logged in
+// 		echo CMA_BaseController::_loadView('answer/widget/question-form', compact('post', 'thread', 'catId'));
+		do_action('cma_index_question_form', $currentCategoryId, 'top');
+	endif; ?>
+
+	<?php if( isset($_GET["sort"]) || isset($_GET["cmatag"]) || isset($_GET["sort"]) || isset($_GET["search"]) AND empty($widget)) : ?>
+		<a class="cma-backlink cma-backlink-ajaxtag" href="<?php echo esc_attr(CMA::getReferer()) ?>">&laquo; <?php echo CMA_Labels::getLocalized('back_full_questions_list') ?></a>
+	<?php endif; ?>
+	
+	<?php if( $displayOptions['search'] ): ?>
+		<div class="cma-thread-search">
+			<form method="GET" action="<?php echo esc_attr(get_post_Type_archive_link(CMA_Thread::POST_TYPE)) ?>" id="cma-ajax-search">
+				<input type="text" name="search" id="cma-ajax-search-term" isp_ignore="true" placeholder="<?php
+					echo esc_attr(CMA_Labels::getLocalized('search_questions')); ?>" value="<?php echo esc_attr($wp_query->get('search')); ?>"/>
+				<input type="submit" value="&gt;" class="cma-ajax-search" />
+			</form>
+		</div>
+	<?php endif; ?>
+
+	<?php if( !$displayOptions['hideQuestions'] ): ?>
+	
+		<?php if (!empty($displayOptions['sortbar'])):
+			echo CMA_BaseController::_loadView('answer/nav/sort-bar', compact('displayOptions', 'permalink'));
+// 			include dirname(__FILE__) . '/../nav/sort-bar.phtml';
+		endif; ?>
+	
+		<?php do_action('CMA_questions_table_before'); ?>
+	
+		<?php if (!empty($questions)): ?>
+			<div class="cma-thread-list<?php
+				if (CMA_Settings::getOption(CMA_Settings::OPTION_INDEX_NUMBERS_VERTICALLY)) echo ' numbers-vertically';
+				if ($displayOptions['resolvedPrefix']) echo ' display-resolved-prefix';
+				if ($displayOptions['icons']) echo ' display-icons';
+			?>">
+				<div class="cma-thread-list-header">
+						<?php if ($displayOptions['votes'] OR $displayOptions['views'] OR $displayOptions['answers'] OR !empty($displayOptions['statusinfo'])): ?>
+								<?php if( $displayOptions['votes'] ): ?>
+									<div><?php echo CMA_Labels::getLocalized('votes_col'); ?></div>
+								<?php endif; ?>
+			
+								<?php if( $displayOptions['answers'] ): ?>
+									<div><?php echo CMA_Labels::getLocalized('answers_header'); ?></div>
+								<?php endif ?>
+								
+								<?php if( $displayOptions['views'] ): ?>
+									<div><?php echo CMA_Labels::getLocalized('views_col'); ?></div>
+								<?php endif ?>
+			
+								<?php if( !empty($displayOptions['statusinfo']) ): ?>
+									<div><?php echo CMA_Labels::getLocalized('status_col'); ?></div>
+								<?php endif; ?>
+						<?php endif; ?>
+	
+						<div><?php echo CMA_Labels::getLocalized('Question'); ?></div>
+						
+				</div>
+	
+				<div class="cma-thread-list-body">
+					<?php foreach($questions as $thread):
+						do_action('cma_question_snippet', $thread, $displayOptions);	
+					endforeach; ?>
+				</div>
+			</div>
+			
+			<?php do_action('CMA_questions_table_after'); ?>
+		
+		<?php else: ?>
+			<p class="c"><?php echo CMA_Labels::getLocalized('no_questions_found'); ?></p>
+		<?php endif; ?>
+		
+		<?php if( $displayOptions['pagination'] ):
+			echo CMA_AnswerController::showPagination($paginationArguments, $paginationBase);
+		endif; // pagination ?>
+		
+	<?php endif; // !hidequestions ?>
+	
+	<script type="text/javascript">
+		jQuery(function($) {
+			CMA_private_question_init($);
+		});
+	</script>
+
+	<ul class="cma-follow-bar">
+		<?php if (CMA_ThreadNewsletter::canBeFollower()): ?>
+			<li><a href="<?php echo esc_attr(CMA::permalink()); ?>" class="cma-follow-new-threads-link" data-nonce="<?php
+						echo esc_attr(wp_create_nonce('cma_follow')); ?>"><?php
+				echo CMA_Labels::getLocalized(CMA_ThreadNewsletter::isNewsletterFollower() ? 'unfollow_new_threads' : 'follow_new_threads'); ?></a></li>
+		<?php endif; ?>
+		<?php if (!empty($category) AND CMA_Category::canBeFollower()): ?>
+			<li><a href="<?php echo esc_attr($category->getPermalink()); ?>" class="cma-follow-link" data-nonce="<?php
+						echo esc_attr(wp_create_nonce('cma_follow')); ?>" data-category-id="<?php echo $category->getId() ?>"><?php
+				echo CMA_Labels::getLocalized($category->getFollowersEngine()->isFollower() ? 'unfollow_category' : 'follow_category'); ?></a></li>
+		<?php endif; ?>
+	</ul>
+
+	<?php if( $displayOptions['form'] AND !$displayOptions['formontop'] ) :
+		 // CMA-QuestionForm
+		 // - Question form if the user is logged in
+		 // - Login form if the user is not logged in
+// 		echo CMA_BaseController::_loadView('answer/widget/question-form', compact('post', 'thread', 'catId'));
+		do_action('cma_index_question_form', $currentCategoryId, 'bottom');
+	endif; ?>
+</div>
+</div>

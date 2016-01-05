@@ -1,0 +1,19 @@
+<?php if (!isset($contentOnly)): CMA_AnswerController::get_header(); ?>
+    <div class="cma-main">
+        <div id="primary" class="site-content cma-content">
+            <div id="content" role="main">
+            <?php endif; ?>
+            <div class="CMA">
+                <ul class="errors">
+                    <li><?php echo CMA_Labels::getLocalized('no_permissions'); ?></li>
+                </ul>
+                <a href="javascript:history.back(-1)"><?php echo CMA_Labels::getLocalized('back_to_previous_page'); ?></a><br />
+                <?php
+                echo CMA_BaseController::_loadView('answer/widget/login');
+                ?>
+            </div>
+<?php if (!isset($contentOnly)): ?></div></div></div>
+    <?php
+    get_footer();
+endif;
+?>

@@ -1,0 +1,31 @@
+<div class="cma-user-related-questions">
+	<table class="wp-list-table widefat fixed">
+		<thead>
+			<tr>
+				<th><?php echo __('Title'); ?></th>
+				<th class="cma-narrow"><?php echo __('Edit'); ?></th>
+				<th class="cma-narrow"><?php echo __('Remove'); ?></th>
+			</tr>
+		</thead>
+		<tbody><?php foreach ($questions as $question) {
+			printf('<tr>
+				<td><a href="%s">%s</a></td>
+				<td class="cma-narrow"><a href="%s" class="button">%s</a><input type="hidden" name="%s[]" value="%d" /></td>
+				<td class="cma-narrow"><button class="button cma-remove-button">%s</button></td>
+			</tr>',
+			esc_attr($question->getPermalink()),
+				$question->getTitle(),
+				esc_attr($question->getBackendEditUrl()),
+				__('Edit'),
+				'cma_related_questions',
+				$question->getId(),
+				__('Remove')
+			);
+		}
+		?></tbody>
+	</table>
+	<div class="form-field">
+		<label>Add new:<br /><textarea name="cma_related_questions_add" placeholder="Enter questions IDs or URLs separated by new line."></textarea></label>
+		<input type="hidden" name="cma_related_questions_nonce" value="<?php echo $nonce; ?>" />
+	</div>
+</div>

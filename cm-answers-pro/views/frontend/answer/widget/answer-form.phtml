@@ -1,0 +1,112 @@
+<?php if (isset($backlink)): echo $backlink; ?>
+<?php else: ?>
+	<a class="cma-backlink" href="<?php echo esc_attr(CMA::getReferer()); ?>"> &laquo; <?php echo CMA_Labels::getLocalized('back_to_previous_page'); ?></a>
+<?php endif; ?>
+
+<?php
+$additionalFormClass = (!CMA_Settings::getOption(CMA_Settings::OPTION_MARKUP_BOX)) ? 'no-markup-box' : '';
+?>
+<div class="cma-form-container cma-answer-form-container <?php echo esc_attr($additionalFormClass); ?>">
+    <?php if( $thread->canPostAnswers()): ?>
+        <form action="<?php echo esc_attr($thread->getPermalink()); ?>" method="post" class="cma-form">
+            <input type="hidden" name="cma-thread" value="<?php echo esc_attr($post->ID); ?>"/>
+            <input type="hidden" name="cma-action" value="<?php echo (!empty($edit) ? 'edit' : 'add'); ?>" />
+            <?php if (!empty($edit) AND !empty($_GET[CMA_AnswerController::PARAM_EDIT_ANSWER_ID])): ?>
+            	<input type="hidden" name="<?php echo CMA_AnswerController::PARAM_EDIT_ANSWER_ID;
+            		?>" value="<?php echo intval($_GET[CMA_AnswerController::PARAM_EDIT_ANSWER_ID]); ?>" />
+            <?php endif; ?>
+            <input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('cma_answer')); ?>"/>
+            <h3>
+                <?php echo (empty($edit) ? CMA_Labels::getLocalized('post_your_answer') : CMA_Labels::getLocalized('edit_your_answer')); ?>
+            </h3>
+
+            <?php if(CMA_Settings::getOption(CMA_Settings::OPTION_MARKUP_BOX)) : ?>
+                <ul class="cma-form-notes">
+                    <li>
+                        <?php _e('Allow markup', 'cm-answers-pro');
+                        ?>: &lt;strong&gt;, &lt;em&gt;, &lt;a&gt;
+                    </li>
+                    <li>
+                        <?php _e('Wrap your code using', 'cm-answers-pro');
+                        ?> &lt;pre&gt;&lt;/pre&gt;
+                    </li>
+                </ul>
+            <?php endif; ?>
+
+            <?php
+            	$showRichTextEditor = (CMA_Settings::getOption(CMA_Settings::OPTION_RICHTEXT_EDITOR) AND !CMA_AJAX);
+                $questionEditorContent = '';
+                if(isset($populatedData['content']))
+                {
+                    $questionEditorContent = ($showRichTextEditor ?
+						$populatedData['content'] :
+						stripslashes(esc_html($populatedData['content']))
+					);
+                }
+
+            if ($showRichTextEditor)
+            {
+            	remove_filter ('the_content',  'wpautop');
+                wp_editor($questionEditorContent, 'answer-content-form', array(
+                	'textarea_name' => 'content',
+                	'textarea_rows' => CMA_Settings::getOption(CMA_Settings::OPTION_EDITOR_ROWS),
+                ));
+            }
+            else
+            {
+            	$shouldBeRichTextEditor = CMA_Settings::getOption(CMA_Settings::OPTION_RICHTEXT_EDITOR) AND CMA_AJAX;
+                ?>
+                <textarea<?php if (!$shouldBeRichTextEditor) echo ' required'; ?> class="cma-form-content" id="cma-form-content-<?php echo rand(1, 999999);
+                	?>" cols="50" rows="<?php echo CMA_Settings::getOption(CMA_Settings::OPTION_EDITOR_ROWS); ?>" name="content" placeholder="<?php
+                	echo esc_attr(CMA_Labels::getLocalized('answer_input_label')); ?>" data-tinymce="<?php
+                	echo intval($shouldBeRichTextEditor); ?>"><?php
+                	echo esc_html($questionEditorContent); ?></textarea>
+                <?php
+            }
+            ?>
+            
+            <p class="cma-attach-video-tip"><?php echo CMA::__('Attach YouTube/Vimeo clip putting the URL in brackets:'); ?> [https://youtu.be/Zkdf3kaso]</p>
+
+            <?php if (empty($edit)): ?>
+            
+            	<?php do_action('CMA_display_answer_form_upload'); ?>
+            
+	            <div class="cma-form-options">
+	            	<?php if(CMA_Thread::canDisplayNotifyCheckbox()): ?>
+		                <label class="cma-form-option-label">
+		                    <input name="thread_notify" type="checkbox" value="1" <?php
+		                    	if (CMA_Settings::getOption(CMA_Settings::OPTION_NOTIFY_CHECKBOX_CHECKED)) echo ' checked="checked"'; ?> />
+		                    <?php echo CMA_Labels::getLocalized('notify_me_of_follow'); ?>
+		                </label>
+		            <?php endif; ?>
+	                <?php if($thread->canResolve()): ?>
+	                    <label class="cma-form-option-label">
+	                        <input name="thread_resolved" type="checkbox" value="1"/>
+	                        <?php echo CMA_Labels::getLocalized('mark_as_resolved'); ?>
+	                    </label>
+	                <?php endif; ?>
+	                <?php if ($thread->canPostPrivateAnswer()): ?>
+		            	<label class="cma-form-option-label">
+		                    <input name="private" type="checkbox" value="1" />
+		                    <?php echo CMA_Labels::getLocalized('private_answer'); ?>
+		                </label>
+	            <?php endif; ?>
+	            </div>
+	            
+            <?php endif; ?>
+			
+			<?php do_action('cma_frontend_answer_form_body_after', $thread); ?>
+			
+            <input type="submit" value="<?php echo esc_attr(CMA_Labels::getLocalized(empty($edit) ? 'button_post_your_answer' : 'button_edit_your_answer')); ?>" />
+            
+            <?php do_action('cma_frontend_answer_form_bottom', $thread); ?>
+            
+        </form>
+    <?php endif; ?>
+    <?php if (!is_user_logged_in()) do_action('CMA_login_form'); ?>
+</div>
+<script type="text/javascript">
+jQuery(function($) {
+	CMA_tags_init($);
+});
+</script>

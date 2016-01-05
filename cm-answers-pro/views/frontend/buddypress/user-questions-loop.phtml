@@ -1,0 +1,7 @@
+<?php
+
+echo '<h3>'. CMA_Labels::getLocalized('Questions') .'</h3>';
+echo do_shortcode(sprintf('[cma-questions author=%d form=0 search=0 sort=newest pagination=1 navbar=0 displaycategories=1 views=1]', $userId));
+
+echo '<h3>'. CMA_Labels::getLocalized('Answers') .'</h3>';
+echo do_shortcode(sprintf('[cma-answers author=%d]', $userId));

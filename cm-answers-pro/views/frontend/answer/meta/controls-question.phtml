@@ -1,0 +1,24 @@
+<ul class="cma-controls controls">
+	<li><a href="<?php echo esc_attr($thread->getPermalink());
+		?>" class="cma-follow-link cma-subscription-link" data-nonce="<?php
+		echo esc_attr(wp_create_nonce('cma_follow')); ?>"><?php
+		echo CMA_Labels::getLocalized('Follow'); ?></a>
+	</li>
+	<li><a href="<?php echo esc_attr($thread->getPermalink());
+		?>" class="cma-unfollow-link cma-subscription-link" data-nonce="<?php
+		echo esc_attr(wp_create_nonce('cma_follow')); ?>"><?php
+		echo CMA_Labels::getLocalized('Unfollow'); ?></a>
+	</li>
+	<?php if( $thread->canEditQuestion() ): ?>
+		<li><a href="<?php echo esc_attr($thread->getEditURL()); ?>" class="cma-question-edit-link"><?php echo CMA::__('Edit'); ?></a></li>
+	<?php endif; ?>
+	<?php if( $thread->canDelete() ): ?>
+		<li><a href="<?php echo esc_attr($thread->getDeleteURL()); ?>" class="cma-thread-delete-link"><?php echo CMA::__('Delete'); ?></a></li>
+	<?php endif; ?>
+	<?php if (CMA_Settings::canReportSpam()): ?>
+		<li><a href="<?php echo esc_attr($thread->getPermalink()); ?>" class="cma-report-spam"><?php echo CMA_Labels::getLocalized('report_spam') ?></a></li>
+	<?php endif; ?>
+	<?php if (current_user_can('manage_options')): ?>
+		<li><a href="<?php echo esc_attr($thread->getPermalink()); ?>" class="cma-unmark-spam"><?php echo CMA_Labels::getLocalized('unmark_as_spam') ?></a></li>
+	<?php endif; ?>
+</ul>

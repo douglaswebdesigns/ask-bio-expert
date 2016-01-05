@@ -1,0 +1,17 @@
+<?php if (!empty($comments) OR CMA_Comment::canCreate()): ?>
+	<div class="cma-comments"><div class="cma-comments-list">
+	
+		<?php if (!empty($comments)):
+			foreach ($comments as $comment) {
+				do_action('CMA_comments_single', $comment);
+			}
+		endif; ?>
+		
+		</div>
+	
+		<?php if (CMA_Comment::canCreate()): ?>
+			<?php do_action('CMA_comments_form_add', $threadId, $answerId); ?>
+		<?php endif; ?>
+	
+	</div>
+<?php endif; ?>

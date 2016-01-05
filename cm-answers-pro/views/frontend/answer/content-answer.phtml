@@ -1,0 +1,11 @@
+<a id="answer-<?php echo $answer->getId(); ?>" class="anchor"></a>
+<div class="cma-answer-content">
+	<div class="cma-answer-private-flag"><?php echo CMA_Labels::getLocalized('private_answer_flag'); ?></div>
+	<div class="cma-answer-body"><?php echo $content; ?></div>
+	     <h1 style="color:#000">This is the content-answer template</h1>
+	<?php get_template_part('cma', 'attachments-answer'); ?>
+	<div class="cma-spam-flag"><strong><?php echo CMA_Labels::getLocalized('answer_marked_spam'); ?></strong></div>
+	<?php get_template_part('cma', 'meta-answer'); ?>
+	<?php get_template_part('cma', 'controls-answer'); ?>
+	<?php get_template_part('cma', 'comments-answer'); ?>
+</div>

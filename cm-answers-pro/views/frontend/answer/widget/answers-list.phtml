@@ -1,0 +1,83 @@
+<?php
+
+$public = isset($public) ? $public : true;
+
+?>
+<div class="cma-answers-widget" data-ajax="<?php echo intval(!empty($ajax)); ?>">
+
+	<?php if (!empty($answers)): ?>
+		<table class="cma-thread-list">
+		    <thead>
+		        <tr>
+		            <?php if(CMA_Settings::getOption(CMA_Settings::OPTION_ANSWERS_RATING_ALLOWED)): ?>
+		                <th><?php echo CMA_Labels::getLocalized('votes_col'); ?></th>
+		            <?php endif; ?>
+		                <?php if(!CMA_Settings::getOption(CMA_Settings::OPTION_ANSWER_AUTO_APPROVE) && !$public): ?>
+		                	<th><?php echo CMA_Labels::getLocalized('status_col'); ?></th>
+		                <?php endif; ?>
+		            <th style="text-align:left;"><?php echo CMA_Labels::getLocalized('Answer'); ?></th>
+		        </tr>
+		    </thead>
+		
+		    <?php foreach($answers as $answer): ?>
+		        <?php
+		        $question   = $answer->getThread();
+		        if ((!$answer->isVisible() AND !$public) OR !$question OR !$question->isVisible())
+		        {
+		            continue;
+		        }
+		        ?>
+		        <tr>
+		            <?php if(CMA_Settings::getOption(CMA_Settings::OPTION_ANSWERS_RATING_ALLOWED)): ?>
+		                <td class="cma-thread-meta">
+		                    <div class="cma-thread-numbers cma-thread-votes"><div class="cma-thread-numbers-count cma-thread-votes-count"><?php
+		                            $votes = $answer->getRating();
+		                            echo $votes;
+		                            ?>
+		                        </div>
+		                        <div class="cma-thread-numbers-caption cma-thread-votes-caption"><?php
+		                            if($votes == 1) echo CMA_Labels::getLocalized('vote');
+		                            else echo CMA_Labels::getLocalized('votes');
+		                            ?>
+		                        </div>
+		                    </div>
+		                </td>
+		            <?php endif; ?>
+		            <?php if(!CMA_Settings::getOption(CMA_Settings::OPTION_ANSWER_AUTO_APPROVE) && !$public): ?>
+		                <td class="cma-thread-meta">
+		                    <?php echo esc_html($answer->getStatus()); ?>
+		                </td><?php endif; ?>
+		            <td class="cma-thread-summary">
+		                <div class="cma-answer-title">
+		                    <a href="<?php echo esc_attr($answer->getPermalinkWithBacklink()); ?>">
+		                        <?php echo esc_html(substr(strip_tags($answer->getContent()), 0, 100)); ?>...
+		                    </a>
+		                </div>
+		                <div class="cma-thread-updated">
+		                    <?php
+		                    printf(__('posted %s in reply to %s', 'cm-answers-pro'),
+		                    	$answer->getDate(),
+		                    	'<a href="' . esc_attr($question->getPermalinkWithBacklink()) . '" >' . $question->getTitle() . '</a>');
+		                    ?>
+		                </div>
+		            </td>
+		        </tr>
+		    <?php endforeach; ?>
+		</table>
+	<?php else: ?>
+		<p><?php echo CMA::__('No results.'); ?></p>
+	<?php endif; ?>
+	
+	<?php if (!empty($authorSlug) AND !empty($currentPage) AND !empty($totalPages) AND $totalPages > 1): ?>
+		<div class="cma-pagination"><?php
+			$pagination_args = array(
+		    	'base' => CMA_BaseController::getUrl('answer', 'answers', array('author' => $authorSlug, 'limit' => $limit)) . '/page/%#%/',
+		        'format' => '',
+		        'total' => $totalPages,
+		        'current' => $currentPage,
+		    );
+    		echo paginate_links($pagination_args);
+    	
+		?></div>
+	<?php endif; ?>
+</div>
