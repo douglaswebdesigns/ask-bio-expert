@@ -9,13 +9,15 @@ Ask A Bio Expert is a membership website
 
 ## Purpose
 
-This project is a membership website question and
-answer forum that will hand pick the experts 
-answering question posed by visitors. 
+This project is a membership website question and answer forum that will hand pick the experts answering questions posed by visitors. The membership will be manually approved by administrator(s).
+
+## Development
+
+The site is being developed locally using DesktopServer, Sublime Text 3 and Github for version control. The development site live at http://your-new-wp-site.com/askabioexpert and uses ASKIT Theme by Elegant Themes and the plugins: Creative Minds CM Answers Pro, Advanced Custom Fields, CM Tooltip Glossary, Simple Custom Login, Custom User Registration Form Builder Silver & Jetpack. 
 
 ## Deployment
 
-This project is scheduled for deployment January 22, 2016
+This project is self-deadlined for deployment by January 22, 2016
 
 ## How To Contribute
 
