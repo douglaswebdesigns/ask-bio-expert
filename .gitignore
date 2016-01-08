@@ -2,6 +2,7 @@
 *.pdf
 *.zip
 *.log
+*.doc
 .htaccess
 sitemap.xml
 sitemap.xml.gz
