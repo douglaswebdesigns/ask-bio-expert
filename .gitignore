@@ -4,6 +4,7 @@
 *.log
 *.doc
 *.docx
+*.xml
 .htaccess
 sitemap.xml
 sitemap.xml.gz
