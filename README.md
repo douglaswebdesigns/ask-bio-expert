@@ -25,4 +25,4 @@ Please fork this repository then issue a Pull request!
 
 ### Copyright
 
-2015-2016 Douglas Web Designs Git.Training
+2015-2016 Douglas Web Design & Graphic Design, Inc.
