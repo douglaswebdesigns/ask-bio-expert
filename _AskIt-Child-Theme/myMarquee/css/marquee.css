@@ -1,0 +1,90 @@
+/*  CSS Document                                               */
+/*  Main CSS for the layout and style of the Homepage Marquee  */
+
+#logo { position: relative; z-index: 105; }
+
+ul#primary-menu { position: relative!important; }
+
+.marquee { height: 225px; background-color: #FAB72A; background-size: cover; }
+.marquee * { font-family: 'Lato'; }
+
+.marquee .marquee_data { display: none; }
+
+.marquee .marquee_stage_large { height: inherit; position: relative; overflow: hidden; }
+
+.marquee .marquee_container_1, .marquee .marquee_container_2 { height: inherit; position: absolute; top: 0px; left: 0px; width: 100%; }
+.marquee .marquee_container_1 { z-index: 101; }
+.marquee .marquee_container_2 { z-index: 102; }
+
+.marquee .marquee_panel { height: inherit; position: absolute; top: 0px; left: 0px; width: 100%; text-align: center; background-repeat: no-repeat; background-position: 45% 0px; background-size:cover; }
+
+.marquee .marquee_panel .panel_caption {
+	width: 400px;
+	background: rgba(255,255,255,.85);
+	position: absolute; bottom: 0px; left: 25%;
+	text-align: left;
+	padding: 15px 15px 65px 20px;
+	border-top: 6px solid #F5A11D;
+	border-left: 6px solid #F5A11D;
+	border-right: 6px solid #F5A11D;
+}
+.marquee .marquee_panel .panel_caption * { color: #000000; line-height: 20px; }
+.marquee .marquee_panel .panel_caption h3 { margin: 0px 0px 8px 0px; font-weight: normal; font-size: 1.8em; }
+.marquee .marquee_panel .panel_caption p { margin: 0px 0px 15px 0px; color: #888; font-size: 1.1em; }
+.marquee .marquee_panel .panel_caption a, .marquee .marquee_panel .panel_caption a:visited { color: #000000; text-decoration: underline; }
+.marquee .marquee_panel .panel_caption a:hover { text-decoration: none; }
+
+.marquee .marquee_nav { z-index: 103; position: absolute; bottom: 20px; left: 25%; text-align: left; width: 400px; padding: 0px 0px 0px 23px; }
+.marquee .marquee_nav div {
+	transition: background-color 1s linear;
+	display: inline-block; width: 10px; height: 10px;
+	background-color: rgba(255,255,255,.8);
+	border: 2px solid #888;
+	border-radius: 50%;
+	margin: 0px 10px 0px 0px;
+	cursor: pointer;
+}
+
+.marquee .marquee_nav div:hover { background-color: rgba(0,0,0,.2); transition: background-color .1s linear; }
+
+.marquee .marquee_nav div.selected { background-color: rgba(0,0,0,.5); }
+
+/*  small screen */
+.marquee .marquee_stage_small { height: inherit; position: relative; overflow: hidden; }
+.marquee .marquee_stage_small .marquee_panel { height: inherit; position: absolute; top: 0px; left: 0px; width: 100%; }
+
+.marquee .marquee_stage_small .marquee_panel .panel_content { display: none; }
+
+.panel_caption {display:none;}
+
+@media screen and (min-width: 1024px) {
+		#logo { 
+			margin-left: 5%;
+		}
+		.marquee .marquee_panel .panel_caption, .marquee .marquee_nav {
+			margin-left: 15%;
+		}
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+		#header-bottom { max-width: 100%; }
+		.marquee .marquee_panel .panel_caption, .marquee .marquee_nav {
+			padding: 15px 15px 5px 20px
+		}
+		.marquee .marquee_nav div {
+		    background-color: rgba(255, 255, 255, 0.8);
+		    border: 2px solid #888;
+		    border-radius: 50%;
+		    margin: 10px 10px 0px 0px;
+		    cursor: pointer;
+		}
+}		
+
+
+@media screen and (max-width: 600px) {
+	#header-bottom { max-width: 100%; }
+	.marquee { height: 200px; }
+	.marquee .marquee_panel { background-size: cover; background-position: 75% 0px; }
+	.marquee .marquee_panel .panel_caption { width: 75%; margin: 0px; padding: 10px 10px 10px 10px; text-align: center; }
+	.marquee .marquee_panel .panel_caption h3 { font-size: 1.4em; }
+}

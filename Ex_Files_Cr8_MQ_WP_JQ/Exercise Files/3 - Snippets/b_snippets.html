@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Code Snippets</title>
+	</head>
+	<body>
+	<!--  Snippets File                                             -->
+	<!--  this filenot meant to be used directly in a web browser   -->
+
+
+	
+
+
+
+<!-- .................................................................... -->
+<!-- SNIPPET 7 .......................................................... --><?php
+
+
+	$marquee_loop = new WP_Query(
+		array(
+			'post_type' => 'marquee_panel',
+			'posts_per_page' => 10,
+			'post_status' => 'publish'
+		)
+	);
+	
+
+	while ( $marquee_loop -> have_posts() ) : $marquee_loop -> the_post();
+		the_title('<h3>','</h3>');
+	endwhile;
+
+
+?><!-- end............................................................... -->
+
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 8 ......................................................... -->
+	
+
+<?php include (TEMPLATEPATH . '/myMarquee/php/marquee_include.php'); ?>
+
+
+<!-- end................................................................ -->
+
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 9 ......................................................... --><?php
+	
+
+	if (is_front_page()){
+	
+		// previous code here
+	
+	}
+
+
+
+?><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 10 ........................................................ --><?php
+
+
+	echo '<div class="marquee">';
+		echo '<div class="marquee_data">';
+			while ( $marquee_loop -> have_posts() ) : $marquee_loop -> the_post();
+				$image_id = get_post_thumbnail_id( $post_id );
+				$image_url_full = wp_get_attachment_image_src($image_id,'full');
+				$image_url_large = wp_get_attachment_image_src($image_id,'large');
+				echo '<div class="marquee_panel" data-image-full="'.$image_url_full[0].'" data-image-large="'.$image_url_large[0].'">';
+					echo '<div class="panel_caption">';
+						the_title('<h3>','</h3>');
+						echo '<div class="panel_content">';
+							the_content();
+						echo '</div>';
+					echo '</div>';
+				echo '</div>';
+			endwhile;
+		echo '</div>';
+	echo '</div>';
+
+
+?><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 11 ........................................................ --><script>
+
+
+var marqueeVars = {
+	screenSize : '',
+	width : 0,
+	mobileSize : 600,
+	autoPlay : true,
+	currentPanel : 1,
+	totalPanels : 0,
+	timePassed : 0,
+	timeToChange : 50,
+	inTansition : false,
+	panelContent : Array
+}
+
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 12 ........................................................ --><script>
+
+
+function marqueeGatherData(){
+	// create and store HTML for panels
+	jQuery('.marquee_data .marquee_panel').each(function(index){
+
+		marqueeVars.totalPanels = index + 1;
+
+		var imageFull = jQuery(this).attr('data-image-full');
+		var imageLarge = jQuery(this).attr('data-image-large');
+		var panelCaption = jQuery(this).find('.panel_caption').html();
+
+		marqueeVars.panelContent[index] = '<div class="marquee_panel" style="background-image:url('+imageFull+');" data-full="'+imageLarge+'"><div class="panel_caption">'+panelCaption+'</div></div>';
+
+	});
+	
+}
+
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 13 ........................................................ --><script>
+
+
+jQuery(document).ready(function(){
+
+	marqueeGatherData();
+
+});
+
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 14 ........................................................ -->
+
+
+<div class="screenSize"></div>
+<div class="photoWidth"></div>
+<div class="autoPlay"></div>
+<div class="totalPanels"></div>
+<div class="currentPanel"></div>
+<div class="timePassed"></div>
+<div class="timeToChange"></div>
+<div class="inTansition"></div>
+
+
+<!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 15 ........................................................ --><script>
+
+
+function setDebuger(){
+	jQuery('.screenSize').html('marqueeVars.screenSize = '+marqueeVars.screenSize);
+	jQuery('.autoPlay').html('marqueeVars.autoPlay = '+marqueeVars.autoPlay);
+	jQuery('.totalPanels').html('marqueeVars.totalPanels = '+marqueeVars.totalPanels);
+	jQuery('.currentPanel').html('marqueeVars.currentPanel = '+marqueeVars.currentPanel);
+	jQuery('.timePassed').html('marqueeVars.timePassed = '+marqueeVars.timePassed);
+	jQuery('.timeToChange').html('marqueeVars.timeToChange = '+marqueeVars.timeToChange);
+	jQuery('.inTansition').html('marqueeVars.inTansition = '+marqueeVars.inTansition);	
+}
+
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 16 ........................................................ --><script>
+
+
+function marqueeMeasureScreen(){
+	// measure screen size
+	if(jQuery('.marquee').width() > 600 ){
+		marqueeVars.screenSize = 'large';
+	}else{
+		marqueeVars.screenSize = 'small';
+	}
+}
+
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 17 ........................................................ --><script>
+
+
+function marqueeAdvance(){
+
+	// check browser width
+	var browserWidth = jQuery('.marquee').width();
+	var currentSize = marqueeVars.screenSize;
+	if(browserWidth > marqueeVars.mobileSize){
+		var newWidth = 'large';
+		marqueeVars.screenSize = 'large';
+	}else{
+		var newWidth = 'small'
+		marqueeVars.screenSize = 'small';
+	}
+	
+	// advance the timer and large marquee
+	if (marqueeVars.timePassed == marqueeVars.timeToChange){
+		marqueeVars.timePassed = 0;
+	}else{
+		marqueeVars.timePassed += 1;
+	}
+	setDebuger();
+}
+
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 18 ........................................................ --><script>
+
+
+function marqueeMultiPanel(){
+
+	marqueeVars.timePassed = 0;
+	marqueeVars.autoPlay = true;
+
+	// clear HTML from marquee and add stage elements
+	jQuery('.marquee').html('').append('<div class="marquee_stage_large"></div>');
+	jQuery('.marquee_stage_large').append('<div class="marquee_container_1"></div><div class="marquee_nav"></div>');
+
+
+}
+
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 19 ........................................................ --><script>
+
+
+	// Generate navigation and links
+	for(i=0; i<marqueeVars.totalPanels; i++){
+		jQuery('.marquee_nav').append('<div></div>');
+	}
+	
+	// Detect hover over marquee
+	jQuery('.marquee').hover(
+		function(){
+			marqueeVars.autoPlay = false;
+			jQuery(this).removeClass('autoplay');
+		},
+		function(){
+			marqueeVars.autoPlay = true;
+			marqueeVars.timePassed = 0;
+			jQuery(this).addClass('autoplay');
+		}
+	);
+
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 20 ........................................................ --><style>
+
+
+.marquee { height: 325px; background-color: #ddd; }
+.marquee * { font-family: 'Source Sans Pro'; }
+
+.marquee .marquee_data { display: none; }
+
+.marquee .marquee_stage_large { height: inherit; position: relative; overflow: hidden; }
+
+
+</style><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 21 ........................................................ --><style>
+
+
+.marquee .marquee_container_1, .marquee .marquee_container_2 { height: inherit; position: absolute; top: 0px; left: 0px; width: 100%; }
+.marquee .marquee_container_1 { z-index: 101; }
+.marquee .marquee_container_2 { z-index: 102; }
+
+.marquee .marquee_panel { height: inherit; position: absolute; top: 0px; left: 0px; width: 100%; text-align: center; background-repeat: no-repeat; background-position: 45% 0px; }
+
+.marquee .marquee_panel .panel_caption {
+	width: 400px;
+	background: rgba(255,255,255,.85);
+	position: absolute; bottom: 0px; left: 15%;
+	text-align: left;
+	padding: 15px 15px 65px 20px;
+	border-top: 6px solid #fff;
+	border-left: 6px solid #fff;
+	border-right: 6px solid #fff;
+}
+.marquee .marquee_panel .panel_caption * { color: #000000; line-height: 20px; }
+.marquee .marquee_panel .panel_caption h3 { margin: 0px 0px 8px 0px; font-weight: normal; font-size: 1.8em; }
+.marquee .marquee_panel .panel_caption p { margin: 0px 0px 15px 0px; color: #888; font-size: 1.1em; }
+.marquee .marquee_panel .panel_caption a, .marquee .marquee_panel .panel_caption a:visited { color: #000000; text-decoration: underline; }
+.marquee .marquee_panel .panel_caption a:hover { text-decoration: none; }
+
+
+</style><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 22 ........................................................ --><style>
+
+
+.marquee .marquee_nav { z-index: 103; position: absolute; bottom: 20px; left: 15%; text-align: left; width: 400px; padding: 0px 0px 0px 23px; }
+.marquee .marquee_nav div {
+	transition: background-color 1s linear;
+	display: inline-block; width: 15px; height: 15px;
+	background-color: rgba(255,255,255,.8);
+	border: 2px solid #888;
+	border-radius: 50%;
+	margin: 0px 10px 0px 0px;
+	cursor: pointer;
+}
+
+.marquee .marquee_nav div:hover { background-color: rgba(0,0,0,.2); transition: background-color .1s linear; }
+
+.marquee .marquee_nav div.selected { background-color: rgba(0,0,0,.5); }
+
+
+</style><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 23 ........................................................ --><script>
+
+
+	// add click events and panel transitions
+	jQuery('.marquee_nav div').on('click', function(){
+
+		var navClicked = jQuery(this).index();
+
+		if(marqueeVars.inTransition){
+			//do nothing
+		}else{
+
+			marqueeVars.currentPanel = navClicked + 1;
+			marqueeVars.inTransition = true;
+			
+			// set the navigation state
+			jQuery('.marquee_nav div').removeClass('selected');
+			jQuery(this).addClass('selected');
+	
+			// inject panel container
+			jQuery('.marquee_stage_large').append('<div class="marquee_container_2" style="opacity:0;"></div>');
+			
+			jQuery('.marquee_container_2').html(marqueeVars.panelContent[navClicked]).animate({opacity:1},1000,function(){
+				jQuery('.marquee_container_1').remove();
+				jQuery(this).addClass('marquee_container_1').removeClass('marquee_container_2');
+				marqueeVars.inTransition = false;
+				setDebuger();
+			});
+
+		}
+
+		setDebuger();
+
+	});
+
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 24 ........................................................ --><script>
+
+	// auto click first nav element
+	jQuery('.marquee_nav div:first').trigger('click');
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 25 ........................................................ --><script>
+
+		if (marqueeVars.autoPlay == true){
+			if(marqueeVars.currentPanel == marqueeVars.totalPanels){
+				jQuery('.marquee_nav div:nth-child(1)').trigger('click');
+			}else{
+				jQuery('.marquee_nav div:nth-child('+(marqueeVars.currentPanel+1)+')').trigger('click');
+			}
+		}
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--  end Snippets File  -->		
+	</body>
+</html>

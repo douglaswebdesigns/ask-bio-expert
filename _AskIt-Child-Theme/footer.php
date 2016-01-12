@@ -1,6 +1,7 @@
+			
+
 			</div> <!-- end .container -->
 		</div> 	<!-- end #right-shadow -->
-
 	</div> <!-- end #content -->
 
 	<div id="footer">
@@ -16,7 +17,14 @@
 					$menuID = 'footer-menu';
 					$footerNav = '';
 					if (function_exists('wp_nav_menu')) {
-						$footerNav = wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'menu_id' => $menuID, 'echo' => false, 'depth' => '1' ) );
+						$footerNav = wp_nav_menu( array( 
+							'theme_location' 	=> 'footer-menu', 
+							'container' 		=> '', 
+							'fallback_cb'	 	=> '', 
+							'menu_class' 		=> $menuClass, 
+							'menu_id' 			=> $menuID, 
+							'echo' 				=> false, 
+							'depth' 			=> '1' ) );
 					};
 					if ($footerNav == '') { ?>
 						<ul id="<?php echo esc_attr( $menuID ); ?>" class="<?php echo esc_attr( $menuClass ); ?>">

@@ -534,8 +534,5 @@ function et_epanel_custom_colors_css(){
 
 <?php }
 
-// function reg_scripts() {
-//    wp_enqueue_style( 'bootstrapstyle',  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' );
-//    wp_enqueue_script( 'bootstrap-script',  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', array(), true );
-// }
-// add_action('wp_enqueue_scripts', 'reg_scripts');
+
+

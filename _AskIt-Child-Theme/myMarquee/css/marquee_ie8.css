@@ -1,0 +1,7 @@
+.marquee .marquee_panel .panel_caption { background-color: none; background-image: url(../images/ie8_white_85_transparent.png); }
+
+.marquee .marquee_nav div:hover { background-color: #cccccc; }
+.marquee .marquee_nav div.selected { background-color: #777777; }
+.marquee .marquee_panel .panel_caption p { color: #444444; }
+
+

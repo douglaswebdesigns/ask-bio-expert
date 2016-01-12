@@ -7,7 +7,7 @@ Template Name: Expert Form Page
 <?php get_header(); ?>
 
 <div id="main-area" class="fullwidth">
-
+<div class="question-table">
 	<?php // get_template_part('includes/breadcrumbs'); ?>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -45,7 +45,7 @@ Template Name: Expert Form Page
 		<?php } ?>
 
 		<?php endwhile; endif; ?>
-
+</div>
 </div> <!-- end #main-area -->
 
 <?php get_footer(); ?>

@@ -26,7 +26,7 @@ if ( $et_ptemplate_portfolio_size == 3 ) $et_ptemplate_portfolio_class = ' et_po
 
 <div id="main-area"<?php if ($fullwidth) echo ' class="fullwidth"'; ?>>
 
-	<?php get_template_part('includes/breadcrumbs'); ?>
+	<?php // get_template_part('includes/breadcrumbs'); ?>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

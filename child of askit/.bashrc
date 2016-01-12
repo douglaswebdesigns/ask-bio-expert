@@ -1,0 +1,1 @@
+alias subl='sublime.exe -multiInst -nosession'

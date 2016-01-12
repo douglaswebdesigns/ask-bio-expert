@@ -20,21 +20,23 @@ $et_ptemplate_blog_perpage = isset( $et_ptemplate_settings['et_ptemplate_blog_pe
 ?>
 
 <div id="main-area"<?php if ($fullwidth) echo ' class="fullwidth"'; ?>>
-
-	<?php get_template_part('includes/breadcrumbs'); ?>
+<div class="">
+	<?php // get_template_part('includes/breadcrumbs'); ?>
 
 	<div id='cssmenu'>
 		<?php $menuClass = 'nav clearfix';
 			$menuID = 'category-menu';
 			$secondaryNav = '';
 			if (function_exists('wp_nav_menu')) {
-				$secondaryNav = wp_nav_menu( array( 'theme_location' => 'category-menu',
-								    'container' => '', 
-								  'fallback_cb' => 'wp_page_menu',
-								   'menu_class' => $menuClass,
-								      'menu_id' => $menuID, 
-								         'echo' => false ) );
-			};
+							$secondaryNav = wp_nav_menu( array( 
+								'theme_location' 	=> 'category-menu', 
+								'container' 		=> '', 
+								'fallback_cb' 		=> '', 
+								'menu_class' 		=> $menuClass, 
+								'menu_id' 			=> $menuID,
+								'depth' 			=> '1', 
+								'echo' 				=> false ) );
+						};
 			if ($secondaryNav == '') { ?>
 				<ul id="<?php echo esc_attr( $menuID ); ?>" class="<?php echo esc_attr( $menuClass ); ?>">
 					<?php if (get_option('askit_home_link') == 'on') { ?>
@@ -108,7 +110,7 @@ $et_ptemplate_blog_perpage = isset( $et_ptemplate_settings['et_ptemplate_blog_pe
 								<div class="page-nav clearfix">
 									<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); }
 									else { ?>
-										 <?php get_template_part('includes/navigation'); ?>
+										 <?php get_template_part(''); ?>
 									<?php } ?>
 								</div> <!-- end .entry -->
 							<?php else : ?>
@@ -130,18 +132,10 @@ $et_ptemplate_blog_perpage = isset( $et_ptemplate_settings['et_ptemplate_blog_pe
 		<div class="clear"></div>
 
 		<?php if (get_option('askit_integration_single_bottom') <> '' && get_option('askit_integrate_singlebottom_enable') == 'on') echo(get_option('askit_integration_single_bottom')); ?>
-
-		<?php if (get_option('askit_468_enable') == 'on') { ?>
-			<?php if(get_option('askit_468_adsense') <> '') echo ( get_option('askit_468_adsense') );
-			else { ?>
-				<a href="<?php echo esc_url(get_option('askit_468_url')); ?>"><img src="<?php echo esc_url(get_option('askit_468_image')); ?>" alt="Microsys Ad" class="foursixeight" /></a>
-			<?php } ?>
-		<?php } ?>
-
 		<?php if (get_option('askit_show_postcomments') == 'on') comments_template('', true); ?>
 
 	<?php endwhile; endif; ?>
-
+</div>
 </div> <!-- end #main-area -->
 
 <?php if (!$fullwidth) get_sidebar(); ?>

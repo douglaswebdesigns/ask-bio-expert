@@ -17,7 +17,7 @@ $et_ptemplate_gallery_perpage = isset( $et_ptemplate_settings['et_ptemplate_gall
 
 <div id="main-area"<?php if ($fullwidth) echo ' class="fullwidth"'; ?>>
 
-	<?php get_template_part('includes/breadcrumbs'); ?>
+	<?php // get_template_part('includes/breadcrumbs'); ?>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

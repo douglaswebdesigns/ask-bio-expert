@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Code Snippets</title>
+	</head>
+	<body>
+	<!--  Snippets File                                             -->
+	<!--  this filenot meant to be used directly in a web browser   -->
+
+
+	
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 26 ........................................................ --><script>
+
+
+function marqueeSinglePanel(){
+
+	// clear HTML from marquee and add stage small
+	jQuery('.marquee').html('').append('<div class="marquee_stage_small">'+marqueeVars.panelContent[0]+'</div>');
+	
+	var getLink = jQuery('.marquee .marquee_stage_small').find('a:nth-child(1)').attr('href');  /* grab first hyperlink url, add hyperlink to title */
+	var getTitle = jQuery('.marquee .marquee_stage_small h3').html();
+	var getFullImage = jQuery('.marquee .marquee_stage_small .marquee_panel').attr('data-full');
+	jQuery('.marquee .marquee_stage_small h3').html('<a href="'+getLink+'">'+getTitle+'</a>');
+	jQuery('.marquee .marquee_stage_small .marquee_panel').css('background-image','url('+getFullImage+')');  /* replace background-image with smalle file */
+	
+	setDebuger();
+}
+
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 27 ........................................................ --><script>
+
+
+	// detect change in screen size variable
+	if(currentSize != newWidth){
+		if(marqueeVars.screenSize == 'large'){
+			alert('change to large');
+		}else{
+			alert('change to small');
+		}
+	}
+
+</script><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 28 ........................................................ --><style>
+
+
+/*  small screen */
+.marquee .marquee_stage_small { height: inherit; position: relative; overflow: hidden; }
+.marquee .marquee_stage_small .marquee_panel { height: inherit; position: absolute; top: 0px; left: 0px; width: 100%; }
+
+.marquee .marquee_stage_small .marquee_panel .panel_content { display: none; }
+
+
+</style><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 29 ........................................................ --><style>
+
+
+@media screen and (max-width: 600px) {
+
+	.marquee { height: 200px; }
+	.marquee .marquee_panel { background-size: cover; background-position: 75% 0px; }
+	.marquee .marquee_panel .panel_caption { width: 75%; margin: 0px; padding: 10px 10px 10px 10px; text-align: center; }
+	.marquee .marquee_panel .panel_caption h3 { font-size: 1.4em; }
+	
+}
+
+
+</style><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 30 ........................................................ --><style>
+
+
+.marquee .marquee_panel .panel_caption { background-color: none; background-image: url(../images/ie8_white_85_transparent.png); }
+
+.marquee .marquee_nav div:hover { background-color: #cccccc; }
+.marquee .marquee_nav div.selected { background-color: #777777; }
+.marquee .marquee_panel .panel_caption p { color: #444444; }
+
+
+</style><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--  end Snippets File  -->		
+	</body>
+</html>

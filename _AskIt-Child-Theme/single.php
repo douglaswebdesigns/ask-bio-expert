@@ -2,7 +2,7 @@
 
 <div id="main-area">
 
-	<?php get_template_part('includes/breadcrumbs'); ?>
+	<?php // get_template_part('includes/breadcrumbs'); ?>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -13,13 +13,15 @@
 				$menuID = 'category-menu';
 				$secondaryNav = '';
 				if (function_exists('wp_nav_menu')) {
-					$secondaryNav = wp_nav_menu( array( 'theme_location' => 'category-menu',
-									    'container' => '', 
-									  'fallback_cb' => 'wp_page_menu',
-									   'menu_class' => $menuClass,
-									      'menu_id' => $menuID, 
-									         'echo' => false ) );
-				};
+							$secondaryNav = wp_nav_menu( array( 
+								'theme_location' 	=> 'category-menu', 
+								'container' 		=> '', 
+								'fallback_cb' 		=> '', 
+								'menu_class' 		=> $menuClass, 
+								'menu_id' 			=> $menuID,
+								'depth' 			=> '1', 
+								'echo' 				=> false ) );
+						};
 				if ($secondaryNav == '') { ?>
 					<ul id="<?php echo esc_attr( $menuID ); ?>" class="<?php echo esc_attr( $menuClass ); ?>">
 						<?php if (get_option('askit_home_link') == 'on') { ?>
@@ -31,6 +33,7 @@
 				<?php }
 				else echo($secondaryNav); ?>
 		</div>
+
 		<div class="entry">
 			<div class="entry-top">
 				<div class="entry-content">
@@ -81,6 +84,7 @@
 		<?php if (get_option('askit_show_postcomments') == 'on') comments_template('', true); ?>
 
 	<?php endwhile; endif; ?>
+
 </div> <!-- end #main-area -->
 
 <?php // get_sidebar(); ?>

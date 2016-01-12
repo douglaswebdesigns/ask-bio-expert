@@ -44,7 +44,7 @@ $sidebarEnabled = (CMA_Thread::isSidebarEnabled() && is_active_sidebar('cm-answe
                 </header><?php endif; ?>
                 
                 <div class="entry-content">
-                
+                 <h1 style="color:#000">This is the index template</h1>
 	                <?php do_action('cma_index_header_after'); ?>
 	
 	                <?php
@@ -82,6 +82,6 @@ $sidebarEnabled = (CMA_Thread::isSidebarEnabled() && is_active_sidebar('cm-answe
  */
 if ($sidebarEnabled) echo CMA_BaseController::_loadView('answer/widget/sidebar');
 ?>
- <h1 style="color:#000">This is the index template</h1>
+
 <?php
 get_footer();

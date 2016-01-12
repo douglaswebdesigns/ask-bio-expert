@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Code Snippets</title>
+	</head>
+	<body>
+	<!--  Snippets File                                             -->
+	<!--  this filenot meant to be used directly in a web browser   -->
+
+
+	
+
+
+
+<!-- .................................................................... -->
+<!-- SNIPPET 1 .......................................................... --><?php
+
+
+	/* Marquee - post type */
+	function create_post_type_marquee() {
+		register_post_type('marquee_panel',
+			array(
+				'labels' => array(
+					'name' => __('Marquee'),
+					'query_var' => true,
+					'hierarchical' => true,
+					'singular_name' => __('Panel')
+				),
+				'public' => true,
+				'has_archive' => false,
+				'capability_type' => 'post',
+				'menu_icon'=> get_template_directory_uri().'/myMarquee/images/admin_marquee_icon.png',
+				'rewrite' => array('slug' => 'learnmore', 'with_front' => false), // Permalinks format
+				'supports' => array('title','editor','thumbnail')
+			)
+		);
+	}
+	add_action('init','create_post_type_marquee');
+
+
+?><!-- end................................................................. -->
+
+
+
+
+
+
+
+
+
+
+<!-- .................................................................... -->
+<!-- SNIPPET 2 .......................................................... --><?php
+
+include (TEMPLATEPATH . '/myMarquee/php/marquee_functions_include.php');
+
+
+?><!-- end............................................................... -->
+
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 3 ......................................................... -->
+	
+
+<!-- panel 1 -->
+Not a cloud in the sky
+Description goes here in the default WordPress editor.
+Learn more
+
+
+<!-- panel 2 -->
+Healthy ride to work
+Caption goes here. This is a longer one, so we can test the varying size of our captions.
+Check it out
+
+
+<!-- panel 3 -->
+Get ready for spring
+Smallest caption here.
+We show you how
+
+
+<!-- panel 4 -->
+The bridges are in bloom
+This is a medium caption for this panel.
+Find out where
+
+
+<!-- end................................................................ -->
+
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 4 ......................................................... --><?php
+	
+
+	/* Marquee - register custom JavaScript files */
+	function load_marquee_scripts(){
+		
+		//wp_register_script('jquery', 'http://code.jquery.com/jquery-1.11.0.min.js');
+		wp_register_script('marquee_js', get_template_directory_uri().'/myMarquee/js/marquee.js', array('jquery'));
+		
+		//wp_enqueue_script('jquery');
+		wp_enqueue_script('marquee_js');
+	
+	}
+	add_action('wp_enqueue_scripts', 'load_marquee_scripts');
+
+
+
+?><!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 5 ......................................................... -->
+	
+
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/myMarquee/css/marquee.css" />
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/myMarquee/css/marquee_ie8.css" />
+<![endif]-->
+
+
+
+<!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+<!-- ................................................................... -->
+<!-- SNIPPET 6 ......................................................... -->
+
+
+<?php include (TEMPLATEPATH . '/myMarquee/php/marquee_header_include.php'); ?>
+
+
+<!-- end....................................................... -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--  end Snippets File  -->		
+	</body>
+</html>

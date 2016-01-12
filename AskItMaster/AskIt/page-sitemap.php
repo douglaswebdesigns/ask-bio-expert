@@ -13,7 +13,7 @@ $fullwidth = isset( $et_ptemplate_settings['et_fullwidthpage'] ) ? (bool) $et_pt
 ?>
 
 <div id="main-area"<?php if ($fullwidth) echo ' class="fullwidth"'; ?>>
-
+<div class="question-table">
 	<?php get_template_part('includes/breadcrumbs'); ?>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -76,7 +76,7 @@ $fullwidth = isset( $et_ptemplate_settings['et_fullwidthpage'] ) ? (bool) $et_pt
 		<?php if (get_option('askit_integration_single_bottom') <> '' && get_option('askit_integrate_singlebottom_enable') == 'on') echo(get_option('askit_integration_single_bottom')); ?>
 
 	<?php endwhile; endif; ?>
-
+</div>
 </div> <!-- end #main-area -->
 
 <?php if (!$fullwidth) get_sidebar(); ?>
