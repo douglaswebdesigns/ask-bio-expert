@@ -1,4 +1,11 @@
+*.psd
+*.pdf
+*.zip
 *.log
+*.doc
+*.docx
+*.xml
+/graphics/
 .htaccess
 sitemap.xml
 sitemap.xml.gz
